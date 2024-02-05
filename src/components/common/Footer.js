@@ -1,4 +1,5 @@
 import * as React from "react";
+import { footerLinks, footerContacts } from "./data";
 
 function Footer() {
   return (
@@ -9,96 +10,50 @@ function Footer() {
             <h1 class="logo">LOGO</h1>
           </div>
           <div class="d-flex flex-wrap justify-content-between">
-            <ul class="nav flex-column text-main-colors-lists">
-              <li>
-                <h4>Подарочные карты</h4>
-              </li>
-              <li>
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="catalog-page.html"
+            {footerLinks.map((item) => {
+              return (
+                <ul
+                  key={item.id}
+                  class="nav flex-column text-main-colors-lists"
                 >
-                  Каталог
-                </a>
-              </li>
-              <li>
-                <a class="nav-link" href="catalog-page.html">
-                  Благотворительность
-                </a>
-              </li>
-            </ul>
-            <ul class="nav flex-column text-main-colors-lists">
-              <li>
-                <h4>О компании</h4>
-              </li>
-              <li>
-                <a class="nav-link" href="about-us.html">
-                  О Монополия
-                </a>
-              </li>
-              <li>
-                <a class="nav-link" href="news.html">
-                  Новости
-                </a>
-              </li>
-              <li>
-                <a class="nav-link" href="oferta.html">
-                  Оферта
-                </a>
-              </li>
-              <li>
-                <a class="nav-link" href="#">
-                  Контакты
-                </a>
-              </li>
-            </ul>
-            <ul class="nav flex-column text-main-colors-lists">
-              <li>
-                <h4>Прочее</h4>
-              </li>
-              <li>
-                <a class="nav-link" href="faq-page.html">
-                  {" "}
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a class="nav-link" href="privacy-policy.html">
-                  Политика конфиденциальности
-                </a>
-              </li>
-            </ul>
+                  <li>
+                    <h4>{item.name}</h4>
+                  </li>
+                  {item.links.map((item) => {
+                    return (
+                      <li key={item.id}>
+                        <a
+                          class="nav-link active"
+                          aria-current="page"
+                          href={item.url}
+                        >
+                          {item.text}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              );
+            })}
           </div>
           <nav class="nav flex-column">
             <h4>Контакты</h4>
-            <p>
-              Клиентская поддержка для физических лиц по вопросам покупки,
-              отправки, использования сертификатов
-            </p>
-            <a class="nav-link" href="#">
-              8 800 555 35 35
-            </a>
-            <a class="nav-link" href="#">
-              +7 800 555 35 35
-            </a>
-            <a class="nav-link" href="#">
-              support@monopol.ru
-            </a>
-            <p>Отдел продаж (для юридических лиц)</p>
-            <a class="nav-link" href="#">
-              +7 800 555 35 35{" "}
-            </a>
-            <a class="nav-link" href="#">
-              b2b@monopol.ru
-            </a>
-            <p>Отдел продаж (для юридических лиц)</p>
-            <a class="nav-link" href="#">
-              +7 800 555 35 35{" "}
-            </a>
-            <a class="nav-link" href="#">
-              partners@monopol.ru
-            </a>
+            {footerContacts.map((item) => {
+              return (
+                <div key={item.id}>
+                  <p>{item.title}</p>
+                  {item.links.map((item) => {
+                    return (
+                      <div key={item.id}>
+                        <a class="nav-link" href={item.url}>
+                          {item.text}
+                        </a>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </nav>
         </footer>
       </div>

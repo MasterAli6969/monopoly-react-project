@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { navDropLincks } from "./data";
+
 function NavBar() {
   return (
     <>
@@ -21,6 +23,7 @@ function NavBar() {
                         src="../img/logo-mono.png"
                         width="150"
                         height="150"
+                        alt=""
                       />
                     </a>
                   </div>
@@ -47,6 +50,7 @@ function NavBar() {
                           src="../img/logo-mono.png"
                           width="160"
                           height="160"
+                          alt=""
                         />
                       </a>
                     </div>
@@ -89,97 +93,31 @@ function NavBar() {
                         </div>
                       </div>
                       <ul class="navbar-nav d-flex flex-wrap justify-content-around">
-                        <li class="nav-item dropdown">
-                          <a
-                            class="nav-link dropdown-toggle"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            Купить подарочную карту
-                          </a>
+                        {navDropLincks.map((item) => {
+                          return (
+                            <li key={item.id} class="nav-item dropdown">
+                              <button
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                                {item.name}
+                              </button>
 
-                          <ul class="dropdown-menu">
-                            <li>
-                              <a class="dropdown-item" href="catalog-page.html">
-                                Все
-                              </a>
+                              <ul class="dropdown-menu">
+                                {item.links.map((item) => {
+                                  return (
+                                    <li key={item.id}>
+                                      <a class="dropdown-item" href={item.url}>
+                                        {item.text}
+                                      </a>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
                             </li>
-                          </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                          <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            О компании
-                          </a>
-                          <ul class="dropdown-menu">
-                            <li>
-                              <a class="dropdown-item" href="about-us.html">
-                                О Монополия
-                              </a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="news.html">
-                                Новости
-                              </a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="oferta.html">
-                                Оферта
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                          <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            Корпоративным клиентам
-                          </a>
-                          <ul class="dropdown-menu">
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                Корпоративным клиентам
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            Ритейлерам
-                          </a>
-                          <ul class="dropdown-menu">
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                Виджет для продажи <br />
-                                подарочных карт
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-
-                        <li class="nav-item">
-                          <a class="nav-link" href="contacts.html">
-                            Контакты
-                          </a>
-                        </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>

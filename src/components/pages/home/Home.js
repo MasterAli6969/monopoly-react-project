@@ -9,6 +9,7 @@ import Block7 from "./Block7";
 import Block8 from "./Block8";
 import Block9 from "./Block9";
 import Block10 from "./Block10";
+import "../../../assets/css/index.css";
 
 function Home() {
   return (

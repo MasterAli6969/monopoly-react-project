@@ -7,10 +7,7 @@ function Block3() {
         <div class="container d-flex flex-wrap justify-content-center">
           <div class="card" style={{ width: "14rem", margin: "10px" }}>
             <div class="card-body d-flex flex-column align-items-center custom_index_block3_card_body">
-              <i
-                class="bi bi-question-lg mb-2"
-                style={{ fontSize: "50px" }}
-              ></i>
+              <i class="bi bi-question-lg mb-2" style={{ fontSize: "50px" }} />
               <p class="card-text text-center">
                 Что такое электронные подарочные карты?
               </p>
@@ -23,7 +20,7 @@ function Block3() {
                   Подробнее
                 </h6>
 
-                <i class="bi bi-arrow-right fs-2"></i>
+                <i class="bi bi-arrow-right fs-2" />
               </div>
               <div
                 class="modal fade"
@@ -228,14 +225,6 @@ function Block3() {
                             Получатель сможет воспользоваться полученной
                             электронной подарочной картой, предъявив ее в
                             магазине в распечатанном виде.
-                          </p>
-                        </li>
-                        <li class="mb-3">
-                          <p>
-                            Некоторые магазины принимают сертификат с экрана
-                            мобильного устройства (необходимо читать условия
-                            приема конкретного ритейлера, они будут описаны в
-                            полученном подарочном сертификате).
                           </p>
                         </li>
                         <li class="mb-3">
