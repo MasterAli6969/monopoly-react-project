@@ -1,9 +1,7 @@
 //<!--------------------- БЛОК - 4 Выбирайте из 300 подарочных ------------------->
 
 import React from "react";
-import { cardData } from "./data";
 import Card from "../../common/Card";
-export { cardData } from "./data";
 function Block4() {
   return (
     <>
@@ -16,7 +14,7 @@ function Block4() {
           </h6>
         </div>
         <div class="container d-flex justify-content-center flex-wrap">
-          <Card data={cardData} />
+          <Card />
           <div class="container d-flex justify-content-center flex-wrap py-5">
             <a
               href="pages/catalog-page.html"

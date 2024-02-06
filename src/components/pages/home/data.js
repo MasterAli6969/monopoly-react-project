@@ -141,35 +141,6 @@ export const modalTiles = [
   },
 ];
 
-export const cardData = [
-  {
-    id: 1,
-    img: "./img/lorem-inage-default1.jpg",
-    cardTitle: "Подписка на онлайн-кинотеатр PREMIER",
-    value: "Номинал",
-    valueFrom: "149",
-    valueBefore: "799",
-    dataBsTargetId: "exampleModal6",
-    modalWindow: {
-      modalTitle: "Giftery Card",
-      description:
-        "Дарите только нужные подарки. Получатель сможет обменять Giftery Card на подарочные карты известных брендов из списка обмена (ссылка на список обмена расположена в разделе 'Правила', пункт 2).",
-      tiles: [
-        {
-          id: 1,
-          icons: "bi bi-mailbox-flag fs-1",
-          text: "Обменяйте Giftery Card в рамках номинала на один или несколько сертификатов из каталога Giftery",
-        },
-        {
-          id: 1,
-          icons: "bi bi-mailbox-flag fs-1",
-          text: "Обменяйте Giftery Card в рамках номинала на один или несколько сертификатов из каталога Giftery",
-        },
-      ],
-    },
-  },
-];
-
 export const iconLinks = [
   {
     icons: "bi bi-house",

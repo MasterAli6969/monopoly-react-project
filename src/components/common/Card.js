@@ -1,9 +1,10 @@
-function Card(props) {
-  const { data } = props;
+import React from "react";
+import { cardData } from "./data";
+function Card() {
   return (
     <>
       <div>
-        {data.map((item) => {
+        {cardData.map((item) => {
           return (
             <>
               <div
