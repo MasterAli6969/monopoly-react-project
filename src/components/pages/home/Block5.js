@@ -1,5 +1,6 @@
 //<!--------------------- БЛОК - 5 Ассортимент подарочных ------------------->
 import React from "react";
+import { iconLinks } from "./data";
 function Block5() {
   return (
     <>
@@ -16,102 +17,24 @@ function Block5() {
           </div>
 
           <ul class="container d-flex justify-content-around flex-wrap text-main-colors-lists">
-            <li
-              class="text-center d-flex flex-column"
-              style={{ margin: "10px", maxWidth: "150px" }}
-            >
-              <i class="bi bi-house fs-1"></i>
-              <a
-                class="container__block5-link-list"
-                href="pages/catalog-page.html"
-              >
-                Mагазины бытовой техники
-              </a>
-            </li>
-            <li
-              class="text-center d-flex flex-column"
-              style={{ margin: "10px", maxWidth: "150px" }}
-            >
-              <i class="bi bi-bag-heart fs-1"></i>
-              <a
-                class="container__block5-link-list"
-                href="pages/catalog-page.html"
-              >
-                Популярные магазины косметики
-              </a>
-            </li>
-            <li
-              class="text-center d-flex flex-column j"
-              style={{ margin: "10px", maxWidth: "150px" }}
-            >
-              <i class="bi bi-bag fs-1"></i>
-              <a
-                class="container__block5-link-list"
-                href="pages/catalog-page.html"
-              >
-                Магазины одежды и обуви
-              </a>
-            </li>
-            <li
-              class="text-center d-flex flex-column"
-              style={{ margin: "10px", maxWidth: "150px" }}
-            >
-              <i class="bi bi-gem fs-1"></i>
-              <a
-                class="container__block5-link-list"
-                href="pages/catalog-page.html"
-              >
-                Ювелирные салоны
-              </a>
-            </li>
-            <li
-              class="text-center d-flex flex-column j"
-              style={{ margin: "10px", maxWidth: "150px" }}
-            >
-              <i class="bi bi-balloon-fill fs-1"></i>
-              <a
-                class="container__block5-link-list"
-                href="pages/catalog-page.html"
-              >
-                Детские товары
-              </a>
-            </li>
-            <li
-              class="text-center d-flex flex-column"
-              style={{ margin: "10px", maxWidth: "150px" }}
-            >
-              <i class="bi bi-clipboard-heart-fill fs-1"></i>
-              <a
-                class="container__block5-link-list"
-                href="pages/catalog-page.html"
-              >
-                Салоны красоты
-              </a>
-            </li>
-            <li
-              class="text-center d-flex flex-column j"
-              style={{ margin: "10px", maxWidth: "150px" }}
-            >
-              <i class="bi bi-fire fs-1"></i>
-              <a
-                class="container__block5-link-list"
-                href="pages/catalog-page.html"
-              >
-                Развлечения
-              </a>
-            </li>
-            <li
-              class="text-center d-flex flex-column"
-              style={{ margin: "10px", maxWidth: "150px" }}
-            >
-              <i class="bi bi-airplane fs-1"></i>
-              <a
-                class="container__block5-link-list"
-                href="pages/catalog-page.html"
-              >
-                Путешествия и многое другое
-              </a>
-            </li>
+            {iconLinks.map((item) => {
+              return (
+                <>
+                  <li
+                    class="text-center d-flex flex-column"
+                    style={{ margin: "10px", maxWidth: "150px" }}
+                  >
+                    <i class={`${item.icons} fs-1`}></i>
+                    <a
+                      class="container__block5-link-list"
+                      href={`${item.links}`}
+                    >
+                      {item.text}
+                    </a>
+                  </li>
+                </>
+              );
+            })}
           </ul>
         </div>
         <div class="container d-flex justify-content-center flex-wrap my-5">

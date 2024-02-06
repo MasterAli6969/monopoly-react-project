@@ -1,5 +1,6 @@
 //<!--------------------- БЛОК - 8 Возможности Универсальной------------------->
 import React from "react";
+import { staticTabs } from "./data";
 function Block8() {
   return (
     <>
@@ -8,37 +9,21 @@ function Block8() {
           <h3>Возможности Универсальной подарочной карты Giftery Card</h3>
         </div>
         <div class="container d-flex justify-content-center flex-wrap">
-          <div
-            class="card"
-            style={{ width: "24rem", padding: "15px", margin: "10px" }}
-          >
-            <div class="card-body">
-              <i class="bi bi-heart fs-1"></i>
-              <p class="card-text">
-                Обмен на любой из более чем 300 известных брендов
-              </p>
-            </div>
-          </div>
-          <div
-            class="card"
-            style={{ width: "24rem", padding: "15px", margin: "10px" }}
-          >
-            <div class="card-body">
-              <i class="bi bi-image fs-1"></i>
-              <p class="card-text">
-                Оформление в фирменном стиле компании или тематике праздника
-              </p>
-            </div>
-          </div>
-          <div
-            class="card"
-            style={{ width: "24rem", padding: "15px", margin: "10px" }}
-          >
-            <div class="card-body">
-              <i class="bi bi-phone fs-1"></i>
-              <p class="card-text">Выпуск в электронном или пластиковом виде</p>
-            </div>
-          </div>
+          {staticTabs.map((item) => {
+            return (
+              <>
+                <div
+                  class="card"
+                  style={{ width: "24rem", padding: "15px", margin: "10px" }}
+                >
+                  <div class="card-body">
+                    <i class={`${item.icons} fs-1`}></i>
+                    <p class="card-text">{item.text}</p>
+                  </div>
+                </div>
+              </>
+            );
+          })}
         </div>
         <div class="container d-flex justify-content-center flex-wrap mt-5 mb-5">
           <h3>
@@ -110,13 +95,13 @@ function Block8() {
                         </p>
                         <p>
                           Настройте моментальную доставку через
-                          <a href="#">Личный b2b кабинет</a>
+                          <a href="/">Личный b2b кабинет</a>
                           всем адресатам одновременно, и получите удобный отчет
                           о доставке.
                         </p>
                         <p>
                           Воспользуйтесь нашей
-                          <a href="#">Витриной вознаграждений</a>с
+                          <a href="/">Витриной вознаграждений</a>с
                           интегрированным каталогом подарочных карт для удобного
                           обмена баллов, которые ваши сотрудники и партнеры
                           копят в рамках программ мотивации
@@ -124,20 +109,20 @@ function Block8() {
                         <p>
                           Мгновенно расширьте выбор вознаграждений в вашей
                           Программе лояльности при помощи
-                          <a href="#">API интеграции</a>
+                          <a href="/">API интеграции</a>
                           каталога электронных подарочных карт, которые
                           предлагает Giftery
                         </p>
                         <p>
                           Моментально запустите продажу собственных подарочных
                           карт с собственного сайта при помощи
-                          <a href="#">виджета Giftery</a>
+                          <a href="/">виджета Giftery</a>
                         </p>
                       </div>
                     </li>
                   </ol>
                   <div class="d-flex justify-content-center align-items-center">
-                    <a href="#">Далее</a>
+                    <a href="/">Далее</a>
                   </div>
                 </div>
               </div>
