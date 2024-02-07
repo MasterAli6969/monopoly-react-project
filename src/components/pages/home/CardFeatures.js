@@ -1,38 +1,38 @@
 //<!--------------------- БЛОК - 8 Возможности Универсальной------------------->
 import React from "react";
 import { staticTabs } from "./data";
-function Block8() {
+function CardFeatures() {
   return (
     <>
-      <div class="col-12 mt-5 mb-5">
-        <div class="container d-flex justify-content-center flex-wrap mb-5 text-center">
+      <div className="col-12 mt-5 mb-5">
+        <div className="container d-flex justify-content-center flex-wrap mb-5 text-center">
           <h3>Возможности Универсальной подарочной карты Giftery Card</h3>
         </div>
-        <div class="container d-flex justify-content-center flex-wrap">
+        <div className="container d-flex justify-content-center flex-wrap">
           {staticTabs.map((item) => {
             return (
               <>
                 <div
-                  class="card"
+                  className="card"
                   style={{ width: "24rem", padding: "15px", margin: "10px" }}
                 >
-                  <div class="card-body">
-                    <i class={`${item.icons} fs-1`}></i>
-                    <p class="card-text">{item.text}</p>
+                  <div className="card-body">
+                    <i className={`${item.icons} fs-1`}></i>
+                    <p className="card-text">{item.text}</p>
                   </div>
                 </div>
               </>
             );
           })}
         </div>
-        <div class="container d-flex justify-content-center flex-wrap mt-5 mb-5">
+        <div className="container d-flex justify-content-center flex-wrap mt-5 mb-5">
           <h3>
             Преимущества Электронных подарочных сертификатов для корпоративных
             клиентов
           </h3>
         </div>
-        <div class="container">
-          <p class="fw-bolder">
+        <div className="container">
+          <p className="fw-bolder">
             1. Экономия бюджета до 20% на подарки для промо-акций, программ
             мотивации и лояльности
           </p>
@@ -42,37 +42,37 @@ function Block8() {
             доставки, как в случае с обычными физическими подарками.
           </p>
         </div>
-        <div class="container d-flex justify-content-center flex-wrap my-5">
+        <div className="container d-flex justify-content-center flex-wrap my-5">
           <button
             data-bs-toggle="modal"
             data-bs-target="#exampleModal21"
             type="button"
-            class="btn btn-light btn-lg rounded-5 accent-colors text-accent-colors"
+            className="btn btn-light btn-lg rounded-5 accent-colors text-accent-colors"
           >
             Узнать больше
           </button>
           <div
-            class="modal fade"
+            className="modal fade"
             id="exampleModal21"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
                   <button
                     type="button"
-                    class="btn-close"
+                    className="btn-close"
                     data-bs-dismiss="modal"
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-body">
+                <div className="modal-body">
                   <ol>
                     <li>
                       <div>
-                        <h6 class="fw-bolder">
+                        <h6 className="fw-bolder">
                           Экономия бюджета до 20% на подарки для промо-акций,
                           программ мотивации и лояльности
                         </h6>
@@ -86,7 +86,7 @@ function Block8() {
                     </li>
                     <li>
                       <div>
-                        <h6 class="fw-bolder">
+                        <h6 className="fw-bolder">
                           Скорость и удобство организации корпоративных закупок
                         </h6>
                         <p>
@@ -121,7 +121,7 @@ function Block8() {
                       </div>
                     </li>
                   </ol>
-                  <div class="d-flex justify-content-center align-items-center">
+                  <div className="d-flex justify-content-center align-items-center">
                     <a href="/">Далее</a>
                   </div>
                 </div>
@@ -133,4 +133,4 @@ function Block8() {
     </>
   );
 }
-export default Block8;
+export default CardFeatures;

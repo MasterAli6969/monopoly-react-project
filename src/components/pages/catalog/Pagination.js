@@ -1,17 +1,17 @@
 //<!--------------------- Пагинация ------------------->
 import React from "react";
 import { paginateData } from "./data";
-function Block4() {
+function Pagination() {
   return (
     <>
-      <div class="col-12 mb-5 d-flex justify-content-center">
+      <div className="col-12 mb-5 d-flex justify-content-center">
         <nav aria-label="Page navigation example">
-          <ul class="pagination">
+          <ul className="pagination">
             {paginateData.map((item) => {
               return (
                 <>
-                  <li key={item.id} class="page-item">
-                    <a class="page-link" href={item.href}>
+                  <li key={item.id} className="page-item">
+                    <a className="page-link" href={item.href}>
                       {item.pagin}
                     </a>
                   </li>
@@ -24,4 +24,4 @@ function Block4() {
     </>
   );
 }
-export default Block4;
+export default Pagination;

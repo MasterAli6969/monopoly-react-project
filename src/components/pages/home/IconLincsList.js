@@ -1,32 +1,32 @@
 //<!--------------------- БЛОК - 5 Ассортимент подарочных ------------------->
 import React from "react";
 import { iconLinks } from "./data";
-function Block5() {
+function IconLincsList() {
   return (
     <>
-      <div class="col-12 mt-5 mb-5">
-        <div class="container d-flex justify-content-center flex-wrap mt-5 mb-5">
+      <div className="col-12 mt-5 mb-5">
+        <div className="container d-flex justify-content-center flex-wrap mt-5 mb-5">
           <h2>Ассортимент подарочных сертификатов</h2>
         </div>
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center">
+        <div className="container">
+          <div className="d-flex justify-content-center align-items-center">
             <p>
               Компания Giftery осуществляет продажу подарочных карт для женщин и
               мужчин в таких категориях:
             </p>
           </div>
 
-          <ul class="container d-flex justify-content-around flex-wrap text-main-colors-lists">
+          <ul className="container d-flex justify-content-around flex-wrap text-main-colors-lists">
             {iconLinks.map((item) => {
               return (
                 <>
                   <li
-                    class="text-center d-flex flex-column"
+                    className="text-center d-flex flex-column"
                     style={{ margin: "10px", maxWidth: "150px" }}
                   >
-                    <i class={`${item.icons} fs-1`}></i>
+                    <i className={`${item.icons} fs-1`}></i>
                     <a
-                      class="container__block5-link-list"
+                      className="container__block5-link-list"
                       href={`${item.links}`}
                     >
                       {item.text}
@@ -37,33 +37,33 @@ function Block5() {
             })}
           </ul>
         </div>
-        <div class="container d-flex justify-content-center flex-wrap my-5">
+        <div className="container d-flex justify-content-center flex-wrap my-5">
           <button
             data-bs-toggle="modal"
             data-bs-target="#exampleModal14"
             type="button"
-            class="btn btn-light btn-lg rounded-5 accent-colors text-accent-colors"
+            className="btn btn-light btn-lg rounded-5 accent-colors text-accent-colors"
           >
             Читать дальше
           </button>
           <div
-            class="modal fade"
+            className="modal fade"
             id="exampleModal14"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
                   <button
                     type="button"
-                    class="btn-close"
+                    className="btn-close"
                     data-bs-dismiss="modal"
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-body">
+                <div className="modal-body">
                   <p>
                     У нас можно купить подарочные сертификаты магазинов в
                     электронном виде с мгновенной доставкой по email или
@@ -93,4 +93,4 @@ function Block5() {
     </>
   );
 }
-export default Block5;
+export default IconLincsList;

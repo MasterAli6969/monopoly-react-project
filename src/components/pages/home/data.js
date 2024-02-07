@@ -3,7 +3,7 @@ export const carouselInner = [
     id: 1,
     img: "/img/lorem-inage-default1.jpg",
     title: "Подарки к Новому году с Giftery!",
-    class: "active",
+    className: "active",
     description:
       "В период с 1 по 28 декабря у вас есть возможность приобрести подарочные сертификаты от наших партнеров со скидками до 70% для ваших близких, друзей и коллег.",
     links: {
@@ -220,7 +220,7 @@ export const staticTabs = [
 export const feedbackCarousel = [
   {
     id: 1,
-    class: "active",
+    className: "active",
     title: "Фанаты Сервиса",
     text: "«Фанаты Сервиса» - сообщество профессионалов и экспертов в клиентском опыте и сервисе.Мы используем электронные подарочные сертификаты Giftery как инструмент для повышения лояльности клиентов компаний, которые входят в сообщество.",
   },

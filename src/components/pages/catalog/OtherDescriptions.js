@@ -1,25 +1,25 @@
 //<!--------------------- Прочие описания ------------------->
 import React from "react";
-function Block5() {
+function OtherDescriptions() {
   return (
     <>
-      <div class="col-12 mb-5">
-        <p class="mb-5">
+      <div className="col-12 mb-5">
+        <p className="mb-5">
           Купить электронные подарочные сертификаты магазинов — отличная идея
           для подарка, когда нет времени или возможности ходить и выбирать
           презент по офлайн магазинам, опасаетесь не угодить вкусовым
           предпочтениям получателя, нужно заказать большое количество подарков
           для сотрудников, клиентов, бизнес партнеров и пр.
         </p>
-        <h4 class="fw-bolder mb-3">
+        <h4 className="fw-bolder mb-3">
           Продажа подарочных сертификатов: товары, услуги, благотворительность
         </h4>
-        <p class="mb-5">
+        <p className="mb-5">
           Наш каталог подарочных сертификатов включает десятки карт магазинов,
           развлекательных центров, спортивных залов, салонов красоты. Мы
           предлагаем выгодно и удобно купить подарочные карты онлайн :
         </p>
-        <ul class="mb-4">
+        <ul className="mb-4">
           <li>
             <p>На квесты для детей и взрослых в QuestReality.</p>
           </li>
@@ -30,13 +30,13 @@ function Block5() {
             <p>На заказы в сервисе Яндекс.Еда и мн. др.</p>
           </li>
         </ul>
-        <p class="mb-5">
+        <p className="mb-5">
           У нас найдется решение даже если вы совершенно не знаете что дарить!
           Мы предлагаем универсальные электронные карты Giftery Card, которые
           можно обменять на сертификаты аналогичного номинала наших партнеров.
         </p>
-        <h4 class="fw-bolder mb-3">Купить подарочные карты онлайн</h4>
-        <p class="mb-5">
+        <h4 className="fw-bolder mb-3">Купить подарочные карты онлайн</h4>
+        <p className="mb-5">
           Мы осуществляем продажу подарочных сертификатов с гарантией мгновенной
           доставки на email. Оформление заказов доступно для частных и
           юридических лиц. Для корпоративных клиентов мы с радостью подготовим
@@ -44,44 +44,44 @@ function Block5() {
           компании. Возможен выпуск карт в пластике. Подробнее о корпоративных
           подарках здесь.
         </p>
-        <p class="mb-5">
+        <p className="mb-5">
           Устали дарить и получать бесполезные презенты? Станьте основателем
           хорошей традиции дарить приятные и нужные подарки с сервисом продажи
           электронных подарочных карт «Giftery»!
         </p>
         <ul
-          class="d-flex flex-wrap p-0 accent-colors-list"
+          className="d-flex flex-wrap p-0 accent-colors-list"
           style={{ listStyle: "none" }}
         >
-          <li class="m-1">
-            <a href="/catalog" class="btn btn-light text-accent-colors">
+          <li className="m-1">
+            <a href="/catalog" className="btn btn-light text-accent-colors">
               Хабаровск
             </a>
           </li>
-          <li class="m-1">
-            <a href="/catalog" class="btn btn-light text-accent-colors">
+          <li className="m-1">
+            <a href="/catalog" className="btn btn-light text-accent-colors">
               Казань
             </a>
           </li>
-          <li class="m-1">
-            <a href="/catalog" class="btn btn-light text-accent-colors">
+          <li className="m-1">
+            <a href="/catalog" className="btn btn-light text-accent-colors">
               {" "}
               Тверь{" "}
             </a>
           </li>
-          <li class="m-1">
-            <a href="/catalog" class="btn btn-light text-accent-colors">
+          <li className="m-1">
+            <a href="/catalog" className="btn btn-light text-accent-colors">
               Воронеж
             </a>
           </li>
-          <li class="m-1">
-            <a href="/catalog" class="btn btn-light text-accent-colors">
+          <li className="m-1">
+            <a href="/catalog" className="btn btn-light text-accent-colors">
               {" "}
               Пермь{" "}
             </a>
           </li>
-          <li class="m-1">
-            <a href="/catalog" class="btn btn-light text-accent-colors">
+          <li className="m-1">
+            <a href="/catalog" className="btn btn-light text-accent-colors">
               Кемерово
             </a>
           </li>
@@ -90,4 +90,4 @@ function Block5() {
     </>
   );
 }
-export default Block5;
+export default OtherDescriptions;

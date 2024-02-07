@@ -1,17 +1,17 @@
 //<!--------------------- Хлебные крошки и загаловок ------------------->
 import React from "react";
-function Block1() {
+function Breadcrumbs() {
   return (
     <>
-      <div class="col-12 mb-5">
+      <div className="col-12 mb-3">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item">
               <a href="file:///home/ubuntu/monopoly-front-project/index.html">
                 Главная
               </a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">
+            <li className="breadcrumb-item active" aria-current="page">
               Подарочные сертификаты и карты
             </li>
           </ol>
@@ -21,4 +21,4 @@ function Block1() {
     </>
   );
 }
-export default Block1;
+export default Breadcrumbs;

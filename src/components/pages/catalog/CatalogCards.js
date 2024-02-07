@@ -1,15 +1,15 @@
 //<!--------------------- Карточки товаров ------------------->
 import React from "react";
 import Card from "../../common/Card";
-function Block3() {
+function CatalogCards() {
   return (
     <>
-      <div class="col-md-9 col-sm-12 mb-5">
-        <div class="container d-flex justify-content-center flex-wrap">
+      <div className="col-md-9 col-sm-12 mb-5">
+        <div className="container d-flex justify-content-center flex-wrap">
           <Card />
         </div>
       </div>
     </>
   );
 }
-export default Block3;
+export default CatalogCards;

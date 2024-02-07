@@ -1,30 +1,30 @@
 import React from "react";
-import Block1 from "./Block1";
-import Block2 from "./Block2";
-import Block3 from "./Block3";
-import Block4 from "./Block4";
-import Block5 from "./Block5";
-import Block6 from "./Block6";
-import Block7 from "./Block7";
-import Block8 from "./Block8";
-import Block9 from "./Block9";
-import Block10 from "./Block10";
+import Head from "./Head";
+import Slider from "./Slider";
+import ModalTabs from "./ModalTabs";
+import RecomendCard from "./RecomendCard";
+import IconLincsList from "./IconLincsList";
+import InstructionCardUse from "./InstructionCardUse";
+import Banner from "./Banner";
+import CardFeatures from "./CardFeatures";
+import OurClients from "./OurClients";
+import FeedbackSlider from "./FeedbackSlider";
 import "../../../assets/css/index.css";
 
 function Home() {
   return (
-    <div class="container-fluid">
-      <div class="row">
-        <Block1 />
-        <Block2 />
-        <Block3 />
-        <Block4 />
-        <Block5 />
-        <Block6 />
-        <Block7 />
-        <Block8 />
-        <Block9 />
-        <Block10 />
+    <div className="container-fluid">
+      <div className="row">
+        <Head />
+        <Slider />
+        <ModalTabs />
+        <RecomendCard />
+        <IconLincsList />
+        <InstructionCardUse />
+        <Banner />
+        <CardFeatures />
+        <OurClients />
+        <FeedbackSlider />
       </div>
     </div>
   );
