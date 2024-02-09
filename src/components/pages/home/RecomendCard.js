@@ -1,7 +1,7 @@
 //<!--------------------- БЛОК - 4 Выбирайте из 300 подарочных ------------------->
 
 import React from "react";
-import Card from "../../common/Card";
+import CardBlocks from "../../common/CardBlocks";
 function RecomendCard() {
   return (
     <>
@@ -13,17 +13,7 @@ function RecomendCard() {
             бесплатная доставка на email!
           </h6>
         </div>
-        <div className="container d-flex justify-content-center flex-wrap">
-          <Card />
-          <div className="container d-flex justify-content-center flex-wrap py-5">
-            <a
-              href="pages/catalog-page.html"
-              className="btn btn-light btn-lg rounded-5 over-accent-color text-accent-colors"
-            >
-              Купить подарочную карту
-            </a>
-          </div>
-        </div>
+        <CardBlocks />
       </div>
     </>
   );

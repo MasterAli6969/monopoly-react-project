@@ -74,18 +74,21 @@ export const accordionData = [
     accordName: "Как отправить?",
     accordItem: [
       {
+        id: 1,
         img: "./img/lorem-inage-default1.jpg",
         title: "Оформите",
         description:
           "Выберите номинал, дизайн, количество и напишите поздравление",
       },
       {
+        id: 2,
         img: "./img/lorem-inage-default2.jpg",
         title: "Оформите",
         description:
           "Выберите номинал, дизайн, количество и напишите поздравление",
       },
       {
+        id: 3,
         img: "./img/lorem-inage-default1.jpg",
         title: "Оформите",
         description:
@@ -102,35 +105,25 @@ export const accordionData = [
       title: "Как воспользоваться сертификатом Giftery Card",
       description1:
         "Дарите только нужные подарки. Получатель сможет обменять Giftery Card на подарочные карты известных брендов из списка обмена (ссылка на список обмена расположена в разделе 'Правила', пункт 2). Для получения полной информации Полный список доступных для обмена брендов можно посмотреть",
-      liks1: { href: "/card-page", text: "посетите сайт" },
-      liks2: { href: "/card-page", text: "здесь" },
       description2: "Для получения полной информации",
-      liks3: { href: "/card-page", text: "посетите сайт" },
       description3:
         "Полный список доступных для обмена брендов можно посмотреть",
-      liks4: { href: "/card-page", text: "здесь" },
       tablets: [
         {
           id: 1,
           icons: "bi bi-clock-history",
           description: "Обратите внимание на срок действия сертификата и",
-          liks: { href: "/card-page", text: "условия использования" },
         },
         {
           id: 2,
           icons: "bi bi-box-seam",
           description:
             "Обменяйте Giftery Card в рамках номинала на один или несколько сертификатов брендов.",
-          liks: { href: "/card-page", text: "из этого списка" },
         },
         {
           id: 2,
           icons: "bi bi-envelope-paper",
           description: "Обратите внимание на срок действия сертификата и",
-          liks: {
-            href: "",
-            text: "Сразу после обмена Вам на почту придет письмо с подарочной картой выбранного бренда",
-          },
         },
       ],
     },
@@ -144,12 +137,10 @@ export const accordionData = [
       {
         id: 1,
         text: "Универсальный подарочный сертификат Giftery Card необходимо обменять на сайте на один или несколько сертификатов Партнеров из каталога обмена полученного сертификата.",
-        liks: { href: "/card-page", text: "'Тут будет ссылка'" },
       },
       {
         id: 2,
         text: "Giftery Card можно обменять на сертификаты любых брендов и номиналов из каталога в рамках баланса.",
-        liks: { href: "/card-page", text: "'Тут будет ссылка'" },
       },
       {
         id: 3,
