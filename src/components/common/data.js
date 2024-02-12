@@ -6,7 +6,7 @@ export const navDropLincks = [
       {
         id: 1,
         text: "Все",
-        url: "#",
+        url: "/catalog",
       },
     ],
   },

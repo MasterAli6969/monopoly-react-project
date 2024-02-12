@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCatalogData } from "../../utils/apiCatalog";
+import { getCatalogData } from "../../utils/api/apiCatalog";
 function CardBlocks() {
   const [products, setProducts] = useState([]);
   useEffect(() => {

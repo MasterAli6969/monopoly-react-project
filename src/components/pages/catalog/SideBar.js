@@ -1,11 +1,11 @@
 // <!--------------------- Левый SIDEBAR ------------------->
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import {
   getSideCategoryFilters,
   getSideDesignedFilters,
   getSideDesignedOccasion,
-} from "../../../utils/apiCatalog";
+  getFitersParamsCard,
+} from "../../../utils/api/apiCatalog";
 function SideBar() {
   const [filtersCategory, setFisltersCategory] = useState([]);
   const [filtersDesigned, setFisltersDesigned] = useState([]);
@@ -38,7 +38,7 @@ function SideBar() {
   const handleSelectChangeOccasion = (event) => {
     setSelectedOccasion(event.target.value);
   };
-  const handleSubmitFilterParam = (event) => {
+  const handleSubmitFilterParam = async (event) => {
     event.preventDefault();
     const params = {
       q: searchQuery,
@@ -46,21 +46,14 @@ function SideBar() {
       designed_id: selectedDesigned,
       occasion_id: selectedOccasion,
     };
-    console.log(
-      "Данные с фильтров",
-      searchQuery,
-      selectedCategory,
-      selectedDesigned,
-      selectedOccasion
-    );
-    axios
-      .get("http://162.0.234.100:5095/products", { params })
-      .then((response) => {
-        alert("Данные ушли");
-      })
-      .catch((error) => {
-        console.error("Ошибка при запросе:", error);
-      });
+    try {
+      const data = await getFitersParamsCard(params);
+      console.log("Результат полученный из getFitersParamsCard:", data);
+      alert("Данные ушли");
+    } catch (error) {
+      alert("Ошибка при запросе");
+      console.error("Ошибка при запросе:", error);
+    }
   };
   return (
     <>

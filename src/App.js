@@ -5,6 +5,8 @@ import Footer from "./components/common/Footer";
 import Home from "./components/pages/home/Home";
 import Catalog from "./components/pages/catalog/Catalog";
 import CardPage from "./components/pages/card-page/CardPage";
+import Register from "./components/pages/register/Register";
+import Login from "./components/pages/login/Login";
 import TooltipInitializer from "./assets/js/script";
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/card-page" element={<CardPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </Router>
