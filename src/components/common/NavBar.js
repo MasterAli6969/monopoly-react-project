@@ -20,7 +20,7 @@ function NavBar() {
                   <div class="d-none nav-menu__logo-mobile">
                     <a href="/monopoly-front-project">
                       <img
-                        src="../img/logo-mono.png"
+                        src="/img/logo-mono.png"
                         width="150"
                         height="150"
                         alt=""
@@ -47,7 +47,7 @@ function NavBar() {
                     <div class="d-flex align-items-center nav-menu__logo-desktop">
                       <a href="/monopoly-front-project">
                         <img
-                          src="../img/logo-mono.png"
+                          src="/img/logo-mono.png"
                           width="160"
                           height="160"
                           alt=""
@@ -59,10 +59,10 @@ function NavBar() {
                       <div class="d-flex flex-wrap justify-content-end">
                         <div class="d-flex align-items-center flex-wrap navbar-collapse__menu-item mb-3">
                           <a
-                            href="/login"
+                            href="/monopoly-react-project/login"
                             class="btn btn-light rounded-5 accent-colors text-accent-colors"
                           >
-                            Личный кабинет
+                            Войти
                           </a>
 
                           <a

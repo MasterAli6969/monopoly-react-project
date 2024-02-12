@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { generateRandomPassword } from "../../../utils/auxiliary";
-import axios from "axios";
-const BASEURL = "http://162.0.234.100:5095";
+import { paramsAuthData } from "../../../utils/api/apiLogin";
 function Register() {
+  const navigate = useNavigate();
   const [emeil, setEmeil] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -35,15 +35,10 @@ function Register() {
       username: userName,
       role_id: 1,
     };
-    console.log(dataRegist);
     try {
-      await axios.post(BASEURL + "/auth/register", JSON.stringify(dataRegist), {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      alert("Данные ушли");
-      redirect("/login");
+      await paramsAuthData(dataRegist);
+      alert("Ваш логин и пароль отправлен на указанную почту");
+      navigate("/monopoly-react-project/login");
     } catch (error) {
       console.error("Registration failed:", error);
     }

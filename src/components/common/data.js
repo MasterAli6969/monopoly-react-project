@@ -6,7 +6,7 @@ export const navDropLincks = [
       {
         id: 1,
         text: "Все",
-        url: "/catalog",
+        url: "/monopoly-react-project/catalog",
       },
     ],
   },

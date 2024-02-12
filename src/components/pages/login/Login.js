@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import axios from "axios";
-const BASEURL = "http://162.0.234.100:5095";
+import { useNavigate } from "react-router-dom";
+import { paramsLoginData } from "../../../utils/api/apiLogin";
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleMailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -19,12 +19,9 @@ function Login() {
     };
     console.log(dataLogin);
     try {
-      await axios.post(BASEURL + "/auth/login", dataLogin, {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      });
-      alert("Данные ушли");
+      await paramsLoginData(dataLogin);
+      alert("Вы успешно авторизовались");
+      navigate("/monopoly-react-project/profile");
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
     }
@@ -60,12 +57,21 @@ function Login() {
                 onChange={handleNameChange}
               />
             </div>
-            <button
-              type="submit"
-              class="btn btn-light rounded-5 over-accent-color text-accent-colors "
-            >
-              Далее
-            </button>
+            <div className="d-flex justify-content-between align-items-center flex-wrap">
+              <button
+                type="submit"
+                class="btn btn-light rounded-5 over-accent-color text-accent-colors"
+              >
+                Войти
+              </button>
+              <a
+                type="button"
+                class="btn btn-light rounded-5 over-accent-color text-accent-colors"
+                href="/monopoly-react-project/register"
+              >
+                Регистация
+              </a>
+            </div>
           </form>
         </div>
       </div>

@@ -1,8 +1,6 @@
 import axios from "axios";
 import { BASEURL } from "./config";
 
-console.log("dfvbkkvjnv jnvf kvnf k", BASEURL);
-
 export const getCatalogData = async () => {
   try {
     const response = await axios.get(BASEURL + "/products", {
