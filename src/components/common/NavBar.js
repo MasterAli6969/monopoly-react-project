@@ -59,7 +59,7 @@ function NavBar() {
                       <div class="d-flex flex-wrap justify-content-end">
                         <div class="d-flex align-items-center flex-wrap navbar-collapse__menu-item mb-3">
                           <a
-                            href="/register"
+                            href="/login"
                             class="btn btn-light rounded-5 accent-colors text-accent-colors"
                           >
                             Личный кабинет

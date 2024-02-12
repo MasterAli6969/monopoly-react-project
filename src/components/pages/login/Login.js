@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { generateRandomPassword } from "../../../utils/auxiliary";
+import React, { useState } from "react";
 import axios from "axios";
 const BASEURL = "http://162.0.234.100:5095";
 function Login() {
@@ -20,15 +19,11 @@ function Login() {
     };
     console.log(dataLogin);
     try {
-      await axios.post(
-        BASEURL + "/auth/login",
-        { data: JSON.stringify(dataLogin) },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      await axios.post(BASEURL + "/auth/login", dataLogin, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
       alert("Данные ушли");
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
