@@ -1,9 +1,5 @@
 import axios from "axios";
-
-const BASEURL = "http://162.0.234.100:5095";
-console.log("kncdmmkldsc sd", BASEURL);
-
-// const BASEURL = "https://api.monopoly-card.online";
+import { BASEURL } from "./config";
 
 console.log("dfvbkkvjnv jnvf kvnf k", BASEURL);
 

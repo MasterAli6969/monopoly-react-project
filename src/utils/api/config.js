@@ -1,7 +1,6 @@
-export let BASEURL;
+import axios from "axios";
 
-if (process.env.DEBUG === "1") {
-  BASEURL = process.env.REACT_MONOPOLY_PUBLIC_API_HOST_DEBUG;
-} else {
-  BASEURL = process.env.REACT_MONOPOLY_PUBLIC_API_HOST;
-}
+// export const BASEURL = "http://162.0.234.100:5095";
+console.log("kncdmmkldsc sd", BASEURL);
+
+export const BASEURL = "https://api.monopoly-card.online";
