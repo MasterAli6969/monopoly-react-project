@@ -17,7 +17,7 @@ function App() {
       <TooltipInitializer />
       <Routes>
         <Route path="/monopoly-react-project" element={<Home />} />
-        <Route path="/monopoly-react-project/catalog" element={<Catalog />} />
+        <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/card-page" element={<CardPage />} />
         <Route path="/monopoly-react-project/register" element={<Register />} />
         <Route path="/monopoly-react-project/login" element={<Login />} />
