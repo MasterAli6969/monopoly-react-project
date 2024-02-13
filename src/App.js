@@ -12,20 +12,19 @@ import Profile from "./components/pages/profile/Profile";
 
 function App() {
   return (
-    <Router>
+    <Router basename="monopoly-react-project">
       <NavBar />
       <TooltipInitializer />
       <Routes>
-        <Route path="/monopoly-react-project" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/card-page" element={<CardPage />} />
-        <Route path="/monopoly-react-project/register" element={<Register />} />
-        <Route path="/monopoly-react-project/login" element={<Login />} />
-        <Route path="/monopoly-react-project/profile" element={<Profile />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </Router>
   );
 }
-
 export default App;
