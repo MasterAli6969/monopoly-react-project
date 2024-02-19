@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/roboto/Roboto-Regular.ttf") format("woff2"),
+    url("./assets/fonts/roboto/Roboto-Regular.ttf") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/montserrat/static/Montserrat-Medium.ttf")
+      format("woff2"),
+    url("./assets/fonts/montserrat/static/Montserrat-Medium.ttf") format("woff");
+  font-style: normal;
+}
+
+body {
+  background-color: #fffdfa;
+}
+
+/*КЛАССЫ НИЖЕ ОТВЕЧАЮТ ЗА ЦВЕТОВУЮ ПОЛИТРУ КЛАССА*/
+
+p {
+  font-family: "Roboto", sans-serif;
+  color: #77787a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  color: #2db6c6;
+}
+
+a {
+  font-family: "Montserrat", sans-serif;
+  color: #81c390;
+}
+
+i {
+  color: #81c390;
+}
+
+.bg-main-colors {
+  background-color: #ffffff;
+}
+
+/* .bg-accent-colors {
+  background-color: #b9f1ef;
+} */
+
+.accent-colors {
+  background-color: #efc62d;
+}
+
+.over-accent-color {
+  background-color: #288b88;
+}
+
+.text-accent-colors {
+  color: #f7f4ef;
+}
+
+.text-main-colors-lists li a {
+  text-decoration: none;
+  color: #77787a;
+}
+
+.text-main-colors-lists li a:hover {
+  color: #efc62d;
+}
+
+.accent-colors-list li a {
+  background-color: #efc62d;
+}
+
+/*  ЭТО СТИЛИ ДЛЯ КОРРЕКТНОЙ РАБОТЫ КОНТЕНТА МОДАЛЬНЫХ ОКОН НА ВСЕХ СТРАНИЦАХ */
+.modal-body__image-size {
+  width: 300px;
+  height: 130px;
+}
+
+.modal-body__description-size {
+  max-width: 400px;
+}
+
+.modal-body__button-size {
+  width: 250px;
+}
+
+/*  ЭТО СТИЛИ ДЛЯ КОРРЕКТНОЙ РАБОТЫ ХЕДЕРА, ПОКА ВЫНЕЧЕНЫ ГЛОБАЛЬНО */
+@media (max-width: 991.98px) {
+  .nav-menu__logo-mobile {
+    display: flex !important;
+  }
+  .nav-menu__logo-desktop {
+    display: none !important;
+  }
+  .navbar-collapse__menu-item {
+    display: block !important;
+  }
+}
