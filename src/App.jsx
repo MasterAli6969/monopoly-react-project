@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TooltipInitializer from "./assets/js/script";
 import NavBar from "./components/common/NavBar";
@@ -17,7 +16,7 @@ import Oferta from "./components/pages/oferta/Oferta";
 import PrivacyPolicy from "./components/pages/privacy-policy/PrivacyPolicy";
 import ShoppingCart from "./components/pages/shopping-cart/ShoppingCart";
 import { ErrorHandler } from "./services/middleware/ErrorHandler";
-
+import "./index.css";
 
 function App() {
   return (
