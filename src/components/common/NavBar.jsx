@@ -53,7 +53,7 @@ function NavBar() {
                             href="/login"
                             className="btn btn-light rounded-5 accent-colors text-accent-colors"
                           >
-                            Вход
+                            Войти
                           </a>
 
                           <a
