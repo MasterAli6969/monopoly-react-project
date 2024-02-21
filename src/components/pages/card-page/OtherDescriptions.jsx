@@ -1,5 +1,4 @@
 //<!--------------------- ПРОЧАЯ ИНФОРМАЦИЯ ------------------->
-import React from "react";
 function OtherDescriptions() {
   return (
     <>

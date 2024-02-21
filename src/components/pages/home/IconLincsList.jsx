@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 5 Ассортимент подарочных ------------------->
-import React from "react";
 import { iconLinks } from "./data";
 function IconLincsList() {
   return (
@@ -49,7 +48,7 @@ function IconLincsList() {
           <div
             className="modal fade"
             id="exampleModal14"
-            tabindex="-1"
+            tabIndex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >

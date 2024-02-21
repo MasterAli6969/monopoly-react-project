@@ -1,5 +1,4 @@
 //<!--------------------- КАРТОЧКИ РЕКОМЕНДАЦИЙ ------------------->
-import React from "react";
 import CardBlocks from "../../common/CardBlocks";
 function RecomendCard() {
   return (

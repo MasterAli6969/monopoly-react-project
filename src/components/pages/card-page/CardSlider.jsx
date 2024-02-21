@@ -1,5 +1,4 @@
 //<!--------------------- СЛАЙДЕР ИЗОБРАЖЕНИЙ САМОЙ КАРТОЧКИ ------------------->
-import React from "react";
 import { carouselCard } from "./data";
 function CardSlider() {
   return (

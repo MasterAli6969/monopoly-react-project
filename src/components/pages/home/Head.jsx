@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 1 Подарочные------------------->
-import React from "react";
 function Head() {
   return (
     <>

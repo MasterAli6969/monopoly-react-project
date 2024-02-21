@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { generateRandomPassword } from "../../../utils/auxiliary";
 import { paramsAuthData } from "../../../services/api/apiLogin";
@@ -45,38 +45,38 @@ function Register() {
   };
   return (
     <>
-      <div class="container-fluid">
-        <div class="container d-flex justify-content-center">
+      <div className="container-fluid">
+        <div className="container d-flex justify-content-center">
           <form
             className=" shadow-lg rounded-5 p-5 w-50"
             onSubmit={handleSubmitForm}
           >
-            <div class="mb-3">
-              <label class="form-label">
+            <div className="mb-3">
+              <label className="form-label">
                 <p className="m-0">Укажите ваш email</p>
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 value={emeil}
                 onChange={handleMailChange}
               />
             </div>
-            <div class="mb-3">
-              <label class="form-label">
+            <div className="mb-3">
+              <label className="form-label">
                 <p className="m-0">ФИО</p>
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 value={name}
                 onChange={handleNameChange}
               />
-              <div id="emailHelp" class="form-text"></div>
+              <div id="emailHelp" className="form-text"></div>
             </div>
             <button
               type="submit"
-              class="btn btn-light rounded-5 over-accent-color text-accent-colors "
+              className="btn btn-light rounded-5 over-accent-color text-accent-colors "
             >
               Далее
             </button>

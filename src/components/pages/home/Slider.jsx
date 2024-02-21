@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 2  СЛАЙДЕР ------------------->
-import React from "react";
 import { carouselInner } from "./data";
 function Slider() {
   return (

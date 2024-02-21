@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 10  СЛАЙДЕР ОТЗЫВОВ ------------------->
-import React from "react";
 import { feedbackCarousel } from "./data";
 function FeedbackSlider() {
   return (

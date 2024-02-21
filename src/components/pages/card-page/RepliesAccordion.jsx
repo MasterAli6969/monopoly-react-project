@@ -1,5 +1,4 @@
 //<!--------------------- АККОРДИОНЫ ------------------->
-import React from "react";
 import { accordionData } from "./data";
 function RepliesAccordion() {
   return (
@@ -80,7 +79,7 @@ function RepliesAccordion() {
                       <form className="d-flex justify-content-between align-items-center flex-wrap">
                         <div className="mb-3">
                           <label
-                            for="exampleInputPassword1"
+                            htmlFor="exampleInputPassword1"
                             className="form-label"
                           >
                             Имя
@@ -93,7 +92,7 @@ function RepliesAccordion() {
                         </div>
                         <div className="mb-3">
                           <label
-                            for="exampleInputEmail1"
+                            htmlFor="exampleInputEmail1"
                             className="form-label"
                           >
                             Email*

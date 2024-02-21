@@ -1,5 +1,4 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
-import React from "react";
 import { valuePrice } from "./data";
 function CardDescriptions() {
   return (

@@ -1,20 +1,19 @@
-import * as React from "react";
 import { footerLinks, footerContacts } from "./data";
 
 function Footer() {
   return (
     <>
-      <div class="col-12 mt-5 pt-5 pb-5 bg-accent-colors shadow-lg">
-        <footer class="container">
+      <div className="col-12 mt-5 pt-5 pb-5 bg-accent-colors shadow-lg">
+        <footer className="container">
           <div>
-            <h1 class="logo">LOGO</h1>
+            <h1 className="logo">LOGO</h1>
           </div>
-          <div class="d-flex flex-wrap justify-content-between">
+          <div className="d-flex flex-wrap justify-content-between">
             {footerLinks.map((item) => {
               return (
                 <ul
                   key={item.id}
-                  class="nav flex-column text-main-colors-lists"
+                  className="nav flex-column text-main-colors-lists"
                 >
                   <li>
                     <h4>{item.name}</h4>
@@ -23,7 +22,7 @@ function Footer() {
                     return (
                       <li key={item.id}>
                         <a
-                          class="nav-link active"
+                          className="nav-link active"
                           aria-current="page"
                           href={item.url}
                         >
@@ -36,7 +35,7 @@ function Footer() {
               );
             })}
           </div>
-          <nav class="nav flex-column">
+          <nav className="nav flex-column">
             <h4>Контакты</h4>
             {footerContacts.map((item) => {
               return (
@@ -45,7 +44,7 @@ function Footer() {
                   {item.links.map((item) => {
                     return (
                       <div key={item.id}>
-                        <a class="nav-link" href={item.url}>
+                        <a className="nav-link" href={item.url}>
                           {item.text}
                         </a>
                       </div>

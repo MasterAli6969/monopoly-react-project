@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getCatalogData } from "../../services/api/apiCatalog";
 function CardBlocks() {
   const [products, setProducts] = useState([]);
@@ -26,24 +26,24 @@ function CardBlocks() {
                 return (
                   <div
                     key={item.id}
-                    class="card"
+                    className="card"
                     style={{ width: "17rem", margin: "10px" }}
                   >
-                    <div class="card-body d-flex flex-column align-items-start justify-content-between">
+                    <div className="card-body d-flex flex-column align-items-start justify-content-between">
                       <div>
                         <img
                           src={item.image_url}
-                          class="img-thumbnail mb-3"
+                          className="img-thumbnail mb-3"
                           alt=""
                         />
-                        <h5 class="card-title mb-5">{item.name}</h5>
+                        <h5 className="card-title mb-5">{item.name}</h5>
                       </div>
                       <div>
-                        <p class="card-text">Номинал</p>
-                        <h5 class="card-text">{item.denomination}</h5>
+                        <p className="card-text">Номинал</p>
+                        <h5 className="card-text">{item.denomination}</h5>
                         <button
                           type="button"
-                          class="btn btn-light accent-colors text-accent-colors w-100"
+                          className="btn btn-light accent-colors text-accent-colors w-100"
                           data-bs-toggle="modal"
                           data-bs-target={"#exampleModal6"}
                         >
@@ -51,80 +51,80 @@ function CardBlocks() {
                         </button>
 
                         <div
-                          class="modal fade"
+                          className="modal fade"
                           id={"exampleModal6"}
-                          tabindex="-1"
+                          tabIndex="-1"
                           aria-labelledby="exampleModalLabel"
                           aria-hidden="true"
                         >
-                          <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content bg-accent-colors">
-                              <div class="modal-header">
+                          <div className="modal-dialog modal-lg modal-dialog-centered">
+                            <div className="modal-content bg-accent-colors">
+                              <div className="modal-header">
                                 <h1
-                                  class="modal-title fs-5"
+                                  className="modal-title fs-5"
                                   id="exampleModalLabel"
                                 >
                                   Giftery Card
                                 </h1>
                                 <button
                                   type="button"
-                                  class="btn-close"
+                                  className="btn-close"
                                   data-bs-dismiss="modal"
                                   aria-label="Close"
                                 ></button>
                               </div>
-                              <div class="modal-body">
-                                <div class="d-flex justify-content-between flex-wrap mb-5">
+                              <div className="modal-body">
+                                <div className="d-flex justify-content-between flex-wrap mb-5">
                                   <img
                                     src={item.image_url}
-                                    class="img-thumbnail modal-body__image-size m-3 mb-3"
+                                    className="img-thumbnail modal-body__image-size m-3 mb-3"
                                     alt=""
                                   />
-                                  <div class="px-2 modal-body__description-size m-3">
+                                  <div className="px-2 modal-body__description-size m-3">
                                     <p>{item.description}</p>
                                   </div>
                                 </div>
-                                <div class="d-flex justify-content-around flex-wrap mb-5">
+                                <div className="d-flex justify-content-around flex-wrap mb-5">
                                   <a
                                     href="pages/card-page.html"
-                                    class="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
+                                    className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
                                   >
                                     Отправить себе
                                   </a>
                                   <a
                                     href="pages/card-page.html"
-                                    class="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size over-accent-color text-accent-colors"
+                                    className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size over-accent-color text-accent-colors"
                                   >
                                     Отправить в подарок
                                   </a>
                                 </div>
-                                <div class="container-fluid d-flex justify-content-around flex-wrap mb-5 p-3 accent-colors">
+                                <div className="container-fluid d-flex justify-content-around flex-wrap mb-5 p-3 accent-colors">
                                   <div
-                                    class="card d-flex flex-column align-items-center rounded-3 m-3"
+                                    className="card d-flex flex-column align-items-center rounded-3 m-3"
                                     style={{ width: "18rem" }}
                                   >
-                                    <i class="bi bi-mailbox-flag fs-1"></i>
-                                    <div class="card-body">
-                                      <p class="card-text">
+                                    <i className="bi bi-mailbox-flag fs-1"></i>
+                                    <div className="card-body">
+                                      <p className="card-text">
                                         Обменяйте Giftery Card в рамках номинала
                                         на один или несколько сертификатов из
-                                        каталога Giftery",
+                                        каталога Giftery,
                                       </p>
                                     </div>
                                   </div>
                                 </div>
-                                <div class="d-flex justify-content-around flex-wrap">
-                                  <div class="px-2 custom_index_block3_card_modal_description">
-                                    <h4 class="mb-3 fw-bolder">
+                                <div className="d-flex justify-content-around flex-wrap">
+                                  <div className="px-2 custom_index_block3_card_modal_description">
+                                    <h4 className="mb-3 fw-bolder">
                                       Корпоративный заказ
                                     </h4>
-                                    <p class="">
+                                    <p className="">
                                       Закажите подарочные карты оптом.
                                     </p>
                                   </div>
                                   <a
                                     href="/"
-                                    class="btn btn-light btn-lg rounded-5 m-3 accent-colors text-accent-colors"
+                                    className="btn btn-light btn-lg rounded-5 m-3 accent-colors text-accent-colors"
                                   >
                                     Оставить заявку
                                   </a>

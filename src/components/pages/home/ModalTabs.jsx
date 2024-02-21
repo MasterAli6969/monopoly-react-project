@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 3 Что такое электронные подарочные карты ------------------->
-import React from "react";
 import { modalTiles } from "./data";
 function ModalTabs() {
   return (
@@ -33,7 +32,7 @@ function ModalTabs() {
                     <div
                       className="modal fade"
                       id={item.dataBsTargetId}
-                      tabindex="-1"
+                      tabIndex="-1"
                       aria-labelledby="exampleModalLabel"
                       aria-hidden="true"
                     >

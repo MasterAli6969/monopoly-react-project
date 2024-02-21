@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 9 Наши клиенты ------------------->
-import React from "react";
 function OurClients() {
   return (
     <>

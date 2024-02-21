@@ -1,6 +1,4 @@
 //<!--------------------- БЛОК - 4 Выбирайте из 300 подарочных ------------------->
-
-import React from "react";
 import CardBlocks from "../../common/CardBlocks";
 function RecomendCard() {
   return (

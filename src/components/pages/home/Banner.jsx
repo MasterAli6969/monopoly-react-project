@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 7 Подарки к Новому году с Giftery! ------------------->
-import React from "react";
 import sliderTestImg from "../../../assets/img/sliderTestImg.png";
 function Banner() {
   return (

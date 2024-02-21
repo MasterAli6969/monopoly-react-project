@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { paramsLoginData } from "../../../services/api/apiLogin";
-import { useError } from "../../../services/middleware/ErrorHandler";
 function Login() {
-  const handleError = useError();
-  useEffect(() => {
-    // const error = 404;
-    // handleError(error);
-  }, []);
-
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,30 +28,30 @@ function Login() {
   };
   return (
     <>
-      <div class="container-fluid">
-        <div class="container d-flex justify-content-center">
+      <div className="container-fluid">
+        <div className="container d-flex justify-content-center">
           <form
             className=" shadow-lg rounded-5 p-5 w-50"
             onSubmit={handleSubmitForm}
           >
-            <div class="mb-3">
-              <label class="form-label">
+            <div className="mb-3">
+              <label className="form-label">
                 <p className="m-0">Укажите ваш email</p>
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 value={email}
                 onChange={handleMailChange}
               />
             </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="exampleInputPassword1" className="form-label">
                 <p className="m-0">Password</p>
               </label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="exampleInputPassword1"
                 value={password}
                 onChange={handleNameChange}
@@ -67,13 +60,13 @@ function Login() {
             <div className="d-flex justify-content-between align-items-center flex-wrap">
               <button
                 type="submit"
-                class="btn btn-light rounded-5 over-accent-color text-accent-colors"
+                className="btn btn-light rounded-5 over-accent-color text-accent-colors"
               >
                 Войти
               </button>
               <a
                 type="button"
-                class="btn btn-light rounded-5 over-accent-color text-accent-colors"
+                className="btn btn-light rounded-5 over-accent-color text-accent-colors"
                 href="/register"
               >
                 Регистация
