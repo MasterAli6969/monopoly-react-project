@@ -21,7 +21,7 @@ function CardBlocks() {
       dispatch(setCard(cartData));
       console.log("Что кладёшщь в  dispatch", cartData);
       alert("Данные ушли");
-      navigate("/catalog/card-page");
+      //navigate("/catalog/card-page");
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
       alert("загляни в консоль");
