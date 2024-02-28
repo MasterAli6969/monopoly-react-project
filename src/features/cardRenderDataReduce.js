@@ -6,9 +6,8 @@ const cardRenderData = createSlice({
   name: "cardRenderDataReduce",
   initialState,
   reducers: {
-    setCard(state) {
-      state = { id: 1 };
-      return state;
+    setCard(state, action) {
+      state = action.payload;
     },
   },
 });
