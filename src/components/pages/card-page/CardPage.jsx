@@ -10,13 +10,13 @@ import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
   const card = useSelector((state) => state.cardData);
-  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card);
+  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card.data);
   return (
     <>
       <div className="container-fluid p-0">
         <div className="container _cardPage">
           <div className="row justify-content-between">
-            {card && Object.keys(card).length !== 0 ? (
+            {card.data && Object.keys(card.data).length !== 0 ? (
               <>
                 <Breadcrumbs />
                 <CardSlider dataImg={card.data && card.data.image_url} />
