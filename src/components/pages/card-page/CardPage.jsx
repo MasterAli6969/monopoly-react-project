@@ -9,11 +9,8 @@ import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
-  const { cardRenderDataReduce } = useSelector((state) => state);
-  const { data } = cardRenderDataReduce;
-  if (!data) {
-    return <h1>402</h1>;
-  }
+  const card = useSelector((state) => state);
+  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card);
   return (
     <>
       <div className="container-fluid p-0">
@@ -21,8 +18,8 @@ function CardPage() {
           <div className="row justify-content-between">
             <>
               <Breadcrumbs />
-              <CardSlider dataImg={data.image_url} />
-              <CardDescriptions dataCard={data} />
+              <CardSlider />
+              <CardDescriptions />
               <WhoForm />
               <WhoDataForm />
               <RepliesAccordion />
