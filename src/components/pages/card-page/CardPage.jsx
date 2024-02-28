@@ -9,8 +9,8 @@ import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
-  const card = useSelector((state) => state.card.payload);
-  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card.payload);
+  const card = useSelector((state) => state.card);
+  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card);
   return (
     <>
       <div className="container-fluid p-0">
