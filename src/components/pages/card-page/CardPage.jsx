@@ -10,17 +10,17 @@ import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
   const card = useSelector((state) => state.card);
-  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card.data);
+  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card);
   return (
     <>
       <div className="container-fluid p-0">
         <div className="container _cardPage">
           <div className="row justify-content-between">
-            {card.data && Object.keys(card.data).length !== 0 ? (
+            {card && Object.keys(card).length !== 0 ? (
               <>
                 <Breadcrumbs />
-                <CardSlider dataImg={card.data && card.data.image_url} />
-                <CardDescriptions dataCard={card.data && card.data} />
+                <CardSlider dataImg={card && card.image_url} />
+                <CardDescriptions dataCard={card && card} />
                 <WhoForm />
                 <WhoDataForm />
                 <RepliesAccordion />
