@@ -10,6 +10,7 @@ import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
   const card = useSelector((state) => state.cardData);
+  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card);
   return (
     <>
       <div className="container-fluid p-0">
