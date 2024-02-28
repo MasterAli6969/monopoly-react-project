@@ -76,15 +76,3 @@ export const getCardPageData = async (params) => {
     return [];
   }
 };
-
-// export const renderCardPageData = async () => {
-//   try {
-//     const response = await axios.get(BASEURL + "/products/specific", {
-//       withCredentials: true,
-//     });
-//     return response.data;
-//   } catch (error) {
-//     console.error("", error);
-//     return [];
-//   }
-// };
