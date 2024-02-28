@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartValueReducer, { incrementCartValue } from "./cartValueReducer";
+import cardRenderDataReduce from "./cardRenderDataReduce";
 export const store = configureStore({
   reducer: {
     cartValueReducer: cartValueReducer,
+    cardRenderDataReduce: cardRenderDataReduce,
   },
   devTools: true,
 });
