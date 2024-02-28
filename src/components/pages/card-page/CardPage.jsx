@@ -15,7 +15,7 @@ function CardPage() {
       <div className="container-fluid p-0">
         <div className="container _cardPage">
           <div className="row justify-content-between">
-            {Object.keys(card).length !== 0 ? (
+            {card && Object.keys(card).length !== 0 ? (
               <>
                 <Breadcrumbs />
                 <CardSlider dataImg={card.data && card.data.image_url} />
