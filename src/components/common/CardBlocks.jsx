@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
-//import { catalogData } from "./data" product_id;
+import { setCard } from "../../features/cardRenderDataReduce";
 function CardBlocks() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const getData = async () => {
@@ -15,7 +17,9 @@ function CardBlocks() {
   }, []);
   const handleItemClick = async (itemId) => {
     try {
-      await getCardPageData({ product_id: itemId });
+      const cartData = await getCardPageData({ product_id: itemId });
+      dispatch(setCard(cartData));
+      console.log("Что кладёшщь в  dispatch", cartData);
       alert("Данные ушли");
       navigate("/catalog/card-page");
     } catch (error) {

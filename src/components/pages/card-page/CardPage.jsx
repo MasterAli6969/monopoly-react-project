@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import Breadcrumbs from "./Breadcrumbs";
 import CardSlider from "./CardSlider";
 import CardDescriptions from "./CardDescriptions";
@@ -7,21 +7,9 @@ import WhoDataForm from "./WhoDataForm";
 import RepliesAccordion from "./RepliesAccordion";
 import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
-import { getCardPageData } from "../../../services/api/apiCatalog";
 
 function CardPage() {
-  const [card, setCard] = useState({});
-
-  useEffect(() => {
-    const getData = async () => {
-      const cardData = await getCardPageData();
-      alert("запрос отработал");
-      setCard(cardData);
-      console.log("ТУТ ДОЛЖНЫ БЫТЬ ДАННЫЕ О КАРТЕ", cardData);
-    };
-    getData();
-  }, []);
-
+  const card = useSelector((state) => state.cardData);
   return (
     <>
       <div className="container-fluid p-0">
