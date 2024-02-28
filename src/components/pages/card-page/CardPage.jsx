@@ -15,6 +15,7 @@ function CardPage() {
     const getData = async () => {
       const cardData = await renderCardPageData();
       setCard(cardData);
+      console.log("ТУТ ДОЛЖНЫ БЫТЬ ДАННЫЕ О КАРТЕ", card);
     };
     getData();
   }, []);
@@ -24,8 +25,8 @@ function CardPage() {
         <div className="container _cardPage">
           <div className="row justify-content-between">
             <Breadcrumbs />
-            <CardSlider dataImg={card.data.image_url} />
-            <CardDescriptions dataCard={card} />
+            <CardSlider dataImg={card.data && card.data.image_url} />
+            <CardDescriptions dataCard={card.data && card.data} />
             <WhoForm />
             <WhoDataForm />
             <RepliesAccordion />
