@@ -20,7 +20,7 @@ function CardBlocks() {
       const cartData = await getCardPageData({ product_id: itemId });
       console.log("sdnccsd jkncmklsd bn mds", dispatch(setCard(cartData)));
       dispatch(setCard(cartData));
-      //navigate("/catalog/card-page");
+      navigate("/catalog/card-page");
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
       alert("загляни в консоль");
