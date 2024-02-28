@@ -10,7 +10,7 @@ import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
   const card = useSelector((state) => state);
-  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card);
+  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ", card);
   return (
     <>
       <div className="container-fluid p-0">
