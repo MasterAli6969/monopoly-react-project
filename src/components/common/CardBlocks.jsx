@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { getCatalogData } from "../../services/api/apiCatalog";
+import { getCardPageData } from "../../services/api/apiCatalog";
+//import { catalogData } from "./data";
 function CardBlocks() {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const getData = async () => {
@@ -9,6 +13,16 @@ function CardBlocks() {
     };
     getData();
   }, []);
+  const handleItemClick = async (itemId) => {
+    try {
+      await getCardPageData(itemId);
+      alert("Данные ушли");
+      navigate("/catalog/card-page");
+    } catch (error) {
+      console.error("Registration failed:ОШИБКА ТВОЯ", error);
+      alert("загляни в консоль");
+    }
+  };
   return (
     <>
       <div className="col-12 mt-5 mb-5">
@@ -40,7 +54,14 @@ function CardBlocks() {
                       </div>
                       <div>
                         <p className="card-text">Номинал</p>
-                        <h5 className="card-text">{item.denomination}</h5>
+                        <h5 className="card-text">
+                          <h5 className="card-text">
+                            <h5 className="card-text">
+                              От {item.denomination.split("|")[0]} до{" "}
+                              {item.denomination.split("|").slice(-1)[0]}
+                            </h5>
+                          </h5>
+                        </h5>
                         <button
                           type="button"
                           className="btn btn-light accent-colors text-accent-colors w-100"
@@ -85,18 +106,12 @@ function CardBlocks() {
                                   </div>
                                 </div>
                                 <div className="d-flex justify-content-around flex-wrap mb-5">
-                                  <a
-                                    href="pages/card-page.html"
+                                  <button
+                                    onClick={() => handleItemClick(item.id)}
                                     className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
                                   >
                                     Отправить себе
-                                  </a>
-                                  <a
-                                    href="pages/card-page.html"
-                                    className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size over-accent-color text-accent-colors"
-                                  >
-                                    Отправить в подарок
-                                  </a>
+                                  </button>
                                 </div>
                                 <div className="container-fluid d-flex justify-content-around flex-wrap mb-5 p-3 accent-colors">
                                   <div

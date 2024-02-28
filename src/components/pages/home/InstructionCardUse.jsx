@@ -35,7 +35,7 @@ function InstructionCardUse() {
 
           <div className="container d-flex justify-content-around flex-wrap my-5">
             <a
-              href="pages/catalog-page.html"
+              href="/catalog"
               className="btn btn-light btn-lg rounded-5 accent-colors text-accent-colors"
             >
               Отправить карту

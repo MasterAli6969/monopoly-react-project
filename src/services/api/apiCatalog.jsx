@@ -63,3 +63,32 @@ export const getFitersParamsCard = async (params) => {
     return [];
   }
 };
+
+export const getCardPageData = async (productId) => {
+  try {
+    const response = await axios.get(BASEURL + "/products/specific", {
+      withCredentials: true,
+      params: {
+        product_id: productId,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
+  }
+};
+
+export const renderCardPageData = async () => {
+  try {
+    const response = await axios
+      .get(BASEURL + "/products/specific", {
+        withCredentials: true,
+      })
+      .catch();
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
+  }
+};

@@ -32,7 +32,7 @@ function RepliesAccordion() {
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target={`#${item.dataBsTarget}`}
-                        aria-expanded="false"
+                        aria-expanded="true"
                         aria-controls={item.dataBsTarget}
                       >
                         {item.accordName}
@@ -155,7 +155,7 @@ function RepliesAccordion() {
                               <>
                                 <div
                                   key={item.id}
-                                  className="card p-5 m-1"
+                                  className="card p-5 mx-2"
                                   style={{ width: "20rem" }}
                                 >
                                   <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">

@@ -1,6 +1,5 @@
 //<!--------------------- СЛАЙДЕР ИЗОБРАЖЕНИЙ САМОЙ КАРТОЧКИ ------------------->
-import { carouselCard } from "./data";
-function CardSlider() {
+function CardSlider({ dataImg }) {
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 p-0">
@@ -28,22 +27,18 @@ function CardSlider() {
             ></button>
           </div>
           <div className="carousel-inner rounded-5">
-            {carouselCard.map((item) => {
-              return (
-                <>
-                  <div
-                    className={`carousel-item ${item.className} shadow-lg rounded-5 p-5`}
-                    data-bs-interval="10000"
-                  >
-                    <div className="container d-flex justify-content-center flex-wrap">
-                      <div>
-                        <img src={item.img} className="img-thumbnail" alt="" />
-                      </div>
-                    </div>
+            <>
+              <div
+                className="carousel-item active shadow-lg rounded-5 p-5"
+                data-bs-interval="10000"
+              >
+                <div className="container d-flex justify-content-center flex-wrap">
+                  <div>
+                    <img src={dataImg} className="img-thumbnail" alt="" />
                   </div>
-                </>
-              );
-            })}
+                </div>
+              </div>
+            </>
           </div>
           <button
             className="carousel-control-prev"

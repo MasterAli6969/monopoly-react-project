@@ -16,6 +16,31 @@ export const carouselCard = [
   },
 ];
 
+export const dataCard = {
+  status: "success",
+  data: {
+    id: 1,
+    name: "Test1",
+    image_url: "https://muzeyrb.ru/storage/no-image-large.jpg",
+    description: "asdasdasd",
+    category: {
+      id: 1,
+      name: "TestCat1",
+    },
+    designed_for: {
+      id: 1,
+      name: "TestDes1",
+    },
+    occasion: {
+      id: 1,
+      name: "TestOcc1",
+    },
+    denomination: "100|200|300",
+    created_at: "21.02.2024 16:40:10",
+  },
+  details: null,
+};
+
 export const valuePrice = [
   {
     id: 1,

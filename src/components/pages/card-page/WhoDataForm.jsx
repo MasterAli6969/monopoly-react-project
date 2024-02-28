@@ -82,7 +82,7 @@ function WhoDataForm() {
                       <h5>Перейти в карзину?</h5>
                       <a
                         className="w-75 btn btn-light btn-lg rounded-5 p-2 m-3 over-accent-color text-accent-colors"
-                        href="shopping-full-cart.html"
+                        href="/shopping-cart"
                       >
                         Да
                       </a>
@@ -104,7 +104,7 @@ function WhoDataForm() {
               className="btn btn-light btn-lg rounded-5 my-2 over-accent-color text-accent-colors"
             >
               Далее
-              <i className="bi bi-arrow-right-circle-fill text-accent-colors"></i>
+              <i className="bi bi-arrow-right-circle-fill text-accent-colors mx-2"></i>
             </button>
           </div>
         </div>
