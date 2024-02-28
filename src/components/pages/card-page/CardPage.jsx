@@ -9,27 +9,23 @@ import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
-  const card = useSelector((state) => state.card);
-  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card);
+  const card = useSelector((state) => state.card.payload);
+  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", card.payload);
   return (
     <>
       <div className="container-fluid p-0">
         <div className="container _cardPage">
           <div className="row justify-content-between">
-            {card && Object.keys(card).length !== 0 ? (
-              <>
-                <Breadcrumbs />
-                <CardSlider dataImg={card && card.image_url} />
-                <CardDescriptions dataCard={card && card} />
-                <WhoForm />
-                <WhoDataForm />
-                <RepliesAccordion />
-                <RecomendCard />
-                <OtherDescriptions />
-              </>
-            ) : (
-              <h1>402</h1>
-            )}
+            <>
+              <Breadcrumbs />
+              <CardSlider />
+              <CardDescriptions />
+              <WhoForm />
+              <WhoDataForm />
+              <RepliesAccordion />
+              <RecomendCard />
+              <OtherDescriptions />
+            </>
           </div>
         </div>
       </div>
