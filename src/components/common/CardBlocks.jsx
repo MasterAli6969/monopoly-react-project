@@ -18,6 +18,7 @@ function CardBlocks() {
   const handleItemClick = async (itemId) => {
     try {
       const cartData = await getCardPageData({ product_id: itemId });
+      console.log(dispatch(setCard(cartData)));
       dispatch(setCard(cartData));
       alert("Данные ушли");
       navigate("/catalog/card-page");

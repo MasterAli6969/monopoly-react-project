@@ -70,7 +70,6 @@ export const getCardPageData = async (params) => {
       withCredentials: true,
       params,
     });
-    console.log("ЛОГИРУЕМ ПОЛУЧЕННЫЕ ДАННЫЕ", response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching data:", error);
