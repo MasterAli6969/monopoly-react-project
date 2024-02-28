@@ -64,13 +64,11 @@ export const getFitersParamsCard = async (params) => {
   }
 };
 
-export const getCardPageData = async (productId) => {
+export const getCardPageData = async (params) => {
   try {
     const response = await axios.get(BASEURL + "/products/specific", {
       withCredentials: true,
-      params: {
-        product_id: productId,
-      },
+      params,
     });
     return response.data;
   } catch (error) {

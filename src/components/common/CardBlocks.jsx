@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
-//import { catalogData } from "./data";
+//import { catalogData } from "./data" product_id;
 function CardBlocks() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
@@ -15,7 +15,7 @@ function CardBlocks() {
   }, []);
   const handleItemClick = async (itemId) => {
     try {
-      await getCardPageData(itemId);
+      await getCardPageData({ product_id: itemId });
       alert("Данные ушли");
       navigate("/catalog/card-page");
     } catch (error) {
