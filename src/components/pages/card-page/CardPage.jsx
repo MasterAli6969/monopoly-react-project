@@ -7,14 +7,15 @@ import WhoDataForm from "./WhoDataForm";
 import RepliesAccordion from "./RepliesAccordion";
 import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
-import { renderCardPageData } from "../../../services/api/apiCatalog";
+import { getCardPageData } from "../../../services/api/apiCatalog";
 
 function CardPage() {
   const [card, setCard] = useState({});
 
   useEffect(() => {
     const getData = async () => {
-      const cardData = await renderCardPageData();
+      const cardData = await getCardPageData();
+      alert("запрос отработал");
       setCard(cardData);
       console.log("ТУТ ДОЛЖНЫ БЫТЬ ДАННЫЕ О КАРТЕ", cardData);
     };

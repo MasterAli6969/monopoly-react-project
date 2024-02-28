@@ -77,16 +77,14 @@ export const getCardPageData = async (params) => {
   }
 };
 
-export const renderCardPageData = async () => {
-  try {
-    const response = await axios
-      .get(BASEURL + "/products/specific", {
-        withCredentials: true,
-      })
-      .catch();
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return [];
-  }
-};
+// export const renderCardPageData = async () => {
+//   try {
+//     const response = await axios.get(BASEURL + "/products/specific", {
+//       withCredentials: true,
+//     });
+//     return response.data;
+//   } catch (error) {
+//     console.error("", error);
+//     return [];
+//   }
+// };
