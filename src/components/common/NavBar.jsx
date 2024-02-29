@@ -1,8 +1,9 @@
-import * as React from 'react'
+import { useState } from 'react'
 import logoMono from '../../assets/img/logoMono.png'
 import { navDropLincks } from './data'
 
 function NavBar() {
+	const [lang, setLang] = useState('ru')
 	return (
 		<>
 			<div
@@ -72,9 +73,10 @@ function NavBar() {
 															className='form-select'
 															id='floatingSelect'
 															aria-label='Floating label select example'
+															defaultValue={'ru'}
 														>
-															<option selected>Русский</option>
-															<option value='1'>Английский</option>
+															<option value='ru'>Русский</option>
+															<option value='en'>Английский</option>
 														</select>
 													</div>
 													<div className='w-70 d-flex justify-content-around align-items-center m-3 flex-wrap'>
