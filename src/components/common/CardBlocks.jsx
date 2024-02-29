@@ -15,7 +15,6 @@ function CardBlocks() {
     };
     getData();
   }, []);
-  // eslint-disable-next-line no-unused-vars
   const handleItemClick = async (itemId) => {
     try {
       const cartData = await getCardPageData({ product_id: itemId });
@@ -110,18 +109,13 @@ function CardBlocks() {
                                   </div>
                                 </div>
                                 <div className="d-flex justify-content-around flex-wrap mb-5">
-                                  <a
+                                  <button
                                     href="pages/card-page.html"
                                     className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
+                                    onClick={handleItemClick}
                                   >
-                                    Отправить себе
-                                  </a>
-                                  <a
-                                    href="pages/card-page.html"
-                                    className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size over-accent-color text-accent-colors"
-                                  >
-                                    Отправить в подарок
-                                  </a>
+                                    Купить
+                                  </button>
                                 </div>
                                 <div className="container-fluid d-flex justify-content-around flex-wrap mb-5 p-3 accent-colors">
                                   <div
