@@ -9,7 +9,7 @@ import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
-  const cardData = useSelector((state) => state);
+  const cardData = useSelector((state) => state.cardRenderDataReduce);
 
   console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ", cardData);
   return (
