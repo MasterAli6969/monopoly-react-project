@@ -20,7 +20,7 @@ function CardBlocks() {
       const cartData = await getCardPageData({ product_id: itemId });
       dispatch(setCard(cartData));
       alert("Запрос ушел");
-      navigate("/catalog/card-page");
+      navigate("/card-page");
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
       alert("загляни в консоль");
