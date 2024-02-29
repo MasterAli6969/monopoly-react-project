@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
 import Breadcrumbs from "./Breadcrumbs";
 import CardSlider from "./CardSlider";
 import CardDescriptions from "./CardDescriptions";
@@ -10,15 +9,9 @@ import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
-  const reduxCardData = useSelector((state) => state.cardRenderDataReduce);
-  const [localCardData, setLocalCardData] = useState(reduxCardData);
+  const cardData = useSelector((state) => state.cardRenderDataReduce);
 
-  useEffect(() => {
-    setLocalCardData(reduxCardData);
-  }, [reduxCardData]);
-
-  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ", localCardData);
-
+  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ", cardData);
   return (
     <>
       <div className="container-fluid p-0">
