@@ -18,9 +18,8 @@ function CardBlocks() {
   const handleItemClick = async (itemId) => {
     try {
       const cartData = await getCardPageData({ product_id: itemId });
+      navigate("/catalog/card-page");
       dispatch(setCard(cartData));
-      alert("Запрос ушел");
-      navigate("/card-page");
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
       alert("загляни в консоль");
