@@ -16,6 +16,7 @@ function CardBlocks() {
   const handleItemClick = async (itemId) => {
     try {
       const cartData = await getCardPageData({ product_id: itemId });
+      console.log(dispatch(setCard(cartData)));
       dispatch(setCard(cartData));
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
@@ -106,7 +107,6 @@ function CardBlocks() {
                                 </div>
                                 <div className="d-flex justify-content-around flex-wrap mb-5">
                                   <a
-                                    href="/catalog/card-page"
                                     className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
                                     onClick={() => handleItemClick(item.id)}
                                   >
