@@ -21,7 +21,10 @@ function CardBlocks() {
       console.log("sdnccsd jkncmklsd bn mds", dispatch(setCard(cartData)));
       dispatch(setCard(cartData));
       alert("Запрос ушел");
-      navigate("/catalog/card-page");
+      console.log(
+        "sdcn sdjkn cjksdn cjksdn cdjn sdbl cjsdkn cd",
+        dispatch(setCard(cartData))
+      );
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
       alert("загляни в консоль");
