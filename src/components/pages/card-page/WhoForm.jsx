@@ -1,5 +1,4 @@
 // <!--------------------- КОМУ ОТПРАВИТЬ? ЧЕКБОКСЫ ------------------->
-import React from "react";
 function WhoForm() {
   return (
     <>
@@ -20,9 +19,7 @@ function WhoForm() {
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
               />
-              <label className="form-check-label" for="flexRadioDefault1">
-                Default radio
-              </label>
+              <label className="form-check-label">Default radio</label>
             </div>
             <div className="form-check">
               <input
@@ -32,9 +29,7 @@ function WhoForm() {
                 id="flexRadioDefault2"
                 checked
               />
-              <label className="form-check-label" for="flexRadioDefault2">
-                Default checked radio
-              </label>
+              <label className="form-check-label">Default checked radio</label>
             </div>
           </form>
           <div>

@@ -1,4 +1,3 @@
-import React from "react";
 import { newsSideBar, newsCart, newsPaginate } from "./data";
 import newsPageLoremBlok1 from "../../../assets/img/newsPageLoremBlok1.svg";
 function News() {
@@ -93,16 +92,16 @@ function News() {
                 )}
               </div>
             </div>
-            <div class="col-12 mb-5 d-flex justify-content-center">
+            <div className="col-12 mb-5 d-flex justify-content-center">
               <nav aria-label="Page navigation example">
-                <ul class="pagination">
+                <ul className="pagination">
                   {newsPaginate && (
                     <>
                       {newsPaginate.map((item) => {
                         return (
                           <>
-                            <li key={item.id} class="page-item">
-                              <a class="page-link" href={item.url}>
+                            <li key={item.id} className="page-item">
+                              <a className="page-link" href={item.url}>
                                 {item.text}
                               </a>
                             </li>

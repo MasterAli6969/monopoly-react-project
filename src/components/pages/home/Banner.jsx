@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 7 Подарки к Новому году с Giftery! ------------------->
-import React from "react";
 import sliderTestImg from "../../../assets/img/sliderTestImg.png";
 function Banner() {
   return (
@@ -12,7 +11,7 @@ function Banner() {
             </div>
             <div className="m-4" style={{ maxWidth: "500px" }}>
               <h1>Подарки к Новому году с Giftery!</h1>
-              <p className="">
+              <p>
                 В период с 1 по 28 декабря у вас есть возможность приобрести
                 подарочные сертификаты от наших партнеров со скидками до 70% для
                 ваших близких, друзей и коллег.
@@ -22,7 +21,7 @@ function Banner() {
         </div>
         <div className="container d-flex justify-content-around flex-wrap">
           <a
-            href="pages/card-page.html"
+            href="/catalog"
             className="btn btn-light btn-lg rounded-5 accent-colors text-accent-colors"
           >
             Подарить карту

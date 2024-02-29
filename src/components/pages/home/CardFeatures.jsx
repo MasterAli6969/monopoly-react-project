@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 8 Возможности Универсальной------------------->
-import React from 'react'
 import { staticTabs } from './data'
 function CardFeatures() {
 	return (

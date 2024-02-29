@@ -1,5 +1,4 @@
 //<!--------------------- Хлебные крошки и загаловок ------------------->
-import React from "react";
 function Breadcrumbs() {
   return (
     <>

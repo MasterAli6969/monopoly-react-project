@@ -1,5 +1,4 @@
 //<!--------------------- Карточки товаров ------------------->
-import React from "react";
 import CardBlocks from "../../common/CardBlocks";
 function CatalogCards() {
   return (

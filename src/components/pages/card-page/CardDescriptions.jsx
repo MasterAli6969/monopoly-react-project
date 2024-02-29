@@ -1,23 +1,36 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
-import React from "react";
-import { valuePrice } from "./data";
-function CardDescriptions() {
+import { useState } from "react";
+function CardDescriptions({ dataCard }) {
+  const [count, setCount] = useState(1);
+  const handleDicrem = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+  const handleIncrem = () => {
+    setCount(count + 1);
+  };
+  if (!dataCard) {
+    return null;
+  }
+  const { name, description, denomination } = dataCard;
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
         <div className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4">
           <div style={{ maxWidth: "130px" }}>
+            <h1>{name}</h1>
             <p>Номинал</p>
             <select
               className="form-select"
               id="floatingSelect"
               aria-label="Floating label select example"
             >
-              {valuePrice.map((item) => {
+              {denomination.split("|").map((item, index) => {
                 return (
                   <>
-                    <option key={item.id} selected>
-                      {item.value}
+                    <option key={index} selected>
+                      {item}
                     </option>
                   </>
                 );
@@ -38,13 +51,15 @@ function CardDescriptions() {
               <button
                 type="button"
                 className="btn btn-outline-secondary _removeDuplicateProducts"
+                onClick={handleDicrem}
               >
                 <i className="bi bi-dash-circle"></i>
               </button>
-              <p className="mx-3 mb-0 _quantityProducts">1</p>
+              <p className="mx-3 mb-0 _quantityProducts">{count}</p>
               <button
                 type="button"
                 className="btn btn-outline-secondary _addDuplicateProducts"
+                onClick={handleIncrem}
               >
                 <i className="bi bi-plus-circle"></i>
               </button>
@@ -53,20 +68,7 @@ function CardDescriptions() {
         </div>
         <ul>
           <li>
-            <p>
-              Обмен на одну или несколько карт Lamoda, ЛитРес и другие.
-              <a href="/card-page">Стандартный список обмена</a>
-            </p>
-          </li>
-          <li>
-            <p>
-              Выберите дизайн или <a href="/card-page">загрузите свой</a>
-            </p>
-          </li>
-          <li>
-            <p>
-              Смотрите также <a href="/card-page">Premium Giftery Card</a>
-            </p>
+            <p>{description}</p>
           </li>
         </ul>
       </div>

@@ -1,5 +1,4 @@
 //<!--------------------- ТРИ КНОПКИ ------------------->
-import React from "react";
 import { questionButton } from "./data";
 function QuestionButton() {
   return (

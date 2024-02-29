@@ -1,10 +1,12 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ErrorContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export function ErrorHandler({ children }) {
   const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
 
   const handleError = (error) => {

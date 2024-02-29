@@ -1,5 +1,5 @@
 // <!--------------------- Левый SIDEBAR ------------------->
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   getSideCategoryFilters,
   getSideDesignedFilters,

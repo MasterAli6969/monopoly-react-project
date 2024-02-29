@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import logoMono from '../../assets/img/logoMono.png'
 import { navDropLincks } from './data'
 

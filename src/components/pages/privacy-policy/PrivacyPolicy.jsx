@@ -1,21 +1,20 @@
-import React from "react";
 import { privacyPolicyData } from "./data";
 function PrivacyPolicy() {
   return (
     <>
-      <div class="container-fluid p-0">
-        <div class="container">
-          <div class="d-flex justify-content-center align-items-center mb-5">
+      <div className="container-fluid p-0">
+        <div className="container">
+          <div className="d-flex justify-content-center align-items-center mb-5">
             <h1>Политика конфиденциальности</h1>
           </div>
-          <ol class="text-main-colors-lists">
+          <ol className="text-main-colors-lists">
             {privacyPolicyData && (
               <>
                 {privacyPolicyData.map((item) => {
                   return (
                     <>
-                      <li key={item.id} class="mb-5">
-                        <h5 class="mb-3">{item.title}</h5>
+                      <li key={item.id} className="mb-5">
+                        <h5 className="mb-3">{item.title}</h5>
                         <p>{item.text}</p>
                       </li>
                     </>

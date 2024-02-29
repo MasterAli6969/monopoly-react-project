@@ -63,3 +63,16 @@ export const getFitersParamsCard = async (params) => {
     return [];
   }
 };
+
+export const getCardPageData = async (params) => {
+  try {
+    const response = await axios.get(BASEURL + "/products/specific", {
+      withCredentials: true,
+      params,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
+  }
+};

@@ -1,4 +1,3 @@
-import React from "react";
 import { dataFaq } from "./data";
 function Faq() {
   return (

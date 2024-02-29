@@ -1,6 +1,5 @@
 //<!--------------------- БЛОК - 6 Как воспользоваться полученной ------------------->
 
-import React from 'react'
 import { hoverTabs } from './data'
 function InstructionCardUse() {
 	return (

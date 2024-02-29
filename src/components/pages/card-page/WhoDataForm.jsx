@@ -1,6 +1,11 @@
 //<!--------------------- ФОРМА ДЛЯ ОФОРМЛЕНИЯ КАРТЫ ------------------->
-import React from 'react'
+import { useDispatch } from 'react-redux'
+import { incrementCartValue } from '../../../features/cartValueReducer'
 function WhoDataForm() {
+	const dispatch = useDispatch()
+	const handleOnClick = () => {
+		dispatch(incrementCartValue())
+	}
 	return (
 		<>
 			<div className='col-md-7 col-sm-12 mb-5 p-0 rounded-2 d-flex flex-column shadow-lg bg-accent-colors'>
@@ -20,7 +25,7 @@ function WhoDataForm() {
 				>
 					<form>
 						<div className='mb-3'>
-							<label for='exampleInputPassword1' className='form-label'>
+							<label className='form-label'>
 								<p>Имя</p>
 							</label>
 							<input
@@ -30,7 +35,7 @@ function WhoDataForm() {
 							/>
 						</div>
 						<div className='mb-3'>
-							<label for='exampleInputEmail1' className='form-label'>
+							<label className='form-label'>
 								<p>Email*</p>
 							</label>
 							<input

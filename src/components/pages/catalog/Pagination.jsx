@@ -1,5 +1,4 @@
 //<!--------------------- Пагинация ------------------->
-import React from "react";
 import { paginateData } from "./data";
 function Pagination() {
   return (

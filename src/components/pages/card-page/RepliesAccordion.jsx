@@ -1,5 +1,4 @@
 //<!--------------------- АККОРДИОНЫ ------------------->
-import React from "react";
 import { accordionData } from "./data";
 function RepliesAccordion() {
   return (
@@ -33,7 +32,7 @@ function RepliesAccordion() {
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target={`#${item.dataBsTarget}`}
-                        aria-expanded="false"
+                        aria-expanded="true"
                         aria-controls={item.dataBsTarget}
                       >
                         {item.accordName}
@@ -80,7 +79,7 @@ function RepliesAccordion() {
                       <form className="d-flex justify-content-between align-items-center flex-wrap">
                         <div className="mb-3">
                           <label
-                            for="exampleInputPassword1"
+                            htmlFor="exampleInputPassword1"
                             className="form-label"
                           >
                             Имя
@@ -93,7 +92,7 @@ function RepliesAccordion() {
                         </div>
                         <div className="mb-3">
                           <label
-                            for="exampleInputEmail1"
+                            htmlFor="exampleInputEmail1"
                             className="form-label"
                           >
                             Email*
@@ -156,7 +155,7 @@ function RepliesAccordion() {
                               <>
                                 <div
                                   key={item.id}
-                                  className="card p-5 m-1"
+                                  className="card p-5 mx-2"
                                   style={{ width: "20rem" }}
                                 >
                                   <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">

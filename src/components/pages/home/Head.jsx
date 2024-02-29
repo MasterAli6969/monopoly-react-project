@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 1 Подарочные------------------->
-import React from "react";
 function Head() {
   return (
     <>
@@ -12,7 +11,7 @@ function Head() {
               доставкой на электронную почту
             </h1>
             <a
-              href="pages/catalog-page.html"
+              href="/catalog"
               className="btn btn-light btn-lg rounded-5 my-5 over-accent-color text-accent-colors p-3"
             >
               Купить подарочную карту

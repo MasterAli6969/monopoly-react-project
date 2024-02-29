@@ -1,36 +1,19 @@
-export const sideBarItemsCart = [
+export const filtersCategory = [
   {
     id: 1,
-    name: "Подарочные карты",
-    links: [
-      {
-        id: 1,
-        url: "/catalog",
-        text: "Все подарочные карты",
-      },
-    ],
+    name: "TestCat",
   },
+];
+export const filtersDesigned = [
   {
-    id: 2,
-    name: "Коллеге",
-    links: [
-      {
-        id: 1,
-        url: "/catalog",
-        text: "Коллеге",
-      },
-    ],
+    id: 1,
+    name: "TestDes",
   },
+];
+export const filtersOccasion = [
   {
-    id: 2,
-    name: "Повод",
-    links: [
-      {
-        id: 1,
-        url: "/catalog",
-        text: "Повод",
-      },
-    ],
+    id: 1,
+    name: "TestOcca",
   },
 ];
 

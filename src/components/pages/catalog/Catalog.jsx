@@ -1,4 +1,3 @@
-import React from 'react'
 import Breadcrumbs from './Breadcrumbs'
 import SideBar from './SideBar'
 import CatalogCards from './CatalogCards'

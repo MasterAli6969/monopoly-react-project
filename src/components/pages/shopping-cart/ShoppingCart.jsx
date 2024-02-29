@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { shoppingCartData } from "./data";
 
 function ShoppingCart() {
@@ -109,7 +109,7 @@ function ShoppingCart() {
                       <p>
                         <span className="_totalPrice">
                           {total === 0 ? item.nominal.howMuch : total}
-                        </span>{" "}
+                        </span>
                         Р.
                       </p>
                     </div>

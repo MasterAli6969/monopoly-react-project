@@ -1,5 +1,4 @@
 //<!--------------------- БЛОК - 3 Что такое электронные подарочные карты ------------------->
-import React from 'react'
 import { modalTiles } from './data'
 function ModalTabs() {
 	return (

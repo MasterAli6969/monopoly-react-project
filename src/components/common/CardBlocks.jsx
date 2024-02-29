@@ -1,6 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import { getCatalogData } from '../../services/api/apiCatalog'
+import { getCardPageData } from '../../services/api/apiCatalog'
+import { setCard } from '../../features/cardRenderDataReduce'
 function CardBlocks() {
+	const navigate = useNavigate()
+	const dispatch = useDispatch()
 	const [products, setProducts] = useState([])
 	useEffect(() => {
 		const getData = async () => {
@@ -9,6 +15,17 @@ function CardBlocks() {
 		}
 		getData()
 	}, [])
+	const handleItemClick = async itemId => {
+		try {
+			const cartData = await getCardPageData({ product_id: itemId })
+			console.log('sdnccsd jkncmklsd bn mds', dispatch(setCard(cartData)))
+			dispatch(setCard(cartData))
+			navigate('/catalog/card-page')
+		} catch (error) {
+			console.error('Registration failed:ОШИБКА ТВОЯ', error)
+			alert('загляни в консоль')
+		}
+	}
 	return (
 		<>
 			<div className='col-12 mt-5 mb-5'>
@@ -40,7 +57,14 @@ function CardBlocks() {
 											</div>
 											<div>
 												<p className='card-text'>Номинал</p>
-												<h5 className='card-text'>{item.denomination}</h5>
+												<h5 className='card-text'>
+													<h5 className='card-text'>
+														<h5 className='card-text'>
+															От {item.denomination.split('|')[0]} до{' '}
+															{item.denomination.split('|').slice(-1)[0]}
+														</h5>
+													</h5>
+												</h5>
 												<button
 													type='button'
 													className='btn btn-light accent-colors text-accent-colors w-100'
