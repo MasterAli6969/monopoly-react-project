@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
 import { setCard } from "../../features/cardRenderDataReduce";
 function CardBlocks() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -19,7 +17,6 @@ function CardBlocks() {
     try {
       const cartData = await getCardPageData({ product_id: itemId });
       dispatch(setCard(cartData));
-      navigate("/catalog/card-page");
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
       alert("загляни в консоль");
@@ -108,13 +105,13 @@ function CardBlocks() {
                                   </div>
                                 </div>
                                 <div className="d-flex justify-content-around flex-wrap mb-5">
-                                  <button
-                                    href="pages/card-page.html"
+                                  <a
+                                    href="/catalog/card-page"
                                     className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
                                     onClick={() => handleItemClick(item.id)}
                                   >
                                     Купить
-                                  </button>
+                                  </a>
                                 </div>
                                 <div className="container-fluid d-flex justify-content-around flex-wrap mb-5 p-3 accent-colors">
                                   <div
