@@ -19,6 +19,7 @@ function CardBlocks() {
     try {
       const cartData = await getCardPageData({ product_id: itemId });
       dispatch(setCard(cartData));
+      localStorage.setItem("cardData", JSON.stringify(cartData));
       navigate("/catalog/card-page");
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
