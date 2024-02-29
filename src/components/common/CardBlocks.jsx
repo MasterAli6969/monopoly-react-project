@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
 import { setCard } from "../../features/cardRenderDataReduce";
 function CardBlocks() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -18,7 +16,6 @@ function CardBlocks() {
   const handleItemClick = async (itemId) => {
     try {
       const cartData = await getCardPageData({ product_id: itemId });
-      navigate("/catalog/card-page");
       dispatch(setCard(cartData));
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
@@ -64,14 +61,15 @@ function CardBlocks() {
                             </h5>
                           </h5>
                         </h5>
-                        <button
+                        <a
                           type="button"
                           className="btn btn-light accent-colors text-accent-colors w-100"
+                          href="/catalog/card-page"
                           data-bs-toggle="modal"
                           data-bs-target={"#exampleModal6"}
                         >
                           Купить
-                        </button>
+                        </a>
 
                         <div
                           className="modal fade"
