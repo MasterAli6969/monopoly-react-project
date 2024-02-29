@@ -19,7 +19,7 @@ function CardPage() {
           <div className="row justify-content-between">
             <>
               <Breadcrumbs />
-              <CardSlider />
+              <CardSlider dataImg={cardData.image_url} />
               <CardDescriptions />
               <WhoForm />
               <WhoDataForm />
