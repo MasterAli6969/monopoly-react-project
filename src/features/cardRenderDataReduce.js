@@ -7,7 +7,7 @@ const cardRenderData = createSlice({
   initialState,
   reducers: {
     setCard(state, action) {
-      state.data = action.payload;
+      return { ...state, ...action.payload };
     },
   },
 });
