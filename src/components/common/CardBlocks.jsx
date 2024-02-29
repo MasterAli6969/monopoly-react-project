@@ -64,7 +64,6 @@ function CardBlocks() {
                         <a
                           type="button"
                           className="btn btn-light accent-colors text-accent-colors w-100"
-                          href="/catalog/card-page"
                           data-bs-toggle="modal"
                           data-bs-target={"#exampleModal6"}
                         >
@@ -107,7 +106,7 @@ function CardBlocks() {
                                 </div>
                                 <div className="d-flex justify-content-around flex-wrap mb-5">
                                   <button
-                                    href="pages/card-page.html"
+                                    href="/catalog/card-page"
                                     className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
                                     onClick={() => handleItemClick(item.id)}
                                   >
