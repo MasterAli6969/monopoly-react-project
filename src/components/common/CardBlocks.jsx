@@ -105,13 +105,13 @@ function CardBlocks() {
                                   </div>
                                 </div>
                                 <div className="d-flex justify-content-around flex-wrap mb-5">
-                                  <button
+                                  <a
                                     href="/catalog/card-page"
                                     className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
                                     onClick={() => handleItemClick(item.id)}
                                   >
                                     Купить
-                                  </button>
+                                  </a>
                                 </div>
                                 <div className="container-fluid d-flex justify-content-around flex-wrap mb-5 p-3 accent-colors">
                                   <div
