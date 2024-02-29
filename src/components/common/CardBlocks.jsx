@@ -18,7 +18,6 @@ function CardBlocks() {
   const handleItemClick = async (itemId) => {
     try {
       const cartData = await getCardPageData({ product_id: itemId });
-      console.log("sdnccsd jkncmklsd bn mds", dispatch(setCard(cartData)));
       dispatch(setCard(cartData));
       alert("Запрос ушел");
       console.log(
@@ -116,7 +115,7 @@ function CardBlocks() {
                                   <button
                                     href="pages/card-page.html"
                                     className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
-                                    onClick={handleItemClick}
+                                    onClick={() => handleItemClick(item.id)}
                                   >
                                     Купить
                                   </button>
