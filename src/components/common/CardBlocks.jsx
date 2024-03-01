@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getCatalogData } from '../../services/api/apiCatalog'
 import { getCardPageData } from '../../services/api/apiCatalog'
@@ -142,12 +142,12 @@ function CardBlocks() {
 																			Закажите подарочные карты оптом.
 																		</p>
 																	</div>
-																	<a
-																		href='/'
+																	<Link
+																		to='/'
 																		className='btn btn-light btn-lg rounded-5 m-3 accent-colors text-accent-colors'
 																	>
 																		Оставить заявку
-																	</a>
+																	</Link>
 																</div>
 															</div>
 														</div>

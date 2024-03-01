@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logoMono from '../../assets/img/logoMono.png'
 import { navDropLincks } from './data'
 
@@ -17,9 +18,9 @@ function NavBar() {
 							<div className='container px-0 d-block'>
 								<div className='d-flex justify-content-between align-items-center'>
 									<div className='d-none nav-menu__logo-mobile'>
-										<a href='/'>
+										<Link to='/'>
 											<img src={logoMono} width='150' height='150' alt='' />
-										</a>
+										</Link>
 									</div>
 									<button
 										className='navbar-toggler'
@@ -39,9 +40,9 @@ function NavBar() {
 								>
 									<div className='d-flex justify-content-between align-items-center w-100'>
 										<div className='d-flex align-items-center nav-menu__logo-desktop'>
-											<a href='/'>
+											<Link to='/'>
 												<img src={logoMono} width='160' height='160' alt='' />
-											</a>
+											</Link>
 										</div>
 
 										<div className='w-100'>
