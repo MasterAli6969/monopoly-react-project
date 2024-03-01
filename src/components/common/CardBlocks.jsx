@@ -69,9 +69,8 @@ function CardBlocks() {
 													data-bs-target={'#exampleModal6'}
 												>
 													Купить
-												</button>
-
-												{/* <div
+												</button>{' '}
+												<div
 													className='modal fade'
 													id={'exampleModal6'}
 													tabIndex='-1'
@@ -148,7 +147,7 @@ function CardBlocks() {
 															</div>
 														</div>
 													</div>
-												</div> */}
+												</div>
 											</div>
 										</div>
 									</div>
