@@ -23,7 +23,7 @@ function RepliesAccordion() {
         <div className="accordion" id="accordionExample">
           {accordionData.map((item) => {
             return (
-              <>
+              <div key={item.id}>
                 {item.id === 1 && (
                   <div id={item.idTeg} className="accordion-item">
                     <h2 className="accordion-header">
@@ -209,7 +209,7 @@ function RepliesAccordion() {
                     </div>
                   </div>
                 )}
-              </>
+              </div>
             );
           })}
         </div>

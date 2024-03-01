@@ -58,12 +58,8 @@ function CardBlocks() {
 											<div>
 												<p className='card-text'>Номинал</p>
 												<h5 className='card-text'>
-													<h5 className='card-text'>
-														<h5 className='card-text'>
-															От {item.denomination.split('|')[0]} до{' '}
-															{item.denomination.split('|').slice(-1)[0]}
-														</h5>
-													</h5>
+													От {item.denomination.split('|')[0]} до{' '}
+													{item.denomination.split('|').slice(-1)[0]}
 												</h5>
 												<button
 													type='button'

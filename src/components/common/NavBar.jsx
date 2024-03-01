@@ -1,9 +1,7 @@
-import { useSelector } from 'react-redux'
 import logoMono from '../../assets/img/logoMono.png'
 import { navDropLincks } from './data'
 
 function NavBar() {
-	const [lang, setLang] = useState('ru')
 	return (
 		<>
 			<div
@@ -73,7 +71,6 @@ function NavBar() {
 															className='form-select'
 															id='floatingSelect'
 															aria-label='Floating label select example'
-															defaultValue={'ru'}
 														>
 															<option value='ru'>Русский</option>
 															<option value='en'>Английский</option>
