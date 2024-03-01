@@ -113,7 +113,7 @@ function CardBlocks() {
 																	<button
 																		href='pages/card-page.html'
 																		className='btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors'
-																		onClick={handleItemClick(item.id)}
+																		onClick={() => handleItemClick(item.id)}
 																	>
 																		Купить
 																	</button>
