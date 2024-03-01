@@ -10,9 +10,14 @@ import RecomendCard from './RecomendCard'
 import OtherDescriptions from './OtherDescriptions'
 
 function CardPage() {
-	const reduxCardData = localStorage.getItem('cardInfo')
+	const useEffect =
+		(() => {
+			const reduxCardData = localStorage.getItem('cardInfo')
+			const parsedData = storedData ? JSON.parse(reduxCardData) : null
+			console.log('ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ', parsedData)
+		},
+		[])
 
-	console.log('ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ', reduxCardData)
 	return (
 		<>
 			<div className='container-fluid p-0'>

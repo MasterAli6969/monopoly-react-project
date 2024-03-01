@@ -19,8 +19,13 @@ function CardBlocks() {
 		try {
 			const cartData = await getCardPageData({ product_id: itemId })
 			dispatch(setCard(cartData))
-			localStorage.setItem('reduxCardData', cartData)
-			navigate('/catalog/card-page')
+			console.log('test1', cartData)
+			localStorage.setItem('reduxCardData', JSON.stringify(cartData))
+			if (localStorage.getItem('reduxCardData')) {
+				navigate('/catalog/card-page')
+			} else {
+				console.error('Ошибка при сохранении данных в localStorage')
+			}
 		} catch (error) {
 			console.error('Registration failed:ОШИБКА ТВОЯ', error)
 			alert('загляни в консоль')
@@ -108,7 +113,7 @@ function CardBlocks() {
 																	<button
 																		href='pages/card-page.html'
 																		className='btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors'
-																		onClick={() => handleItemClick(item.id)}
+																		onClick={handleItemClick(item.id)}
 																	>
 																		Купить
 																	</button>
