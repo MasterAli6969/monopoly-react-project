@@ -21,7 +21,7 @@ function CardBlocks() {
 			dispatch(setCard(cartData))
 			console.log('test1', cartData)
 			localStorage.setItem('reduxCardData', JSON.stringify(cartData))
-			await new Promise(resolve => setTimeout(resolve, 300)) // Пример ожидания 100 мс
+			await new Promise(resolve => setTimeout(resolve, 1000))
 			navigate('/catalog/card-page')
 		} catch (error) {
 			console.error('Registration failed:ОШИБКА ТВОЯ', error)
