@@ -10,7 +10,7 @@ import RecomendCard from './RecomendCard'
 import OtherDescriptions from './OtherDescriptions'
 
 function CardPage() {
-	const useEffect =
+	useEffect =
 		(() => {
 			const reduxCardData = localStorage.getItem('cardInfo')
 			const parsedData = storedData ? JSON.parse(reduxCardData) : null
