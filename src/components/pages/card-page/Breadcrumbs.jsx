@@ -1,5 +1,5 @@
 //<!--------------------- Хлебные крошки и загаловок ------------------->
-import Link from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Breadcrumbs() {
 	return (
