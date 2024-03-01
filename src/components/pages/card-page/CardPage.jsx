@@ -20,7 +20,7 @@ function CardPage() {
 			<div className='container-fluid p-0'>
 				<div className='container _cardPage'>
 					<div className='row justify-content-between'>
-						{/* <>
+						<>
 							<Breadcrumbs />
 							<CardSlider />
 							<CardDescriptions />
@@ -29,7 +29,7 @@ function CardPage() {
 							<RepliesAccordion />
 							<RecomendCard />
 							<OtherDescriptions />
-						</> */}
+						</>
 					</div>
 				</div>
 			</div>
