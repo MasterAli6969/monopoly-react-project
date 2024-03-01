@@ -17,26 +17,23 @@ function CardPage() {
 
 	return (
 		<>
-			{parsedData ? (
-				<div className='container-fluid p-0'>
-					<div className='container _cardPage'>
-						<div className='row justify-content-between'>
-							<>
-								<Breadcrumbs />
-								<CardSlider />
-								<CardDescriptions />
-								<WhoForm />
-								<WhoDataForm />
-								<RepliesAccordion />
-								<RecomendCard />
-								<OtherDescriptions />
-							</>
-						</div>
+			<div className='container-fluid p-0'>
+				<div className='container _cardPage'>
+					<div className='row justify-content-between'>
+						<>
+							<Breadcrumbs />
+							<CardSlider />
+							<CardDescriptions />
+							<WhoForm />
+							<WhoDataForm />
+							<RepliesAccordion />
+							<RecomendCard />
+							<OtherDescriptions />
+						</>
 					</div>
 				</div>
-			) : (
-				<div>loading...</div>
-			)}
+			</div>
+			)
 		</>
 	)
 }
