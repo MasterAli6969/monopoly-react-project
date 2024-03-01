@@ -20,7 +20,7 @@ function CardBlocks() {
 			const cartData = await getCardPageData({ product_id: itemId })
 			dispatch(setCard(cartData))
 			console.log('test1', cartData)
-			localStorage.setItem('reduxCardData', JSON.stringify(cartData))
+			localStorage.setItem('cardData', JSON.stringify(cartData))
 			await new Promise(resolve => setTimeout(resolve, 1000))
 			navigate('/catalog/card-page')
 		} catch (error) {

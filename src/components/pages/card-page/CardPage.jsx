@@ -10,8 +10,8 @@ import OtherDescriptions from './OtherDescriptions'
 
 function CardPage() {
 	useEffect(() => {
-		const reduxCardData = localStorage.getItem('reduxCardData')
-		let parsedData = reduxCardData ? JSON.parse(reduxCardData) : null
+		const reduxCardData = localStorage.getItem('cardData')
+		const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null
 		console.log('ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ', parsedData)
 	}, [])
 
