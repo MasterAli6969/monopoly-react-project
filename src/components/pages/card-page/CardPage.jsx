@@ -11,28 +11,32 @@ import OtherDescriptions from './OtherDescriptions'
 function CardPage() {
 	useEffect(() => {
 		const reduxCardData = localStorage.getItem('reduxCardData')
-		let parsedData = reduxCardData ? JSON.parse(reduxCardData) : null
+		const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null
 		console.log('ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ', parsedData)
-	}, [])
+	}, [parsedData])
 
 	return (
 		<>
-			<div className='container-fluid p-0'>
-				<div className='container _cardPage'>
-					<div className='row justify-content-between'>
-						<>
-							<Breadcrumbs />
-							<CardSlider />
-							<CardDescriptions />
-							<WhoForm />
-							<WhoDataForm />
-							<RepliesAccordion />
-							<RecomendCard />
-							<OtherDescriptions />
-						</>
+			{parsedData ? (
+				<div className='container-fluid p-0'>
+					<div className='container _cardPage'>
+						<div className='row justify-content-between'>
+							<>
+								<Breadcrumbs />
+								<CardSlider />
+								<CardDescriptions />
+								<WhoForm />
+								<WhoDataForm />
+								<RepliesAccordion />
+								<RecomendCard />
+								<OtherDescriptions />
+							</>
+						</div>
 					</div>
 				</div>
-			</div>
+			) : (
+				<div>loading...</div>
+			)}
 		</>
 	)
 }
