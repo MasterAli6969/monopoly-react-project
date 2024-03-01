@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
@@ -18,9 +18,10 @@ function CardBlocks() {
   const handleItemClick = async (itemId) => {
     try {
       const cartData = await getCardPageData({ product_id: itemId });
-      console.log("sdnccsd jkncmklsd bn mds", dispatch(setCard(cartData)));
       dispatch(setCard(cartData));
-      navigate("/catalog/card-page");
+      console.log("test1", cartData);
+      localStorage.setItem("cardData", JSON.stringify(cartData));
+      await new Promise((resolve) => setTimeout(resolve, 300));
     } catch (error) {
       console.error("Registration failed:ОШИБКА ТВОЯ", error);
       alert("загляни в консоль");
@@ -33,7 +34,7 @@ function CardBlocks() {
           {(!products || products.length === 0) && (
             <>
               <div>
-                <h5>Упс, что то пошло не так..... попробуйсте немного позже</h5>
+                <h5>Упс, что то пошло не так... попробуйсте немного позже</h5>
               </div>
             </>
           )}
@@ -105,13 +106,13 @@ function CardBlocks() {
                                   </div>
                                 </div>
                                 <div className="d-flex justify-content-around flex-wrap mb-5">
-                                  <button
-                                    href="pages/card-page.html"
+                                  <Link
+                                    to="/catalog/card-page"
                                     className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
                                     onClick={() => handleItemClick(item.id)}
                                   >
                                     Купить
-                                  </button>
+                                  </Link>
                                 </div>
                                 <div className="container-fluid d-flex justify-content-around flex-wrap mb-5 p-3 accent-colors">
                                   <div
@@ -137,12 +138,12 @@ function CardBlocks() {
                                       Закажите подарочные карты оптом.
                                     </p>
                                   </div>
-                                  <a
-                                    href="/"
+                                  <Link
+                                    to="/"
                                     className="btn btn-light btn-lg rounded-5 m-3 accent-colors text-accent-colors"
                                   >
                                     Оставить заявку
-                                  </a>
+                                  </Link>
                                 </div>
                               </div>
                             </div>
