@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
 import Breadcrumbs from './Breadcrumbs'
 import CardSlider from './CardSlider'
 import CardDescriptions from './CardDescriptions'
@@ -11,7 +10,7 @@ import OtherDescriptions from './OtherDescriptions'
 
 function CardPage() {
 	useEffect(() => {
-		const reduxCardData = localStorage.getItem('cardInfo')
+		const reduxCardData = localStorage.getItem('reduxCardData')
 		let parsedData = reduxCardData ? JSON.parse(reduxCardData) : null
 		console.log('ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ', parsedData)
 	}, [])
