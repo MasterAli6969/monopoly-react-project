@@ -21,8 +21,7 @@ function CardBlocks() {
 			dispatch(setCard(cartData))
 			console.log('test1', cartData)
 			localStorage.setItem('cardData', JSON.stringify(cartData))
-			await new Promise(resolve => setTimeout(resolve, 1000))
-			navigate('/catalog/card-page')
+			await new Promise(resolve => setTimeout(resolve, 300))
 		} catch (error) {
 			console.error('Registration failed:ОШИБКА ТВОЯ', error)
 			alert('загляни в консоль')
@@ -107,13 +106,13 @@ function CardBlocks() {
 																	</div>
 																</div>
 																<div className='d-flex justify-content-around flex-wrap mb-5'>
-																	<button
-																		// to='/catalog/card-page'
+																	<Link
+																		to='/catalog/card-page'
 																		className='btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors'
 																		onClick={() => handleItemClick(item.id)}
 																	>
 																		Купить
-																	</button>
+																	</Link>
 																</div>
 																<div className='container-fluid d-flex justify-content-around flex-wrap mb-5 p-3 accent-colors'>
 																	<div
