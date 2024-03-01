@@ -18,8 +18,8 @@ function CardBlocks() {
 	const handleItemClick = async itemId => {
 		try {
 			const cartData = await getCardPageData({ product_id: itemId })
-			console.log('sdnccsd jkncmklsd bn mds', dispatch(setCard(cartData)))
 			dispatch(setCard(cartData))
+			localStorage.setItem('reduxCardData', cartData)
 			navigate('/catalog/card-page')
 		} catch (error) {
 			console.error('Registration failed:ОШИБКА ТВОЯ', error)

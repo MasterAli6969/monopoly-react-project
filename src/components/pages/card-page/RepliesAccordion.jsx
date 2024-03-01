@@ -23,9 +23,9 @@ function RepliesAccordion() {
         <div className="accordion" id="accordionExample">
           {accordionData.map((item) => {
             return (
-              <div key={item.id}>
+              <>
                 {item.id === 1 && (
-                  <div id={item.idTeg} className="accordion-item">
+                  <div key={item.id} id={item.idTeg} className="accordion-item">
                     <h2 className="accordion-header">
                       <button
                         className="accordion-button collapsed bg-accent-colors"
@@ -117,7 +117,7 @@ function RepliesAccordion() {
                 )}
 
                 {item.id === 2 && (
-                  <div id={item.idTeg} className="accordion-item">
+                  <div key={item.id} id={item.idTeg} className="accordion-item">
                     <h2 className="accordion-header">
                       <button
                         className="accordion-button collapsed bg-accent-colors"
@@ -175,7 +175,7 @@ function RepliesAccordion() {
                 )}
 
                 {item.id === 3 && (
-                  <div id={item.idTeg} className="accordion-item">
+                  <div key={item.id} id={item.idTeg} className="accordion-item">
                     <h2 className="accordion-header">
                       <button
                         className="accordion-button collapsed bg-accent-colors"
@@ -209,7 +209,7 @@ function RepliesAccordion() {
                     </div>
                   </div>
                 )}
-              </div>
+              </>
             );
           })}
         </div>
