@@ -21,7 +21,7 @@ function CardBlocks() {
 			dispatch(setCard(cartData))
 			console.log('test1', cartData)
 			localStorage.setItem('reduxCardData', JSON.stringify(cartData))
-			if (localStorage.getItem('reduxCardData')) {
+			if (localStorage.getItem('reduxCardData') !== null) {
 				navigate('/catalog/card-page')
 			} else {
 				console.error('Ошибка при сохранении данных в localStorage')
