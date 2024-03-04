@@ -1,31 +1,32 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import TooltipInitializer from "./assets/js/script";
-import NavBar from "./components/common/NavBar";
-import Footer from "./components/common/Footer";
-import Home from "./components/pages/home/Home";
-import Catalog from "./components/pages/catalog/Catalog";
-import CardPage from "./components/pages/card-page/CardPage";
-import Register from "./components/pages/register/Register";
-import Login from "./components/pages/login/Login";
-import Profile from "./components/pages/profile/Profile";
-import Page404 from "./components/pages/errors/404";
-import Contacts from "./components/pages/contact/Contact";
-import Faq from "./components/pages/faq/Faq";
-import News from "./components/pages/news/News";
-import Oferta from "./components/pages/oferta/Oferta";
-import PrivacyPolicy from "./components/pages/privacy-policy/PrivacyPolicy";
-import ShoppingCart from "./components/pages/shopping-cart/ShoppingCart";
-import { ErrorHandler } from "./services/middleware/ErrorHandler";
+import { lazy } from "react";
+import Layout from "./components/Layout";
 import "./index.css";
+
+const Home = lazy(() => import("./components/pages/home/Home"));
+const Catalog = lazy(() => import("./components/pages/catalog/Catalog"));
+const CardPage = lazy(() => import("./components/pages/card-page/CardPage"));
+const Register = lazy(() => import("./components/pages/register/Register"));
+const Login = lazy(() => import("./components/pages/login/Login"));
+const Profile = lazy(() => import("./components/pages/profile/Profile"));
+const Page404 = lazy(() => import("./components/pages/errors/404"));
+const Contacts = lazy(() => import("./components/pages/contact/Contact"));
+const Faq = lazy(() => import("./components/pages/faq/Faq"));
+const News = lazy(() => import("./components/pages/news/News"));
+const Oferta = lazy(() => import("./components/pages/oferta/Oferta"));
+const PrivacyPolicy = lazy(() =>
+  import("./components/pages/privacy-policy/PrivacyPolicy")
+);
+const ShoppingCart = lazy(() =>
+  import("./components/pages/shopping-cart/ShoppingCart")
+);
 
 function App() {
   return (
     <Router>
-      <ErrorHandler>
-        <NavBar />
-        <TooltipInitializer />
-        <Routes>
-          <Route path="/" element={<Home />} />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/catalog/card-page" element={<CardPage />} />
           <Route path="/register" element={<Register />} />
@@ -38,9 +39,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
           <Route path="/page404" element={<Page404 />} />
-        </Routes>
-        <Footer />
-      </ErrorHandler>
+        </Route>
+      </Routes>
     </Router>
   );
 }
