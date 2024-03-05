@@ -6,8 +6,7 @@ import {
   getSideDesignedOccasion,
   getFitersParamsCard,
 } from "../../../services/api/apiCatalog";
-import LoadingSpinner from "../../common/LoadingSpinner";
-
+import SkeletonCustom from "../../common/SkeletonCustom";
 function SideBar() {
   const [filtersCategory, setFisltersCategory] = useState([]);
   const [filtersDesigned, setFisltersDesigned] = useState([]);
@@ -74,10 +73,8 @@ function SideBar() {
           />
           <>
             {(!filtersCategory || filtersCategory.length === 0) && (
-              <div>
-                <div>
-                  <LoadingSpinner />
-                </div>
+              <div className="mb-3">
+                <SkeletonCustom height={35} />
               </div>
             )}
             {filtersCategory.data &&
@@ -107,8 +104,8 @@ function SideBar() {
                 );
               })}
             {(!filtersDesigned || filtersDesigned.length === 0) && (
-              <div>
-                <LoadingSpinner />
+              <div className="mb-3">
+                <SkeletonCustom height={35} />
               </div>
             )}
             {filtersDesigned.data &&
@@ -138,8 +135,8 @@ function SideBar() {
                 );
               })}
             {(!filtersOccasion || filtersOccasion.length === 0) && (
-              <div>
-                <LoadingSpinner />
+              <div className="mb-3">
+                <SkeletonCustom height={35} />
               </div>
             )}
             {filtersOccasion.data &&

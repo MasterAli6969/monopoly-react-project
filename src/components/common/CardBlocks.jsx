@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
 import { setCard } from "../../features/cardRenderDataReduce";
+import SkeletonCustom from "./SkeletonCustom";
 import LoadingSpinner from "./LoadingSpinner";
 function CardBlocks() {
   const navigate = useNavigate();
@@ -35,13 +36,11 @@ function CardBlocks() {
   return (
     <>
       <div className="col-12 mt-5 mb-5">
-        <div className="container d-flex justify-content-center flex-wrap">
+        <div className="container d-flex  justify-content-center flex-wrap">
           {(!products || products.length === 0) && (
-            <>
-              <div>
-                <LoadingSpinner />
-              </div>
-            </>
+            <div>
+              <LoadingSpinner />
+            </div>
           )}
           {products.data != null && (
             <>
