@@ -61,7 +61,7 @@ function CardBlocks() {
                         <h5 className="card-title mb-5">{item.name}</h5>
                       </div>
                       <div>
-                        <p className="card-text">Номинал</p>
+                        <p className="card-text">Номинал:</p>
                         <h5 className="card-text">
                           От {item.denomination.split("|")[0]} до{" "}
                           {item.denomination.split("|").slice(-1)[0]}
