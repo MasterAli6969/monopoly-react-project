@@ -8,11 +8,11 @@ import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
-  // useEffect(() => {
-  // 	const reduxCardData = localStorage.getItem('cardData')
-  // 	const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null
-  // 	console.log('ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ', parsedData)
-  // }, [])
+  useEffect(() => {
+    const reduxCardData = localStorage.getItem("cardData");
+    const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
+    console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ", parsedData);
+  }, []);
 
   return (
     <>
