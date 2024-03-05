@@ -117,7 +117,7 @@ function SideBar() {
                       className="w-100 btn btn-light btn-lg rounded-5 accent-colors text-accent-colors my-2"
                     >
                       <select
-                        className=" border-0 bg-transparent text-white"
+                        className="w-100 border-0 bg-transparent text-white"
                         id="floatingSelect"
                         value={selectedDesigned}
                         onChange={handleSelectChangeDesigned}
@@ -148,7 +148,7 @@ function SideBar() {
                       className="w-100 btn btn-light btn-lg rounded-5 accent-colors text-accent-colors my-2"
                     >
                       <select
-                        className=" border-0 bg-transparent text-white"
+                        className="w-100 border-0 bg-transparent text-white"
                         id="floatingSelect"
                         value={selectedOccasion}
                         onChange={handleSelectChangeOccasion}
