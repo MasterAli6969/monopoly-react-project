@@ -5,7 +5,7 @@ function Faq() {
       <div className="container-fluid p-0">
         <div className="container">
           <div className="d-flex justify-content-center align-items-center mb-5">
-            <h1>Часто задаваемые вопросы</h1>
+            <h1>Часто задаваемые вопросыcacs</h1>
           </div>
 
           <ol className="text-main-colors-lists">
