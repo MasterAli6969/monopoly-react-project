@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import TooltipInitializer from "../assets/js/script";
 import { ErrorHandler } from "../services/middleware/ErrorHandler";
 import { Suspense } from "react";
 import NavBar from "./common/NavBar";
@@ -10,7 +9,6 @@ export default function Layout() {
     <>
       <ErrorHandler>
         <NavBar />
-        <TooltipInitializer />
         <Suspense
           fallback={
             <div>
