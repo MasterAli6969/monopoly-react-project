@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
 import { setCard } from "../../features/cardRenderDataReduce";
-import SkeletonCustom from "./SkeletonCustom";
 import LoadingSpinner from "./LoadingSpinner";
 function CardBlocks() {
   const navigate = useNavigate();

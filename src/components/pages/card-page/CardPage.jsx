@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Breadcrumbs from "./Breadcrumbs";
 import CardSlider from "./CardSlider";
 import CardDescriptions from "./CardDescriptions";
