@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
 import { setCard } from "../../features/cardRenderDataReduce";
+import LoadingSpinner from "./LoadingSpinner";
 function CardBlocks() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ function CardBlocks() {
           {(!products || products.length === 0) && (
             <>
               <div>
-                <h5>Упс, что то пошло не так... попробуйсте немного позже</h5>
+                <LoadingSpinner />
               </div>
             </>
           )}

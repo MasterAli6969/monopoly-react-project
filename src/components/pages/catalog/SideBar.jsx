@@ -6,6 +6,8 @@ import {
   getSideDesignedOccasion,
   getFitersParamsCard,
 } from "../../../services/api/apiCatalog";
+import LoadingSpinner from "../../common/LoadingSpinner";
+
 function SideBar() {
   const [filtersCategory, setFisltersCategory] = useState([]);
   const [filtersDesigned, setFisltersDesigned] = useState([]);
@@ -73,7 +75,9 @@ function SideBar() {
           <>
             {(!filtersCategory || filtersCategory.length === 0) && (
               <div>
-                <h6>Упс, что то пошло не так... </h6>
+                <div>
+                  <LoadingSpinner />
+                </div>
               </div>
             )}
             {filtersCategory.data &&
@@ -104,7 +108,7 @@ function SideBar() {
               })}
             {(!filtersDesigned || filtersDesigned.length === 0) && (
               <div>
-                <h6>Упс, что то пошло не так... </h6>
+                <LoadingSpinner />
               </div>
             )}
             {filtersDesigned.data &&
@@ -135,7 +139,7 @@ function SideBar() {
               })}
             {(!filtersOccasion || filtersOccasion.length === 0) && (
               <div>
-                <h6>Упс, что то пошло не так... </h6>
+                <LoadingSpinner />
               </div>
             )}
             {filtersOccasion.data &&
