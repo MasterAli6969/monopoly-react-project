@@ -135,7 +135,7 @@ function CardBlocks() {
                                 <div className="d-flex justify-content-around flex-wrap">
                                   <div className="px-2 custom_index_block3_card_modal_description">
                                     <h4 className="mb-3 fw-bolder">
-                                      Корпоративный заказ
+                                      Корпоративный заказ.
                                     </h4>
                                     <p className="">
                                       Закажите подарочные карты оптом.
