@@ -28,11 +28,9 @@ function CardDescriptions({ dataCard }) {
             >
               {denomination.split("|").map((item, index) => {
                 return (
-                  <>
-                    <option key={index} selected>
-                      {item}
-                    </option>
-                  </>
+                  <option key={index} selected>
+                    {item}
+                  </option>
                 );
               })}
             </select>

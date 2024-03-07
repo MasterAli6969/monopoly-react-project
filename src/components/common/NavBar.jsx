@@ -101,7 +101,6 @@ function NavBar() {
                               >
                                 {item.name}
                               </button>
-
                               <ul className="dropdown-menu">
                                 {item.links.map((item) => {
                                   return (

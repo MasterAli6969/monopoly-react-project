@@ -22,9 +22,9 @@ function RepliesAccordion() {
           </Link>
         </div>
         <div className="accordion" id="accordionExample">
-          {accordionData.map((item) => {
+          {accordionData.map((item, index) => {
             return (
-              <>
+              <div key={index}>
                 {item.id === 1 && (
                   <div key={item.id} id={item.idTeg} className="accordion-item">
                     <h2 className="accordion-header">
@@ -47,27 +47,23 @@ function RepliesAccordion() {
                       <div className="accordion-body d-flex justify-content-center flex-wrap p-0 mb-5">
                         {item.accordItem.map((item) => {
                           return (
-                            <>
-                              <div
-                                key={item.id}
-                                className="card"
-                                style={{ width: "25rem" }}
-                              >
-                                <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">
-                                  <img
-                                    alt=""
-                                    src={item.img}
-                                    className="img-thumbnail mb-4"
-                                  />
-                                  <h5 className="card-title mb-3">
-                                    {item.title}
-                                  </h5>
-                                  <p className="card-text">
-                                    {item.description}
-                                  </p>
-                                </div>
+                            <div
+                              key={item.id}
+                              className="card"
+                              style={{ width: "25rem" }}
+                            >
+                              <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                <img
+                                  alt=""
+                                  src={item.img}
+                                  className="img-thumbnail mb-4"
+                                />
+                                <h5 className="card-title mb-3">
+                                  {item.title}
+                                </h5>
+                                <p className="card-text">{item.description}</p>
                               </div>
-                            </>
+                            </div>
                           );
                         })}
                       </div>
@@ -153,20 +149,18 @@ function RepliesAccordion() {
                         <div className="d-flex justify-content-center flex-wrap p-0 mb-5">
                           {item.accordItem.tablets.map((item) => {
                             return (
-                              <>
-                                <div
-                                  key={item.id}
-                                  className="card p-5 mx-2"
-                                  style={{ width: "20rem" }}
-                                >
-                                  <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">
-                                    <i className={`${item.icons} fs-1`}></i>
-                                    <p className="card-text">
-                                      {item.description}
-                                    </p>
-                                  </div>
+                              <div
+                                key={item.id}
+                                className="card p-5 mx-2"
+                                style={{ width: "20rem" }}
+                              >
+                                <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                  <i className={`${item.icons} fs-1`}></i>
+                                  <p className="card-text">
+                                    {item.description}
+                                  </p>
                                 </div>
-                              </>
+                              </div>
                             );
                           })}
                         </div>
@@ -198,11 +192,9 @@ function RepliesAccordion() {
                         <ol>
                           {item.accordItem.map((item) => {
                             return (
-                              <>
-                                <li key={item.id} className="mb-3">
-                                  <p>{item.text}</p>
-                                </li>
-                              </>
+                              <li key={item.id} className="mb-3">
+                                <p>{item.text}</p>
+                              </li>
                             );
                           })}
                         </ol>
@@ -210,7 +202,7 @@ function RepliesAccordion() {
                     </div>
                   </div>
                 )}
-              </>
+              </div>
             );
           })}
         </div>

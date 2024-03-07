@@ -11,12 +11,10 @@ function Faq() {
           <ol className="text-main-colors-lists">
             {dataFaq.map((item) => {
               return (
-                <>
-                  <li key={item.id} className="mb-5">
-                    <h5 className="mb-3">{item.title}</h5>
-                    <p>{item.description}</p>
-                  </li>
-                </>
+                <li key={item.id} className="mb-5">
+                  <h5 className="mb-3">{item.title}</h5>
+                  <p>{item.description}</p>
+                </li>
               );
             })}
           </ol>

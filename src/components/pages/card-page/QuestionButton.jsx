@@ -7,17 +7,15 @@ function QuestionButton() {
         <div className="d-flex justify-content-around align-items-center flex-wrap">
           {questionButton.map((item) => {
             return (
-              <>
-                <button
-                  key={item.id}
-                  type="button"
-                  className="btn btn-light m-3 accard-btn__size _anchorButton accent-colors text-accent-colors"
-                  data-target={item.dataTarget}
-                  data-bs-target={`#${item.dataBsTarget}`}
-                >
-                  {item.name}
-                </button>
-              </>
+              <button
+                key={item.id}
+                type="button"
+                className="btn btn-light m-3 accard-btn__size _anchorButton accent-colors text-accent-colors"
+                data-target={item.dataTarget}
+                data-bs-target={`#${item.dataBsTarget}`}
+              >
+                {item.name}
+              </button>
             );
           })}
         </div>

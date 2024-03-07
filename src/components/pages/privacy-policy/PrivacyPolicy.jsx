@@ -8,20 +8,15 @@ function PrivacyPolicy() {
             <h1>Политика конфиденциальности</h1>
           </div>
           <ol className="text-main-colors-lists">
-            {privacyPolicyData && (
-              <>
-                {privacyPolicyData.map((item) => {
-                  return (
-                    <>
-                      <li key={item.id} className="mb-5">
-                        <h5 className="mb-3">{item.title}</h5>
-                        <p>{item.text}</p>
-                      </li>
-                    </>
-                  );
-                })}
-              </>
-            )}
+            {privacyPolicyData &&
+              privacyPolicyData.map((item) => {
+                return (
+                  <li key={item.id} className="mb-5">
+                    <h5 className="mb-3">{item.title}</h5>
+                    <p>{item.text}</p>
+                  </li>
+                );
+              })}
           </ol>
         </div>
       </div>
