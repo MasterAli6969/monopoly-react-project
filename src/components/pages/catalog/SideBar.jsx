@@ -89,7 +89,7 @@ function SideBar() {
                     value={selectedCategory}
                     onChange={handleSelectChangeCategory}
                   >
-                    <option selected>Все</option>
+                    <option defaultValue>Все</option>
                     <option className="accent-colors border-0" value={item.id}>
                       {item.name}
                     </option>
