@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Breadcrumbs from "./Breadcrumbs";
 import CardSlider from "./CardSlider";
 import CardDescriptions from "./CardDescriptions";
@@ -9,15 +9,15 @@ import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
+  // eslint-disable-next-line no-unused-vars
   const [cardData, setCardData] = useState({});
-  useEffect(() => {
-    const reduxCardData = localStorage.getItem("cardData");
-    const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
-    console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ", parsedData.data);
-    if (parsedData && parsedData.data) {
-      setCardData(parsedData.data);
-    }
-  }, [cardData]);
+
+  const reduxCardData = localStorage.getItem("cardData");
+  const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
+  console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ", parsedData.data);
+  if (parsedData && parsedData.data) {
+    setCardData(parsedData.data);
+  }
 
   return (
     <>
