@@ -71,101 +71,84 @@ function SideBar() {
             value={searchQuery}
             onChange={handleInputChange}
           />
-          <>
-            {(!filtersCategory || filtersCategory.length === 0) && (
-              <div className="mb-3">
-                <SkeletonCustom height={35} />
-              </div>
-            )}
-            {filtersCategory.data &&
-              filtersCategory.data.map((item) => {
-                return (
-                  <>
-                    <div
-                      key={item.id}
-                      className="w-100 btn btn-light btn-lg rounded-5 accent-colors text-accent-colors my-2"
-                    >
-                      <select
-                        className="w-100 border-0 bg-transparent text-white"
-                        id="floatingSelect"
-                        value={selectedCategory}
-                        onChange={handleSelectChangeCategory}
-                      >
-                        <option selected>Все</option>
-                        <option
-                          className="accent-colors border-0"
-                          value={item.id}
-                        >
-                          {item.name}
-                        </option>
-                      </select>
-                    </div>
-                  </>
-                );
-              })}
-            {(!filtersDesigned || filtersDesigned.length === 0) && (
-              <div className="mb-3">
-                <SkeletonCustom height={35} />
-              </div>
-            )}
-            {filtersDesigned.data &&
-              filtersDesigned.data.map((item) => {
-                return (
-                  <>
-                    <div
-                      key={item.id}
-                      className="w-100 btn btn-light btn-lg rounded-5 accent-colors text-accent-colors my-2"
-                    >
-                      <select
-                        className="w-100 border-0 bg-transparent text-white"
-                        id="floatingSelect"
-                        value={selectedDesigned}
-                        onChange={handleSelectChangeDesigned}
-                      >
-                        <option selected>Все</option>
-                        <option
-                          className="accent-colors border-0"
-                          value={item.id}
-                        >
-                          {item.name}
-                        </option>
-                      </select>
-                    </div>
-                  </>
-                );
-              })}
-            {(!filtersOccasion || filtersOccasion.length === 0) && (
-              <div className="mb-3">
-                <SkeletonCustom height={35} />
-              </div>
-            )}
-            {filtersOccasion.data &&
-              filtersOccasion.data.map((item) => {
-                return (
-                  <>
-                    <div
-                      key={item.id}
-                      className="w-100 btn btn-light btn-lg rounded-5 accent-colors text-accent-colors my-2"
-                    >
-                      <select
-                        className="w-100 border-0 bg-transparent text-white"
-                        id="floatingSelect"
-                        value={selectedOccasion}
-                        onChange={handleSelectChangeOccasion}
-                      >
-                        <option selected>Все</option>
-                        <option
-                          className="accent-colors border-0"
-                          value={item.id}
-                        >
-                          {item.name}
-                        </option>
-                      </select>
-                    </div>
-                  </>
-                );
-              })}
-          </>
+          {(!filtersCategory || filtersCategory.length === 0) && (
+            <div className="mb-3">
+              <SkeletonCustom height={35} />
+            </div>
+          )}
+          {filtersCategory.data &&
+            filtersCategory.data.map((item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="w-100 btn btn-light btn-lg rounded-5 accent-colors text-accent-colors my-2"
+                >
+                  <select
+                    className="w-100 border-0 bg-transparent text-white"
+                    id="floatingSelect"
+                    value={selectedCategory}
+                    onChange={handleSelectChangeCategory}
+                  >
+                    <option selected>Все</option>
+                    <option className="accent-colors border-0" value={item.id}>
+                      {item.name}
+                    </option>
+                  </select>
+                </div>
+              );
+            })}
+          {(!filtersDesigned || filtersDesigned.length === 0) && (
+            <div className="mb-3">
+              <SkeletonCustom height={35} />
+            </div>
+          )}
+          {filtersDesigned.data &&
+            filtersDesigned.data.map((item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="w-100 btn btn-light btn-lg rounded-5 accent-colors text-accent-colors my-2"
+                >
+                  <select
+                    className="w-100 border-0 bg-transparent text-white"
+                    id="floatingSelect"
+                    value={selectedDesigned}
+                    onChange={handleSelectChangeDesigned}
+                  >
+                    <option selected>Все</option>
+                    <option className="accent-colors border-0" value={item.id}>
+                      {item.name}
+                    </option>
+                  </select>
+                </div>
+              );
+            })}
+          {(!filtersOccasion || filtersOccasion.length === 0) && (
+            <div className="mb-3">
+              <SkeletonCustom height={35} />
+            </div>
+          )}
+          {filtersOccasion.data &&
+            filtersOccasion.data.map((item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="w-100 btn btn-light btn-lg rounded-5 accent-colors text-accent-colors my-2"
+                >
+                  <select
+                    className="w-100 border-0 bg-transparent text-white"
+                    id="floatingSelect"
+                    value={selectedOccasion}
+                    onChange={handleSelectChangeOccasion}
+                  >
+                    <option selected>Все</option>
+                    <option className="accent-colors border-0" value={item.id}>
+                      {item.name}
+                    </option>
+                  </select>
+                </div>
+              );
+            })}
           <div>
             <button
               type="submit"

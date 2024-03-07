@@ -9,13 +9,11 @@ function Pagination() {
           <ul className="pagination">
             {paginateData.map((item) => {
               return (
-                <>
-                  <li key={item.id} className="page-item">
-                    <Link className="#" to={item.href}>
-                      {item.pagin}
-                    </Link>
-                  </li>
-                </>
+                <li key={item.id} className="page-item">
+                  <Link className="#" to={item.href}>
+                    {item.pagin}
+                  </Link>
+                </li>
               );
             })}
           </ul>
