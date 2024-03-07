@@ -115,7 +115,7 @@ function SideBar() {
                     value={selectedDesigned}
                     onChange={handleSelectChangeDesigned}
                   >
-                    <option selected>Все</option>
+                    <option defaultValue>Все</option>
                     <option className="accent-colors border-0" value={item.id}>
                       {item.name}
                     </option>
@@ -141,7 +141,7 @@ function SideBar() {
                     value={selectedOccasion}
                     onChange={handleSelectChangeOccasion}
                   >
-                    <option selected>Все</option>
+                    <option defaultValue>Все</option>
                     <option className="accent-colors border-0" value={item.id}>
                       {item.name}
                     </option>
