@@ -1,24 +1,19 @@
-//<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useState, useEffect } from "react";
+
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
 
   const [count, setCount] = useState(1);
-  const [total, setTotal] = useState();
-  const [denominationSel, setDenominationSel] = useState();
+  const [total, setTotal] = useState(0);
+  const [denominationSel, setDenominationSel] = useState(0);
 
   useEffect(() => {
     if (denomination) {
       const initialDenomination = parseInt(denomination.split("|")[0], 10);
       setDenominationSel(initialDenomination);
+      setTotal(initialDenomination + initialDenomination * 0.08);
     }
-  }, []);
-
-  useEffect(() => {
-    if (denominationSel !== undefined) {
-      setTotal(denominationSel + denominationSel * 0.08);
-    }
-  }, [denominationSel]);
+  }, [denomination]);
 
   const handleDicrem = () => {
     if (count > 1) {
@@ -45,6 +40,7 @@ function CardDescriptions({ dataCard }) {
   if (!dataCard) {
     return null;
   }
+
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
@@ -59,12 +55,11 @@ function CardDescriptions({ dataCard }) {
               value={denominationSel}
               onChange={handleDenomination}
             >
-              {denomination &&
-                denomination.split("|").map((item, index) => (
-                  <option defaultValue={index[0]} key={index}>
-                    {item}
-                  </option>
-                ))}
+              {denomination.split("|").map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              ))}
             </select>
             <p>
               К оплате — {total}
@@ -105,4 +100,5 @@ function CardDescriptions({ dataCard }) {
     </>
   );
 }
+
 export default CardDescriptions;
