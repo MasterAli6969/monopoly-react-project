@@ -9,7 +9,6 @@ import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
-  // eslint-disable-next-line no-unused-vars
   const [cardData, setCardData] = useState({});
   useEffect(() => {
     const reduxCardData = localStorage.getItem("cardData");
@@ -17,6 +16,7 @@ function CardPage() {
     console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ", parsedData.data);
     if (parsedData && parsedData.data) {
       setCardData(parsedData.data);
+      console.log("Данные состояние данных карты", cardData);
     }
   }, []);
 
