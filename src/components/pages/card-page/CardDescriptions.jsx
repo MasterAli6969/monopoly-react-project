@@ -1,15 +1,49 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
-import { useState } from "react";
+import { useState, useEffect } from "react";
 function CardDescriptions({ dataCard }) {
   const [count, setCount] = useState(1);
+
+  const [total, setTotal] = useState();
+  const [denominationSel, setDenominationSel] = useState();
+
+  useEffect(() => {
+    if (dataCard.data.denomination) {
+      const initialDenomination = parseInt(
+        dataCard.data.denomination.split("|")[0],
+        10
+      );
+      setDenominationSel(initialDenomination);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (denominationSel !== undefined) {
+      setTotal(denominationSel + denominationSel * 0.08);
+    }
+  }, [denominationSel]);
+
   const handleDicrem = () => {
     if (count > 1) {
       setCount(count - 1);
+      setTotal(
+        (prevTotal) => prevTotal - denominationSel - 0.08 * denominationSel
+      );
     }
   };
+
   const handleIncrem = () => {
     setCount(count + 1);
+    setTotal(
+      (prevTotal) => prevTotal + denominationSel + 0.08 * denominationSel
+    );
   };
+
+  const handleDenomination = (event) => {
+    const value = event.target.value;
+    setDenominationSel(parseInt(value, 10));
+    setCount(1);
+  };
+
   if (!dataCard) {
     return null;
   }
@@ -25,14 +59,18 @@ function CardDescriptions({ dataCard }) {
               className="form-select mb-3"
               id="floatingSelect"
               aria-label="Floating label select example"
+              value={denominationSel}
+              onChange={handleDenomination}
             >
               {denomination &&
-                denomination
-                  .split("|")
-                  .map((item, index) => <option key={index}>{item}</option>)}
+                denomination.split("|").map((item, index) => (
+                  <option defaultValue={index[0]} key={index}>
+                    {item}
+                  </option>
+                ))}
             </select>
             <p>
-              К оплате — 540
+              К оплате — {total}
               <i
                 className="bi bi-exclamation-circle"
                 data-bs-toggle="tooltip"

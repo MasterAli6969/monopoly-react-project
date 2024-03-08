@@ -12,7 +12,6 @@ export default function TooltipInitializer() {
     );
     return () => {
       tooltipList.forEach((tooltip) => tooltip.dispose());
-    console.log(tooltipList);
     };
   }, []);
   return null;
