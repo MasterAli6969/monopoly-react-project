@@ -1,6 +1,6 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useState } from "react";
-function CardDescriptions({ dataCard }) {
+function CardDescriptions({ name, description, denomination }) {
   const [count, setCount] = useState(1);
   const handleDicrem = () => {
     if (count > 1) {
@@ -10,10 +10,6 @@ function CardDescriptions({ dataCard }) {
   const handleIncrem = () => {
     setCount(count + 1);
   };
-  if (!dataCard) {
-    return null;
-  }
-  const { name, description, denomination } = dataCard;
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
