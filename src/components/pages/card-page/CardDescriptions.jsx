@@ -28,13 +28,14 @@ function CardDescriptions({ dataCard }) {
               id="floatingSelect"
               aria-label="Floating label select example"
             >
-              {denomination.split("|").map((item, index) => {
+              {/* {denomination.split("|").map((item, index) => {
                 return (
                   <option key={index} defaultValue>
                     {item}
                   </option>
                 );
-              })}
+              })} */}
+              <h1>{denomination}</h1>
             </select>
             <p>
               К оплате — 540
