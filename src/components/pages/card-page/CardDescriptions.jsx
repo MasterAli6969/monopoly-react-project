@@ -13,8 +13,7 @@ function CardDescriptions({ dataCard }) {
   if (!dataCard) {
     return null;
   }
-  const { name, description } = dataCard;
-  const denomination = "100|200|300";
+  const { name, description, denomination } = dataCard;
 
   console.log("Тут должны быть props данные", dataCard);
   return (
@@ -31,7 +30,7 @@ function CardDescriptions({ dataCard }) {
             >
               {denomination.split("|").map((item, index) => {
                 return (
-                  <option key={index} selected>
+                  <option key={index} defaultValue>
                     {item}
                   </option>
                 );
