@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import Breadcrumbs from "./Breadcrumbs";
 import CardSlider from "./CardSlider";
 import CardDescriptions from "./CardDescriptions";
@@ -9,16 +9,16 @@ import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
-  const [cardData, setCardData] = useState({});
-  useEffect(() => {
-    const reduxCardData = localStorage.getItem("cardData");
-    const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
-    console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", parsedData.data);
-    if (parsedData && parsedData.data) {
-      setCardData(parsedData.data);
-      console.log("Данные состояние данных карты", cardData);
-    }
-  }, [cardData]);
+  //const [cardData, setCardData] = useState({});
+  // useEffect(() => {
+  //   const reduxCardData = localStorage.getItem("cardData");
+  //   const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
+  //   console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", parsedData.data);
+  //   if (parsedData && parsedData.data) {
+  //     setCardData(parsedData.data);
+  //     console.log("Данные состояние данных карты", cardData);
+  //   }
+  // }, [cardData]);
 
   return (
     <>
