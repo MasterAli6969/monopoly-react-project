@@ -18,30 +18,25 @@ function CardDescriptions({ dataCard }) {
   console.log("Тут должны быть props данные", dataCard);
   return (
     <>
-      {!!dataCard && (
-        <div>
-          <h1>404 ошибка с данными</h1>
-        </div>
-      )}
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
         <div className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4">
           <div style={{ maxWidth: "130px" }}>
             <h1>{name}</h1>
             <p>Номинал</p>
-            <select
+            <h1>{denomination}</h1>
+            {/* <select
               className="form-select"
               id="floatingSelect"
               aria-label="Floating label select example"
             >
-              {/* {denomination.split("|").map((item, index) => {
+              {denomination.split("|").map((item, index) => {
                 return (
                   <option key={index} defaultValue>
                     {item}
                   </option>
                 );
-              })} */}
-              <h1>{denomination}</h1>
-            </select>
+              })}
+            </select> */}
             <p>
               К оплате — 540
               <i
