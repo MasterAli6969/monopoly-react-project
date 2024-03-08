@@ -13,12 +13,12 @@ function CardPage() {
   useEffect(() => {
     const reduxCardData = localStorage.getItem("cardData");
     const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
-    console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХacsascЕРНЯ", parsedData.data);
+    console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", parsedData.data);
     if (parsedData && parsedData.data) {
       setCardData(parsedData.data);
       console.log("Данные состояние данных карты", cardData);
     }
-  }, []);
+  }, [cardData]);
 
   return (
     <>
