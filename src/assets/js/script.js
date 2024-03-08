@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function TooltipInitializer() {
+export default function TooltipInitializer() {
   useEffect(() => {
     const tooltipTriggerList = document.querySelectorAll(
       '[data-bs-toggle="tooltip"]'
@@ -15,5 +15,3 @@ function TooltipInitializer() {
   }, []);
   return null;
 }
-
-export default TooltipInitializer;

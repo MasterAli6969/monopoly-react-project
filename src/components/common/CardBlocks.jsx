@@ -23,8 +23,6 @@ function CardBlocks() {
         dispatch(setCard(cartData));
         localStorage.setItem("cardData", JSON.stringify(cartData));
         await new Promise((resolve) => setTimeout(resolve, 300));
-        console.log(itemId);
-        alert("Глянько ко в консоль");
         navigate("/catalog/card-page");
       } catch (error) {
         console.error("Error handling item click:", error);
