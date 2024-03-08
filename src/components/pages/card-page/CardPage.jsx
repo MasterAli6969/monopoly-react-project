@@ -14,7 +14,6 @@ function CardPage() {
   useEffect(() => {
     const reduxCardData = localStorage.getItem("cardData");
     const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
-    console.log(parsedData);
     if (parsedData && parsedData.data) {
       setCardData(parsedData.data);
     }

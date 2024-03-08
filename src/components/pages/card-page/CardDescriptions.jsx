@@ -1,8 +1,9 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useState, useEffect } from "react";
 function CardDescriptions({ dataCard }) {
-  const [count, setCount] = useState(1);
+  const { name, description, denomination } = dataCard;
 
+  const [count, setCount] = useState(1);
   const [total, setTotal] = useState();
   const [denominationSel, setDenominationSel] = useState();
 
@@ -44,7 +45,6 @@ function CardDescriptions({ dataCard }) {
   if (!dataCard) {
     return null;
   }
-  const { name, description, denomination } = dataCard;
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
