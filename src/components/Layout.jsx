@@ -8,21 +8,20 @@ import TooltipInitializer from "../assets/js/script";
 export default function Layout() {
   return (
     <>
-      <TooltipInitializer>
-        <ErrorHandler>
-          <NavBar />
-          <Suspense
-            fallback={
-              <div>
-                <LoadingSpinner />
-              </div>
-            }
-          >
-            <Outlet />
-          </Suspense>
-          <Footer />
-        </ErrorHandler>
-      </TooltipInitializer>
+      <TooltipInitializer />
+      <ErrorHandler>
+        <NavBar />
+        <Suspense
+          fallback={
+            <div>
+              <LoadingSpinner />
+            </div>
+          }
+        >
+          <Outlet />
+        </Suspense>
+        <Footer />
+      </ErrorHandler>
     </>
   );
 }
