@@ -13,7 +13,6 @@ function CardPage() {
   useEffect(() => {
     const reduxCardData = localStorage.getItem("cardData");
     const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
-    console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", parsedData.data);
     if (parsedData && parsedData.data) {
       setCardData(parsedData.data);
       console.log("Данные состояние данных карты", cardData);
@@ -28,11 +27,7 @@ function CardPage() {
             <>
               <Breadcrumbs />
               <CardSlider dataImg={cardData.image_url} />
-              <CardDescriptions
-                name={cardData.name}
-                description={cardData.description}
-                denomination={cardData.denomination}
-              />
+              <CardDescriptions dataCard={cardData} />
               <WhoForm />
               <WhoDataForm />
               <RepliesAccordion />
