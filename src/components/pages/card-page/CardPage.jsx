@@ -10,26 +10,15 @@ import OtherDescriptions from "./OtherDescriptions";
 
 function CardPage() {
   const [cardData, setCardData] = useState({});
-  const [storageData, setStorageData] = useState({});
-
   useEffect(() => {
     const reduxCardData = localStorage.getItem("cardData");
     const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
     console.log("ВАМ ТУТ ПРИШЛА КАКАЯ ТО ХЕРНЯ", parsedData.data);
     if (parsedData && parsedData.data) {
-      setStorageData(parsedData.data);
+      setCardData(parsedData.data);
+      console.log("Данные состояние данных карты", cardData);
     }
   }, []);
-
-  useEffect(() => {
-    console.log("Данные состояние данных карты", cardData);
-  }, [cardData]);
-
-  useEffect(() => {
-    if (storageData && Object.keys(storageData).length > 0) {
-      setCardData(storageData);
-    }
-  }, [storageData]);
 
   return (
     <>
@@ -38,7 +27,7 @@ function CardPage() {
           <div className="row justify-content-between">
             <>
               <Breadcrumbs />
-              <CardSlider />
+              <CardSlider dataImg={cardData.image_url} />
               <CardDescriptions />
               <WhoForm />
               <WhoDataForm />
