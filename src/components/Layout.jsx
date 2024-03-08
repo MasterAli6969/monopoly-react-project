@@ -8,8 +8,8 @@ import TooltipInitializer from "../assets/js/script";
 export default function Layout() {
   return (
     <>
-      <TooltipInitializer />
       <ErrorHandler>
+        <TooltipInitializer />
         <NavBar />
         <Suspense
           fallback={

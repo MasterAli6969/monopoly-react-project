@@ -1,3 +1,4 @@
+// TooltipInitializer.js
 import { useEffect } from "react";
 
 export default function TooltipInitializer() {
@@ -6,7 +7,7 @@ export default function TooltipInitializer() {
       '[data-bs-toggle="tooltip"]'
     );
     const tooltipList = [...tooltipTriggerList].map(
-      /* global bootstrap */
+      // eslint-disable-next-line no-undef
       (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
     );
     return () => {
