@@ -7,6 +7,7 @@ import WhoDataForm from "./WhoDataForm";
 import RepliesAccordion from "./RepliesAccordion";
 import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
+import TooltipInitializer from "../../../assets/js/script";
 
 function CardPage() {
   const [cardData, setCardData] = useState({});
@@ -25,6 +26,7 @@ function CardPage() {
         <div className="container _cardPage">
           <div className="row justify-content-between">
             <>
+              <TooltipInitializer />
               <Breadcrumbs />
               <CardSlider dataImg={cardData.image_url} />
               <CardDescriptions dataCard={cardData} />
