@@ -28,7 +28,7 @@ function CardPage() {
               <TooltipInitializer />
               <Breadcrumbs />
               <CardSlider dataImg={cardData.image_url} />
-              <CardDescriptions />
+              <CardDescriptions dataCard={cardData} />
               <WhoForm />
               <WhoDataForm />
               <RepliesAccordion />
