@@ -22,7 +22,7 @@ function CardDescriptions({ dataCard }) {
             <h1>{name}</h1>
             <p>Номинал</p>
             <select
-              className="form-select"
+              className="form-select mb-3"
               id="floatingSelect"
               aria-label="Floating label select example"
             >
