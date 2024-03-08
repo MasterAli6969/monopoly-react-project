@@ -14,8 +14,6 @@ function CardDescriptions({ dataCard }) {
     return null;
   }
   const { name, description, denomination } = dataCard;
-
-  console.log("Тут должны быть props данные", dataCard);
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
@@ -23,8 +21,7 @@ function CardDescriptions({ dataCard }) {
           <div style={{ maxWidth: "130px" }}>
             <h1>{name}</h1>
             <p>Номинал</p>
-            <h1>{denomination}</h1>
-            {/* <select
+            <select
               className="form-select"
               id="floatingSelect"
               aria-label="Floating label select example"
@@ -36,7 +33,7 @@ function CardDescriptions({ dataCard }) {
                   </option>
                 );
               })}
-            </select> */}
+            </select>
             <p>
               К оплате — 540
               <i

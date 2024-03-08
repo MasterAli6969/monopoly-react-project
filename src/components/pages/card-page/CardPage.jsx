@@ -15,7 +15,6 @@ function CardPage() {
     const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
     if (parsedData && parsedData.data) {
       setCardData(parsedData.data);
-      console.log("Данные состояние данных карты", cardData);
     }
   }, []);
 
