@@ -7,11 +7,8 @@ function CardDescriptions({ dataCard }) {
   const [denominationSel, setDenominationSel] = useState();
 
   useEffect(() => {
-    if (dataCard.data.denomination) {
-      const initialDenomination = parseInt(
-        dataCard.data.denomination.split("|")[0],
-        10
-      );
+    if (denomination) {
+      const initialDenomination = parseInt(denomination.split("|")[0], 10);
       setDenominationSel(initialDenomination);
     }
   }, []);
