@@ -18,6 +18,11 @@ function CardDescriptions({ dataCard }) {
   console.log("Тут должны быть props данные", dataCard);
   return (
     <>
+      {!!dataCard && (
+        <div>
+          <h1>404 ошибка с данными</h1>
+        </div>
+      )}
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
         <div className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4">
           <div style={{ maxWidth: "130px" }}>
