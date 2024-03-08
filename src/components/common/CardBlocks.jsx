@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
 import { setCard } from "../../features/cardRenderDataReduce";
 import LoadingSpinner from "./LoadingSpinner";
 function CardBlocks() {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -23,13 +23,13 @@ function CardBlocks() {
         dispatch(setCard(cartData));
         localStorage.setItem("cardData", JSON.stringify(cartData));
         await new Promise((resolve) => setTimeout(resolve, 300));
-        //navigate("/catalog/card-page");
+        navigate("/catalog/card-page");
       } catch (error) {
         console.error("Error handling item click:", error);
         alert("При обработке произошла ошибка");
       }
     },
-    [dispatch]
+    [dispatch, navigate]
   );
 
   return (
@@ -107,13 +107,15 @@ function CardBlocks() {
                                 </div>
                               </div>
                               <div className="d-flex justify-content-around flex-wrap mb-5">
-                                <Link
-                                  to="/catalog/card-page"
+                                <button
+                                  type="button"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
                                   className="btn btn-light btn-lg rounded-5 m-3 modal-body__button-size accent-colors text-accent-colors"
                                   onClick={() => handleItemClick(item.id)}
                                 >
                                   Купить
-                                </Link>
+                                </button>
                               </div>
                               <div className="container-fluid d-flex justify-content-around flex-wrap mb-5 p-3 accent-colors">
                                 <div
