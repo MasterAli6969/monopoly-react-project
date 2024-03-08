@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TooltipInitializer from "../../../assets/js/script";
 import { shoppingCartData } from "./data";
 
 function ShoppingCart() {
@@ -11,9 +12,9 @@ function ShoppingCart() {
   const handleAddition = (howMuch) => {
     setTotal(total + howMuch);
   };
-
   return (
     <div className="container-fluid p-0">
+      <TooltipInitializer />
       {shoppingCartData.length === 0 ? (
         <div className="container rounded-2 p-0 mb-5 bg-accent-colors">
           <div className="d-flex justify-content-center align-items-center rounded-top py-3 accent-colors">
