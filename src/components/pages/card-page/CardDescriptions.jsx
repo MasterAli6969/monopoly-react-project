@@ -7,18 +7,17 @@ function CardDescriptions({ dataCard }) {
   const [total, setTotal] = useState();
   const [denominationSel, setDenominationSel] = useState();
 
+  useEffect(() => {}, []);
+
   useEffect(() => {
     if (denomination) {
       const initialDenomination = parseInt(denomination.split("|")[0], 10);
       setDenominationSel(initialDenomination);
     }
-  }, []);
-
-  useEffect(() => {
     if (denominationSel !== undefined) {
       setTotal(denominationSel + denominationSel * 0.08);
     }
-  }, [denominationSel]);
+  }, []);
 
   const handleDicrem = () => {
     if (count > 1) {
