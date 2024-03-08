@@ -28,7 +28,11 @@ function CardPage() {
             <>
               <Breadcrumbs />
               <CardSlider dataImg={cardData.image_url} />
-              <CardDescriptions name={cardData.name} />
+              <CardDescriptions
+                name={cardData.name}
+                description={cardData.description}
+                denomination={cardData.denomination}
+              />
               <WhoForm />
               <WhoDataForm />
               <RepliesAccordion />
