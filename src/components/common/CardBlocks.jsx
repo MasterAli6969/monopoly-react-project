@@ -31,7 +31,6 @@ function CardBlocks() {
     },
     [dispatch, navigate]
   );
-
   return (
     <>
       <div className="col-12 mt-5 mb-5">

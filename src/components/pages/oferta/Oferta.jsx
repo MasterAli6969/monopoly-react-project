@@ -1,4 +1,5 @@
 import { ofertData } from "./data";
+import "./oferta.css";
 function Oferta() {
   return (
     <>
@@ -13,6 +14,7 @@ function Oferta() {
                 </div>
               );
             })}
+          <div className="red green"></div>
         </div>
       </div>
     </>

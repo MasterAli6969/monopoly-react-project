@@ -1,5 +1,11 @@
 import { dataFaq } from "./data";
+import { incrementCartValue } from "../../../features/cartValueReducer";
+import { useDispatch } from "react-redux";
 function Faq() {
+  const dispatch = useDispatch();
+  const handleOnClick = () => {
+    dispatch(incrementCartValue());
+  };
   return (
     <>
       <div className="container-fluid p-0">
@@ -18,6 +24,13 @@ function Faq() {
               );
             })}
           </ol>
+          <button
+            onClick={handleOnClick}
+            type="button"
+            className="btn btn-primary"
+          >
+            Redux
+          </button>
         </div>
       </div>
     </>
