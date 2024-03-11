@@ -1,10 +1,11 @@
 //<!--------------------- ФОРМА ДЛЯ ОФОРМЛЕНИЯ КАРТЫ ------------------->
 import { useDispatch } from "react-redux";
 import { incrementCartValue } from "../../../features/cartValueReducer";
-function WhoDataForm() {
+function WhoDataForm({ handleSubmitProps }) {
   const dispatch = useDispatch();
   const handleOnClick = () => {
     dispatch(incrementCartValue());
+    handleSubmitProps();
   };
   return (
     <>
@@ -23,7 +24,7 @@ function WhoDataForm() {
           className="d-flex flex-column justify-content-between p-5"
           style={{ height: "400px" }}
         >
-          <form>
+          <div>
             <div className="mb-3">
               <label className="form-label">
                 <p>Имя</p>
@@ -45,11 +46,11 @@ function WhoDataForm() {
                 aria-describedby="emailHelp"
               />
             </div>
-          </form>
+          </div>
 
           <div className="d-flex justify-content-between align-items-center flex-wrap">
             <button
-              type="button"
+              type="submit"
               className="btn btn-light rounded-5 btn-lg my-2 _buttonAddCart over-accent-color text-accent-colors"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
@@ -101,7 +102,7 @@ function WhoDataForm() {
               </div>
             </div>
             <button
-              type="button"
+              type="submit"
               className="btn btn-light btn-lg rounded-5 my-2 over-accent-color text-accent-colors"
             >
               Далее

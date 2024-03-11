@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import Breadcrumbs from "./Breadcrumbs";
 import CardSlider from "./CardSlider";
@@ -12,12 +12,23 @@ import TooltipInitializer from "../../../assets/js/script";
 
 function CardPage() {
   const [cardData, setCardData] = useState({});
+  const [parentData, setParentData] = useState(null);
+  const formRef = useRef(null);
   const cartDataRedus = useSelector((state) => state.cardRenderDataReduce);
   useEffect(() => {
     if (cartDataRedus && cartDataRedus) {
       setCardData(cartDataRedus.data);
     }
   }, []);
+
+  const handleChildData = (childData) => {
+    setParentData(childData);
+    console.log("Данные из детей", parentData);
+  };
+
+  const handleSubmit = () => {
+    formRef.current.submit();
+  };
 
   return (
     <>
@@ -27,12 +38,17 @@ function CardPage() {
             <>
               <TooltipInitializer />
               <Breadcrumbs />
-              {/* Собрать данные карты в  объект */}
-              <CardSlider dataImg={cardData.image_url} />
-              {/* Собрать данные имени и почтssы в объект */}
-              <CardDescriptions dataCard={cardData} />
-              <WhoForm />
-              <WhoDataForm />
+              <form ref={formRef}>
+                {/* Собрать данные карты в  объект */}
+                <CardSlider dataImg={cardData.image_url} />
+                {/* Собрать данные имени и почтssы в объект */}
+                <CardDescriptions
+                  onData={handleChildData}
+                  dataCard={cardData}
+                />
+                <WhoForm />
+                <WhoDataForm handleSubmitProps={handleSubmit} />
+              </form>
               <RepliesAccordion />
               <RecomendCard />
               <OtherDescriptions />
