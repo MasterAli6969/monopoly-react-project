@@ -1,13 +1,10 @@
 //<!--------------------- ФОРМА ДЛЯ ОФОРМЛЕНИЯ КАРТЫ ------------------->
 import { useDispatch } from "react-redux";
 import { incrementCartValue } from "../../../features/cartValueReducer";
-function WhoDataForm({ handleSubmitProps, dataLog }) {
+function WhoDataForm() {
   const dispatch = useDispatch();
-  const handleOnClick = (event) => {
-    event.preventdefault();
+  const handleOnClick = () => {
     dispatch(incrementCartValue());
-    handleSubmitProps();
-    console.log("Обработанные данные", dataLog);
   };
   return (
     <>
@@ -26,7 +23,7 @@ function WhoDataForm({ handleSubmitProps, dataLog }) {
           className="d-flex flex-column justify-content-between p-5"
           style={{ height: "400px" }}
         >
-          <div>
+          <form>
             <div className="mb-3">
               <label className="form-label">
                 <p>Имя</p>
@@ -48,11 +45,11 @@ function WhoDataForm({ handleSubmitProps, dataLog }) {
                 aria-describedby="emailHelp"
               />
             </div>
-          </div>
+          </form>
 
           <div className="d-flex justify-content-between align-items-center flex-wrap">
             <button
-              type="submit"
+              type="button"
               className="btn btn-light rounded-5 btn-lg my-2 _buttonAddCart over-accent-color text-accent-colors"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
@@ -104,7 +101,7 @@ function WhoDataForm({ handleSubmitProps, dataLog }) {
               </div>
             </div>
             <button
-              type="submit"
+              type="button"
               className="btn btn-light btn-lg rounded-5 my-2 over-accent-color text-accent-colors"
             >
               Далее
