@@ -6,6 +6,11 @@ function CardDescriptions({ dataCard }) {
   const [count, setCount] = useState(1);
   const [total, setTotal] = useState();
   const [denominationSel, setDenominationSel] = useState();
+  const [channgeDataCard, setChanngeDataCard] = useState({
+    name: "",
+    denomination: 0,
+    quantity: 0,
+  });
 
   useEffect(() => {
     if (denomination) {
@@ -42,13 +47,25 @@ function CardDescriptions({ dataCard }) {
     setCount(1);
   };
 
+  const handleDataCard = () => {
+    setChanngeDataCard({
+      name: name,
+      denomination: total,
+      quantity: count,
+    });
+    console.log("СБОР ДАННЫХ", channgeDataCard);
+  };
+
   if (!dataCard) {
     return null;
   }
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
-        <div className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4">
+        <form
+          onSubmit={handleDataCard}
+          className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4"
+        >
           <div style={{ maxWidth: "130px" }}>
             <h1>{name}</h1>
             <p>Номинал</p>
@@ -95,7 +112,8 @@ function CardDescriptions({ dataCard }) {
               </button>
             </div>
           </div>
-        </div>
+          <button type="submit">ТЕСТ ОТПРАВКИ</button>
+        </form>
         <ul>
           <li>
             <p>{description}</p>

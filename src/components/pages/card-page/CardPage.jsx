@@ -13,13 +13,9 @@ import TooltipInitializer from "../../../assets/js/script";
 function CardPage() {
   const [cardData, setCardData] = useState({});
   const cartDataRedus = useSelector((state) => state.cardRenderDataReduce);
-  console.log("Данные пришли все норм", cartDataRedus);
   useEffect(() => {
-    // const reduxCardData = localStorage.getItem("cardData");
-    // const parsedData = reduxCardData ? JSON.parse(reduxCardData) : nul;
     if (cartDataRedus && cartDataRedus) {
       setCardData(cartDataRedus.data);
-      console.log("НЕ ПРОШЛИ ПРОВЕРКУ НА ИСТИНУ", cartDataRedus);
     }
   }, []);
 
@@ -33,8 +29,8 @@ function CardPage() {
               <Breadcrumbs />
               {/* Собрать данные карты в  объект */}
               <CardSlider dataImg={cardData.image_url} />
-              <CardDescriptions dataCard={cardData} />
               {/* Собрать данные имени и почтssы в объект */}
+              <CardDescriptions dataCard={cardData} />
               <WhoForm />
               <WhoDataForm />
               <RepliesAccordion />

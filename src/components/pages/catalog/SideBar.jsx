@@ -152,7 +152,6 @@ function SideBar() {
           <div>
             <button
               type="submit"
-              href="user-profile.html"
               className="btn btn-light rounded-5 over-accent-color text-accent-colors w-100 mt-5 fs-5"
             >
               Применить
