@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Breadcrumbs from "./Breadcrumbs";
 import CardSlider from "./CardSlider";
@@ -13,15 +13,14 @@ import TooltipInitializer from "../../../assets/js/script";
 function CardPage() {
   const [cardData, setCardData] = useState({});
   const cartDataRedus = useSelector((state) => state.cardRenderDataReduce);
-  const memoizedCartData = useMemo(() => cartDataRedus, [cartDataRedus]);
   console.log("Данные пришли все норм", cartDataRedus);
   useEffect(() => {
     // const reduxCardData = localStorage.getItem("cardData");
     // const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
-    if (memoizedCartData && memoizedCartData.data) {
-      setCardData(memoizedCartData.data);
+    if (cartDataRedus && cartDataRedus.data) {
+      setCardData(cartDataRedus.data);
     }
-  }, [memoizedCartData]);
+  }, []);
 
   return (
     <>
