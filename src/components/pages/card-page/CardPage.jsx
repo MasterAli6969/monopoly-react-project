@@ -18,7 +18,7 @@ function CardPage() {
     // const reduxCardData = localStorage.getItem("cardData");
     // const parsedData = reduxCardData ? JSON.parse(reduxCardData) : nul;
     if (cartDataRedus && cartDataRedus) {
-      setCardData(cartDataRedus);
+      setCardData(cartDataRedus.data);
       console.log("НЕ ПРОШЛИ ПРОВЕРКУ НА ИСТИНУ", cartDataRedus);
     }
   }, []);
