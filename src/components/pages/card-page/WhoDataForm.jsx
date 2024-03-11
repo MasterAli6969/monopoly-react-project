@@ -1,12 +1,13 @@
 //<!--------------------- ФОРМА ДЛЯ ОФОРМЛЕНИЯ КАРТЫ ------------------->
 import { useDispatch } from "react-redux";
 import { incrementCartValue } from "../../../features/cartValueReducer";
-function WhoDataForm({ handleSubmitProps }) {
+function WhoDataForm({ handleSubmitProps, dataLog }) {
   const dispatch = useDispatch();
   const handleOnClick = (event) => {
     event.preventdefault();
     dispatch(incrementCartValue());
     handleSubmitProps();
+    console.log("Обработанные данные", dataLog);
   };
   return (
     <>

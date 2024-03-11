@@ -12,6 +12,7 @@ import TooltipInitializer from "../../../assets/js/script";
 
 function CardPage() {
   const [cardData, setCardData] = useState({});
+  // eslint-disable-next-line no-unused-vars
   const [parentData, setParentData] = useState(null);
   const formRef = useRef(null);
   const cartDataRedus = useSelector((state) => state.cardRenderDataReduce);
@@ -23,7 +24,6 @@ function CardPage() {
 
   const handleChildData = (childData) => {
     setParentData(childData);
-    console.log("Данные из детей", parentData);
   };
 
   const handleSubmit = () => {
@@ -47,7 +47,10 @@ function CardPage() {
                   dataCard={cardData}
                 />
                 <WhoForm />
-                <WhoDataForm handleSubmitProps={handleSubmit} />
+                <WhoDataForm
+                  dataLog={parentData}
+                  handleSubmitProps={handleSubmit}
+                />
               </form>
               <RepliesAccordion />
               <RecomendCard />
