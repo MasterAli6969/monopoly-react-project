@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import { incrementCartValue } from "../../../features/cartValueReducer";
 function WhoDataForm({ handleSubmitProps }) {
   const dispatch = useDispatch();
-  const handleOnClick = () => {
+  const handleOnClick = (event) => {
+    event.preventdefault();
     dispatch(incrementCartValue());
     handleSubmitProps();
   };

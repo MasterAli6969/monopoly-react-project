@@ -22,7 +22,6 @@ function CardBlocks() {
         const cartData = await getCardPageData({ product_id: itemId });
         dispatch(setCard(cartData));
         navigate("/catalog/card-page");
-        console.log("Данные ушли", cartData);
       } catch (error) {
         console.error("Error handling item click:", error);
         alert("При обработке произошла ошибка");
