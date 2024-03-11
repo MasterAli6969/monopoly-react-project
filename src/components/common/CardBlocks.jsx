@@ -24,6 +24,7 @@ function CardBlocks() {
         // localStorage.setItem("cardData", JSON.stringify(cartData));
         // await new Promise((resolve) => setTimeout(resolve, 300));
         navigate("/catalog/card-page");
+        console.log("Данные ушли", cartData);
       } catch (error) {
         console.error("Error handling item click:", error);
         alert("При обработке произошла ошибка");
