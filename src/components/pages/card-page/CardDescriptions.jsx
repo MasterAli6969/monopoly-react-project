@@ -25,6 +25,15 @@ function CardDescriptions({ dataCard }) {
     }
   }, [denominationSel]);
 
+  useEffect(() => {
+    setChanngeDataCard((prevData) => ({
+      ...prevData,
+      name: name,
+      denomination: total,
+      quantity: count,
+    }));
+  }, [name, total, count]);
+
   const handleDicrem = () => {
     if (count > 1) {
       setCount(count - 1);
@@ -49,11 +58,6 @@ function CardDescriptions({ dataCard }) {
 
   const handleDataCard = (event) => {
     event.preventDefault();
-    setChanngeDataCard({
-      name: name,
-      denomination: total,
-      quantity: count,
-    });
     console.log("СБОР ДАННЫХ", channgeDataCard);
   };
 
