@@ -1,6 +1,6 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useState, useEffect } from "react";
-function CardDescriptions({ dataCard, onData }) {
+function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
 
   const [count, setCount] = useState(1);
@@ -34,10 +34,6 @@ function CardDescriptions({ dataCard, onData }) {
     }));
   }, [name, total, count]);
 
-  useEffect(() => {
-    onData(channgeDataCard);
-  }, [channgeDataCard, onData]);
-
   const handleDicrem = () => {
     if (count > 1) {
       setCount(count - 1);
@@ -60,13 +56,21 @@ function CardDescriptions({ dataCard, onData }) {
     setCount(1);
   };
 
+  const handleDataCard = (event) => {
+    event.preventDefault();
+    console.log("СБОР ДАННЫХ", channgeDataCard);
+  };
+
   if (!dataCard) {
     return null;
   }
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
-        <form className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4">
+        <form
+          onSubmit={handleDataCard}
+          className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4"
+        >
           <div style={{ maxWidth: "130px" }}>
             <h1>{name}</h1>
             <p>Номинал</p>
