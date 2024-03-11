@@ -34,7 +34,7 @@ function CardPage() {
               {/* Собрать данные карты в  объект */}
               <CardSlider dataImg={cardData.image_url} />
               <CardDescriptions dataCard={cardData} />
-              {/* Собрать данные имени и почты в объект */}
+              {/* Собрать данные имени и почтssы в объект */}
               <WhoForm />
               <WhoDataForm />
               <RepliesAccordion />
