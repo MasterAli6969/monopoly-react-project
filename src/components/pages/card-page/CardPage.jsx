@@ -31,13 +31,11 @@ function CardPage() {
               <TooltipInitializer />
               <Breadcrumbs />
               {/* Собрать данные карты в  объект */}
-              <form>
-                <CardSlider dataImg={cardData.image_url} />
-                <CardDescriptions dataCard={cardData} />
-                {/* Собрать данные имени и почты в объект */}
-                <WhoForm />
-                <WhoDataForm />
-              </form>
+              <CardSlider dataImg={cardData.image_url} />
+              <CardDescriptions dataCard={cardData} />
+              {/* Собрать данные имени и почты в объект */}
+              <WhoForm />
+              <WhoDataForm />
               <RepliesAccordion />
               <RecomendCard />
               <OtherDescriptions />
