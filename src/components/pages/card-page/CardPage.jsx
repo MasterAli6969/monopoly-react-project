@@ -13,7 +13,7 @@ import TooltipInitializer from "../../../assets/js/script";
 function CardPage() {
   const [cardData, setCardData] = useState({});
   const cartDataRerus = useSelector((state) => state.cardRenderDataReduce);
-  console.log(cartDataRerus);
+  console.log("Данные пришли все норм", cartDataRerus);
   useEffect(() => {
     // const reduxCardData = localStorage.getItem("cardData");
     // const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
