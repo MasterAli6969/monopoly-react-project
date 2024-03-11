@@ -17,8 +17,8 @@ function CardPage() {
   useEffect(() => {
     // const reduxCardData = localStorage.getItem("cardData");
     // const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
-    if (cardData && cardData.data) {
-      setCardData(cardData.data);
+    if (cartDataRerus && cartDataRerus.data) {
+      setCardData(cartDataRerus.data);
     }
   }, []);
 
