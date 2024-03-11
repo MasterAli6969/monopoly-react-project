@@ -21,8 +21,8 @@ function CardBlocks() {
       try {
         const cartData = await getCardPageData({ product_id: itemId });
         dispatch(setCard(cartData));
-        localStorage.setItem("cardData", JSON.stringify(cartData));
-        await new Promise((resolve) => setTimeout(resolve, 300));
+        // localStorage.setItem("cardData", JSON.stringify(cartData));
+        // await new Promise((resolve) => setTimeout(resolve, 300));
         navigate("/catalog/card-page");
       } catch (error) {
         console.error("Error handling item click:", error);
