@@ -1,5 +1,7 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setCartData } from "../../../features/shoppinCartRenderReduser";
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
 
@@ -11,6 +13,7 @@ function CardDescriptions({ dataCard }) {
     denomination: 0,
     quantity: 0,
   });
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (denomination) {
@@ -56,14 +59,20 @@ function CardDescriptions({ dataCard }) {
     setCount(1);
   };
 
+  const newDataCollection = useSelector(
+    (state) => state.shoppinCartRenderReduser
+  );
+
   const handleDataCard = (event) => {
     event.preventDefault();
-    console.log("СБОР ДАННЫХ", channgeDataCard);
+    dispatch(setCartData(channgeDataCard));
+    console.log(newDataCollection);
   };
 
   if (!dataCard) {
     return null;
   }
+
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
@@ -117,6 +126,7 @@ function CardDescriptions({ dataCard }) {
               </button>
             </div>
           </div>
+          <button type="submit">Test Redux Dispatch</button>
         </form>
         <ul>
           <li>

@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartValueReducer from "./cartValueReducer";
 import cardRenderDataReduce from "./cardRenderDataReduce";
+import shoppinCartRenderReduser from "./shoppinCartRenderReduser";
 import storage from "redux-persist/lib/storage";
 import { persistStore,
   persistReducer,
@@ -20,6 +21,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   cartValueReducer: cartValueReducer,
   cardRenderDataReduce: cardRenderDataReduce,
+  shoppinCartRenderReduser:shoppinCartRenderReduser
 })
 
 const persistedReducer = persistReducer(persistConfig,rootReducer)
