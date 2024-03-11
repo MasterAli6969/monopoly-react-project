@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {};
 
-const cardData = createSlice({
-  name: "dataCardReduser",
+const cardRenderData = createSlice({
+  name: "cardRenderDataReduce",
   initialState,
   reducers: {
     setCard(state, action) {
@@ -12,6 +12,6 @@ const cardData = createSlice({
   },
 });
 
-export const { setCard } = cardData.actions;
+export const { setCard } = cardRenderData.actions;
 
-export default cardData.reducer;
+export default cardRenderData.reducer;

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getCatalogData } from "../../services/api/apiCatalog";
 import { getCardPageData } from "../../services/api/apiCatalog";
-import { setCard } from "../../features/dataCardReduser";
+import { setCard } from "../../features/cardRenderDataReduce";
 import LoadingSpinner from "./LoadingSpinner";
 function CardBlocks() {
   const navigate = useNavigate();

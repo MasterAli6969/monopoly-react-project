@@ -12,14 +12,14 @@ import TooltipInitializer from "../../../assets/js/script";
 
 function CardPage() {
   const [cardData, setCardData] = useState({});
-  const cartDataReduser = useSelector((state) => state.dataCardReduser);
-  console.log("Данные пришли все норм", cartDataReduser);
+  const cartDataRedus = useSelector((state) => state.cardRenderDataReduce);
+  console.log("Данные пришли все норм", cartDataRedus);
   useEffect(() => {
     // const reduxCardData = localStorage.getItem("cardData");
     // const parsedData = reduxCardData ? JSON.parse(reduxCardData) : nul;
-    if (cartDataReduser && cartDataReduser) {
-      setCardData(cartDataReduser);
-      console.log("НЕ ПРОШЛИ ПРОВЕРКУ НА ИСТИНУ", cartDataReduser);
+    if (cartDataRedus && cartDataRedus) {
+      setCardData(cartDataRedus);
+      console.log("НЕ ПРОШЛИ ПРОВЕРКУ НА ИСТИНУ", cartDataRedus);
     }
   }, []);
 
