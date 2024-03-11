@@ -11,7 +11,7 @@ function WhoForm() {
           className="d-flex flex-column justify-content-between p-5"
           style={{ height: "400px" }}
         >
-          <form>
+          <div>
             <div className="form-check bg-accent-colors">
               <input
                 className="form-check-input"
@@ -31,7 +31,7 @@ function WhoForm() {
               />
               <label className="form-check-label">Default checked radio</label>
             </div>
-          </form>
+          </div>
           <div>
             <hr />
             <p>

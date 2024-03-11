@@ -48,7 +48,7 @@ function CardDescriptions({ dataCard }) {
   return (
     <>
       <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
-        <form className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4">
+        <div className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4">
           <div style={{ maxWidth: "130px" }}>
             <h1>{name}</h1>
             <p>Номинал</p>
@@ -95,7 +95,7 @@ function CardDescriptions({ dataCard }) {
               </button>
             </div>
           </div>
-        </form>
+        </div>
         <ul>
           <li>
             <p>{description}</p>

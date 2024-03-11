@@ -30,8 +30,10 @@ function CardPage() {
             <>
               <TooltipInitializer />
               <Breadcrumbs />
+              {/* Собрать данные карты в  объект */}
               <CardSlider dataImg={cardData.image_url} />
               <CardDescriptions dataCard={cardData} />
+              {/* Собрать данные имени и почты массив строк */}
               <WhoForm />
               <WhoDataForm />
               <RepliesAccordion />
