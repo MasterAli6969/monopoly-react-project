@@ -16,7 +16,7 @@ function CardPage() {
   console.log("Данные пришли все норм", cartDataRedus);
   useEffect(() => {
     // const reduxCardData = localStorage.getItem("cardData");
-    // const parsedData = reduxCardData ? JSON.parse(reduxCardData) : null;
+    // const parsedData = reduxCardData ? JSON.parse(reduxCardData) : nul;
     if (cartDataRedus && cartDataRedus.data) {
       setCardData(cartDataRedus.data);
     }
