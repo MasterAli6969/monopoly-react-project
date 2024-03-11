@@ -1,7 +1,3 @@
-import { configureStore } from "@reduxjs/toolkit";
-import cartValueReducer from "./cartValueReducer";
-//import dataCardReduser from "./dataCardReduser";
-import storage from "redux-persist/lib/storage";
 import { persistStore,
   persistReducer,
   FLUSH,
@@ -10,6 +6,10 @@ import { persistStore,
   PERSIST,
   PURGE,
   REGISTER, } from "redux-persist";
+import { configureStore } from "@reduxjs/toolkit";
+import cartValueReducer from "./cartValueReducer";
+import dataCardReduser from "./dataCardReduser";
+import storage from "redux-persist/lib/storage";
 import { combineReducers } from "@reduxjs/toolkit";
 
 const persistConfig = {
@@ -19,6 +19,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   cartValueReducer: cartValueReducer,
+  dataCardReduser: dataCardReduser,
 })
 
 const persistedReducer = persistReducer(persistConfig,rootReducer)
