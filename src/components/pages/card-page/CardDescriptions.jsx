@@ -67,6 +67,7 @@ function CardDescriptions({ dataCard }) {
   // const newDataCollection = useSelector(
   //   (state) => state.shoppinCartRenderReduser
   // );
+
   return (
     <>
       {dataCard && (
