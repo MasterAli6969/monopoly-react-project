@@ -47,7 +47,8 @@ function CardDescriptions({ dataCard }) {
     setCount(1);
   };
 
-  const handleDataCard = () => {
+  const handleDataCard = (event) => {
+    event.preventDefault();
     setChanngeDataCard({
       name: name,
       denomination: total,
