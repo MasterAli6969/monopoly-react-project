@@ -61,12 +61,7 @@ function CardDescriptions({ dataCard }) {
   const handleDataCard = (event) => {
     event.preventDefault();
     dispatch(setCartData(channgeDataCard));
-    console.log(dispatch(setCartData(channgeDataCard)));
   };
-
-  // const newDataCollection = useSelector(
-  //   (state) => state.shoppinCartRenderReduser
-  // );
 
   return (
     <>
