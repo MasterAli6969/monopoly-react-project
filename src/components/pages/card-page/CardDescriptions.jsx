@@ -61,6 +61,7 @@ function CardDescriptions({ dataCard }) {
   const handleDataCard = (event) => {
     event.preventDefault();
     dispatch(setCartData(channgeDataCard));
+    console.log(dispatch(setCartData(channgeDataCard)));
   };
 
   return (
