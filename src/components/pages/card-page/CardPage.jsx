@@ -19,9 +19,9 @@ function CardPage() {
     }
   }, []);
 
-  const handleDataUpdate = (data) => {
-    console.log(data);
-  };
+  // const handleDataUpdate = (data) => {
+  //   console.log(data);
+  // };
 
   return (
     <>
@@ -34,10 +34,7 @@ function CardPage() {
               {/* Собрать данные карты в  объект */}
               <CardSlider dataImg={cardData.image_url} />
               {/* Собрать данные имени и почтssы в объект */}
-              <CardDescriptions
-                dataCartUpdate={handleDataUpdate}
-                dataCard={cardData}
-              />
+              <CardDescriptions dataCard={cardData} />
               <WhoForm />
               <WhoDataForm />
               <RepliesAccordion />

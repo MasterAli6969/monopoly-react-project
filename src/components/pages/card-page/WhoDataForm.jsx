@@ -1,10 +1,14 @@
 //<!--------------------- ФОРМА ДЛЯ ОФОРМЛЕНИЯ КАРТЫ ------------------->
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { incrementCartValue } from "../../../features/cartValueReducer";
 function WhoDataForm() {
   const dispatch = useDispatch();
+  const shoppinCartReduser = useSelector(
+    (state) => state.shoppinCartRenderReduser
+  );
   const handleOnClick = () => {
     dispatch(incrementCartValue());
+    console.log(shoppinCartReduser);
   };
   return (
     <>

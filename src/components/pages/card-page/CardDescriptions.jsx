@@ -1,6 +1,8 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useState, useEffect } from "react";
-function CardDescriptions({ dataCard, dataCartUpdate }) {
+import { useDispatch } from "react-redux";
+import { setCartData } from "../../../features/shoppinCartRenderReduser";
+function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
   const [count, setCount] = useState(1);
   const [total, setTotal] = useState();
@@ -10,7 +12,7 @@ function CardDescriptions({ dataCard, dataCartUpdate }) {
     denomination: 0,
     quantity: 0,
   });
-
+  const dispatch = useDispatch();
   useEffect(() => {
     if (denomination) {
       const initialDenomination = parseInt(denomination.split("|")[0], 10);
@@ -31,6 +33,7 @@ function CardDescriptions({ dataCard, dataCartUpdate }) {
       denomination: total,
       quantity: count,
     }));
+    dispatch(setCartData(channgeDataCard));
   }, [name, total, count]);
 
   const handleDicrem = () => {
@@ -53,10 +56,6 @@ function CardDescriptions({ dataCard, dataCartUpdate }) {
     const value = event.target.value;
     setDenominationSel(parseInt(value, 10));
     setCount(1);
-  };
-
-  const handleDataCardUpdate = () => {
-    dataCartUpdate(channgeDataCard);
   };
 
   return (
