@@ -1,8 +1,6 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setCartData } from "../../../features/shoppinCartRenderReduser";
-function CardDescriptions({ dataCard }) {
+function CardDescriptions({ dataCard, dataCartUpdate }) {
   const { name, description, denomination } = dataCard;
   const [count, setCount] = useState(1);
   const [total, setTotal] = useState();
@@ -12,7 +10,6 @@ function CardDescriptions({ dataCard }) {
     denomination: 0,
     quantity: 0,
   });
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (denomination) {
@@ -58,20 +55,15 @@ function CardDescriptions({ dataCard }) {
     setCount(1);
   };
 
-  const handleDataCard = (event) => {
-    event.preventDefault();
-    dispatch(setCartData(channgeDataCard));
-    console.log(dispatch(setCartData(channgeDataCard)));
+  const handleDataCardUpdate = () => {
+    dataCartUpdate(channgeDataCard);
   };
 
   return (
     <>
       {dataCard && (
         <div className="col-md-6 col-sm-12 mb-5 bg-accent-colors rounded-5">
-          <form
-            onSubmit={handleDataCard}
-            className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4"
-          >
+          <div className="w-100 d-flex flex-wrap justify-content-between align-items-center pt-5 px-3 mb-4">
             <div style={{ maxWidth: "130px" }}>
               <h1>{name}</h1>
               <p>Номинал</p>
@@ -118,8 +110,7 @@ function CardDescriptions({ dataCard }) {
                 </button>
               </div>
             </div>
-            <button type="submit">Test Redux Dispatch</button>
-          </form>
+          </div>
           <ul>
             <li>
               <p>{description}</p>

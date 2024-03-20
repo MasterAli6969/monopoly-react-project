@@ -19,6 +19,10 @@ function CardPage() {
     }
   }, []);
 
+  const handleDataUpdate = (data) => {
+    console.log(data);
+  };
+
   return (
     <>
       <div className="container-fluid p-0">
@@ -30,7 +34,10 @@ function CardPage() {
               {/* Собрать данные карты в  объект */}
               <CardSlider dataImg={cardData.image_url} />
               {/* Собрать данные имени и почтssы в объект */}
-              <CardDescriptions dataCard={cardData} />
+              <CardDescriptions
+                dataCartUpdate={handleDataUpdate}
+                dataCard={cardData}
+              />
               <WhoForm />
               <WhoDataForm />
               <RepliesAccordion />

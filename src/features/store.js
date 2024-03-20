@@ -3,30 +3,32 @@ import cartValueReducer from "./cartValueReducer";
 import cardRenderDataReduce from "./cardRenderDataReduce";
 import shoppinCartRenderReduser from "./shoppinCartRenderReduser";
 import storage from "redux-persist/lib/storage";
-import { persistStore,
+import {
+  persistStore,
   persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
-  REGISTER, } from "redux-persist";
+  REGISTER,
+} from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
 
 const persistConfig = {
-  key:"root",
-  storage
-}
+  key: "root",
+  storage,
+};
 
 const rootReducer = combineReducers({
   cartValueReducer: cartValueReducer,
   cardRenderDataReduce: cardRenderDataReduce,
-  shoppinCartRenderReduser:shoppinCartRenderReduser
-})
+  shoppinCartRenderReduser: shoppinCartRenderReduser,
+});
 
-const persistedReducer = persistReducer(persistConfig,rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
- const store = configureStore({
+const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -37,7 +39,6 @@ const persistedReducer = persistReducer(persistConfig,rootReducer)
   devTools: true,
 });
 
-export const persistor =  persistStore(store)
-
+export const persistor = persistStore(store);
 
 export default store;
