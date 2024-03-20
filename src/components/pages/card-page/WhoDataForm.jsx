@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCartData } from "../../../features/shoppinCartRenderReduser";
 import { incrementCartValue } from "../../../features/cartValueReducer";
+import { Link } from "react-router-dom";
 function WhoDataForm() {
   const [shoppinCart, setShoppinCart] = useState({});
   const dispatch = useDispatch();
@@ -91,12 +92,12 @@ function WhoDataForm() {
                   <div className="modal-body">
                     <div className="d-flex flex-column justify-content-center align-items-center">
                       <h5>Перейти в карзину?</h5>
-                      <a
+                      <Link
                         className="w-75 btn btn-light btn-lg rounded-5 p-2 m-3 over-accent-color text-accent-colors"
-                        href="shopping-full-cart.html"
+                        to="/shopping-cart"
                       >
                         Да
-                      </a>
+                      </Link>
 
                       <button
                         type="button"
