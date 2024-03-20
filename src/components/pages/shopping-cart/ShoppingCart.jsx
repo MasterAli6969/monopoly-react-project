@@ -1,16 +1,20 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import TooltipInitializer from "../../../assets/js/script";
 import { shoppingCartData } from "./data";
 
 function ShoppingCart() {
   const [total, setTotal] = useState(0);
-
+  const shoppinCartReduser = useSelector(
+    (state) => state.shoppinCartRenderReduser
+  );
   const handleDeduction = (howMuch) => {
     setTotal(total - howMuch);
   };
 
   const handleAddition = (howMuch) => {
     setTotal(total + howMuch);
+    console.log(shoppinCartReduser);
   };
   return (
     <div className="container-fluid p-0">

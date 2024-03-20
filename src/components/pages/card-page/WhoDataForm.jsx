@@ -1,10 +1,11 @@
 //<!--------------------- ФОРМА ДЛЯ ОФОРМЛЕНИЯ КАРТЫ ------------------->
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { setCartData } from "../../../features/shoppinCartRenderReduser";
 import { incrementCartValue } from "../../../features/cartValueReducer";
 function WhoDataForm() {
   const [shoppinCart, setShoppinCart] = useState({});
-  const dispatchCardCaunt = useDispatch();
+  const dispatch = useDispatch();
   const shoppinCartReduser = useSelector(
     (state) => state.shoppinCartRenderReduser
   );
@@ -12,8 +13,8 @@ function WhoDataForm() {
     setShoppinCart(shoppinCartReduser);
   }, [shoppinCartReduser]);
   const handleOnClick = () => {
-    dispatchCardCaunt(incrementCartValue());
-    console.log(shoppinCart);
+    dispatch(incrementCartValue());
+    dispatch(setCartData(shoppinCart));
   };
   return (
     <>
