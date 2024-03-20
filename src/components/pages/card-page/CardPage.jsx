@@ -17,7 +17,7 @@ function CardPage() {
     if (cartDataRedus && cartDataRedus) {
       setCardData(cartDataRedus.data);
     }
-  }, []);
+  }, [cartDataRedus]);
 
   // const handleDataUpdate = (data) => {
   //   console.log(data);
