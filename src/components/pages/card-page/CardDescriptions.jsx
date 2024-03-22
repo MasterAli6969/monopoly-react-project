@@ -43,8 +43,10 @@ function CardDescriptions({ dataCard }) {
   };
 
   const handleDicrem = () => {
-    dispatch(setCountDicrem(denominationStateRedux));
-    dispatch(setTotalDicrem(denominationStateRedux));
+    if (countStateRedux > 1) {
+      dispatch(setCountDicrem(denominationStateRedux));
+      dispatch(setTotalDicrem(denominationStateRedux));
+    }
   };
 
   const handleDenomination = (event) => {
