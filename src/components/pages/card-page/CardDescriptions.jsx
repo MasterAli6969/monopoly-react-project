@@ -5,7 +5,6 @@ import {
   setDenomination,
   setCountIncrem,
   setCountDicrem,
-  setDenominationSel,
 } from "../../../features/shoppinCartRenderReduser";
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
@@ -25,7 +24,7 @@ function CardDescriptions({ dataCard }) {
   useEffect(() => {
     if (denomination) {
       const initialDenomination = parseInt(denomination.split("|")[0], 10);
-      dispatch(setDenominationSel(initialDenomination));
+      dispatch(setDenomination(initialDenomination));
     }
   }, [denomination, dispatch]);
 
