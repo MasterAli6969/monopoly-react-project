@@ -29,7 +29,7 @@ function CardDescriptions({ dataCard }) {
       dispatch(setDenomination(initialDenomination));
       dispatch(setTotal(denominationStateRedux));
     }
-  }, [denomination, dispatch, denominationStateRedux]);
+  }, [denomination, dispatch]);
 
   const handleIncrem = () => {
     dispatch(setCountIncrem());
