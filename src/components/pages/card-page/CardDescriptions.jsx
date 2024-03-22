@@ -1,4 +1,3 @@
-//<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -6,18 +5,14 @@ import {
   setCountIncrem,
   setCountDicrem,
 } from "../../../features/shoppinCartRenderReduser";
+
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
-  //const [total, setTotal] = useState();
-  //const [denominationSel, setDenominationSel] = useState();
   const countStateRedux = useSelector(
     (state) => state.shoppinCartRenderReduser.count
   );
-  const denominationStateRedux = useSelector(
-    (state) => state.shoppinCartRenderReduser.count
-  );
   const totalStateRedux = useSelector(
-    (state) => state.shoppinCartRenderReduser.count
+    (state) => state.shoppinCartRenderReduser.total
   );
   const dispatch = useDispatch();
 
@@ -28,18 +23,12 @@ function CardDescriptions({ dataCard }) {
     }
   }, [denomination, dispatch]);
 
-  // useEffect(() => {
-  //   if (denominationSel !== undefined) {
-  //     setTotal(denominationSel + denominationSel * 0.08);
-  //   }
-  // }, [denominationSel]);
-
   const handleDicrem = () => {
-    dispatch(setCountDicrem(denominationStateRedux));
+    dispatch(setCountDicrem());
   };
 
   const handleIncrem = () => {
-    dispatch(setCountIncrem(denominationStateRedux));
+    dispatch(setCountIncrem());
   };
 
   const handleDenomination = (event) => {
@@ -59,12 +48,12 @@ function CardDescriptions({ dataCard }) {
                 className="form-select mb-3"
                 id="floatingSelect"
                 aria-label="Floating label select example"
-                value={denominationStateRedux}
+                value={denomination}
                 onChange={handleDenomination}
               >
                 {denomination &&
                   denomination.split("|").map((item, index) => (
-                    <option defaultValue={index[0]} key={index}>
+                    <option value={item} key={index}>
                       {item}
                     </option>
                   ))}
@@ -109,4 +98,5 @@ function CardDescriptions({ dataCard }) {
     </>
   );
 }
+
 export default CardDescriptions;
