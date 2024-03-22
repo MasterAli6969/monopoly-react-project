@@ -1,21 +1,30 @@
 //<!--------------------- ФОРМА ДЛЯ ОФОРМЛЕНИЯ КАРТЫ ------------------->
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setCartData } from "../../../features/shoppinCartRenderReduser";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  setRecipient,
+  setRecipientEmail,
+} from "../../../features/shoppinCartRenderReduser";
 import { incrementCartValue } from "../../../features/cartValueReducer";
 import { Link } from "react-router-dom";
 function WhoDataForm() {
-  const [shoppinCart, setShoppinCart] = useState({});
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+
   const dispatch = useDispatch();
-  const shoppinCartReduser = useSelector(
-    (state) => state.shoppinCartRenderReduser
-  );
-  useEffect(() => {
-    setShoppinCart(shoppinCartReduser);
-  }, [shoppinCartReduser]);
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleMailChange = (event) => {
+    setMail(event.target.value);
+  };
+
   const handleOnClick = () => {
     dispatch(incrementCartValue());
-    dispatch(setCartData(shoppinCart));
+    dispatch(setRecipient(name));
+    dispatch(setRecipientEmail(mail));
   };
   return (
     <>
@@ -43,6 +52,8 @@ function WhoDataForm() {
                 type="text"
                 className="form-control"
                 id="exampleInputPassword1"
+                value={name}
+                onChange={handleNameChange}
               />
             </div>
             <div className="mb-3">
@@ -54,6 +65,8 @@ function WhoDataForm() {
                 className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
+                value={mail}
+                onChange={handleMailChange}
               />
             </div>
           </form>
@@ -111,13 +124,13 @@ function WhoDataForm() {
                 </div>
               </div>
             </div>
-            <button
+            {/* <button
               type="button"
               className="btn btn-light btn-lg rounded-5 my-2 over-accent-color text-accent-colors"
             >
               Далее
               <i className="bi bi-arrow-right-circle-fill text-accent-colors"></i>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

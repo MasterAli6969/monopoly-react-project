@@ -1,17 +1,18 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setCartData } from "../../../features/shoppinCartRenderReduser";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setDenomination,
+  setCountIncrem,
+  setCountDicrem,
+} from "../../../features/shoppinCartRenderReduser";
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
-  const [count, setCount] = useState(1);
   const [total, setTotal] = useState();
   const [denominationSel, setDenominationSel] = useState();
-  const [channgeDataCard, setChanngeDataCard] = useState({
-    total: 0,
-    count: 1,
-  });
+  const count = useSelector((state) => state.shoppinCartRenderReduser.count);
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (denomination) {
       const initialDenomination = parseInt(denomination.split("|")[0], 10);
@@ -25,35 +26,23 @@ function CardDescriptions({ dataCard }) {
     }
   }, [denominationSel]);
 
-  useEffect(() => {
-    setChanngeDataCard((prevData) => ({
-      ...prevData,
-      total: total,
-      count: count,
-    }));
-    dispatch(setCartData(channgeDataCard));
-  }, [total, count]);
-
   const handleDicrem = () => {
-    if (count > 1) {
-      setCount(count - 1);
-      setTotal(
-        (prevTotal) => prevTotal - denominationSel - 0.08 * denominationSel
-      );
-    }
+    dispatch(setCountDicrem());
+    setTotal(
+      (prevTotal) => prevTotal - denominationSel - 0.08 * denominationSel
+    );
   };
 
   const handleIncrem = () => {
-    setCount(count + 1);
+    dispatch(setCountIncrem());
     setTotal(
       (prevTotal) => prevTotal + denominationSel + 0.08 * denominationSel
     );
   };
 
   const handleDenomination = (event) => {
-    const value = event.target.value;
-    setDenominationSel(parseInt(value, 10));
-    setCount(1);
+    const value = parseInt(event.target.value, 10);
+    dispatch(setDenomination(value));
   };
 
   return (
