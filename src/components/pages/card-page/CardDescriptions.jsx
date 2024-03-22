@@ -31,12 +31,6 @@ function CardDescriptions({ dataCard }) {
     }
   }, [denomination, dispatch]);
 
-  // useEffect(() => {
-  //   if (denominationStateRedux !== undefined) {
-  //     setTotal(denominationSel + denominationSel * 0.08);
-  //   }
-  // }, [denominationStateRedux]);
-
   const handleIncrem = () => {
     dispatch(setCountIncrem());
     dispatch(setTotalIncrem(denominationStateRedux));
