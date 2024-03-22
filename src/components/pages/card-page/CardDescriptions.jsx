@@ -27,9 +27,9 @@ function CardDescriptions({ dataCard }) {
     if (denomination) {
       const initialDenomination = parseInt(denomination.split("|")[0], 10);
       dispatch(setDenomination(initialDenomination));
-      dispatch(setTotal(initialDenomination));
+      dispatch(setTotal(denominationStateRedux));
     }
-  }, [denomination, dispatch]);
+  }, [denomination, dispatch, denominationStateRedux]);
 
   const handleIncrem = () => {
     dispatch(setCountIncrem());
