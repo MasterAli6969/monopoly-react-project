@@ -36,10 +36,14 @@ const shoppinCartRenderReduser = createSlice({
 
     setCountIncrem(state) {
       state.count = state.count + 1;
+      state.total =
+        state.total - state.denomination - 0.08 * state.denomination;
     },
     setCountDicrem(state) {
       if (state.count > 1) {
         state.count = state.count - 1;
+        state.total =
+          state.total - state.denomination - 0.08 * state.denomination;
       }
     },
 

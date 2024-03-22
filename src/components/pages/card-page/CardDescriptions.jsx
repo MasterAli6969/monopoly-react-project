@@ -1,43 +1,46 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setDenomination,
   setCountIncrem,
   setCountDicrem,
+  setDenominationSel,
 } from "../../../features/shoppinCartRenderReduser";
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
-  const [total, setTotal] = useState();
-  const [denominationSel, setDenominationSel] = useState();
-  const count = useSelector((state) => state.shoppinCartRenderReduser.count);
+  //const [total, setTotal] = useState();
+  //const [denominationSel, setDenominationSel] = useState();
+  const countStateRedux = useSelector(
+    (state) => state.shoppinCartRenderReduser.count
+  );
+  const denominationStateRedux = useSelector(
+    (state) => state.shoppinCartRenderReduser.count
+  );
+  const totalStateRedux = useSelector(
+    (state) => state.shoppinCartRenderReduser.count
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (denomination) {
       const initialDenomination = parseInt(denomination.split("|")[0], 10);
-      setDenominationSel(initialDenomination);
+      dispatch(setDenominationSel(initialDenomination));
     }
-  }, [denomination]);
+  }, [denomination, dispatch]);
 
-  useEffect(() => {
-    if (denominationSel !== undefined) {
-      setTotal(denominationSel + denominationSel * 0.08);
-    }
-  }, [denominationSel]);
+  // useEffect(() => {
+  //   if (denominationSel !== undefined) {
+  //     setTotal(denominationSel + denominationSel * 0.08);
+  //   }
+  // }, [denominationSel]);
 
   const handleDicrem = () => {
-    dispatch(setCountDicrem());
-    setTotal(
-      (prevTotal) => prevTotal - denominationSel - 0.08 * denominationSel
-    );
+    dispatch(setCountDicrem(denominationStateRedux));
   };
 
   const handleIncrem = () => {
-    dispatch(setCountIncrem());
-    setTotal(
-      (prevTotal) => prevTotal + denominationSel + 0.08 * denominationSel
-    );
+    dispatch(setCountIncrem(denominationStateRedux));
   };
 
   const handleDenomination = (event) => {
@@ -57,7 +60,7 @@ function CardDescriptions({ dataCard }) {
                 className="form-select mb-3"
                 id="floatingSelect"
                 aria-label="Floating label select example"
-                value={denominationSel}
+                value={denominationStateRedux}
                 onChange={handleDenomination}
               >
                 {denomination &&
@@ -68,7 +71,7 @@ function CardDescriptions({ dataCard }) {
                   ))}
               </select>
               <p>
-                К оплате — {total}
+                К оплате — {totalStateRedux}
                 <i
                   className="bi bi-exclamation-circle"
                   data-bs-toggle="tooltip"
@@ -86,7 +89,7 @@ function CardDescriptions({ dataCard }) {
                 >
                   <i className="bi bi-dash-circle"></i>
                 </button>
-                <p className="mx-3 mb-0 _quantityProducts">{count}</p>
+                <p className="mx-3 mb-0 _quantityProducts">{countStateRedux}</p>
                 <button
                   type="button"
                   className="btn btn-outline-secondary _addDuplicateProducts"
