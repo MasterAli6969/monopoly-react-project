@@ -27,7 +27,6 @@ function CardDescriptions({ dataCard }) {
     if (denomination) {
       const initialDenomination = parseInt(denomination.split("|")[0], 10);
       dispatch(setDenomination(initialDenomination));
-      dispatch(setTotal(denominationStateRedux));
     }
   }, [denomination, dispatch]);
 
@@ -46,6 +45,7 @@ function CardDescriptions({ dataCard }) {
   const handleDenomination = (event) => {
     const value = parseInt(event.target.value, 10);
     dispatch(setDenomination(value));
+    dispatch(setTotal(value));
     dispatch(setCountToDefault());
   };
 

@@ -34,8 +34,8 @@ const shoppinCartRenderReduser = createSlice({
       state.denomination = action.payload;
     },
 
-    setTotal(state) {
-      state.total = state.denomination + state.denomination * 0.08;
+    setTotal(state, action) {
+      state.total = action.payload + action.payload * 0.08;
     },
 
     setCountIncrem(state) {
