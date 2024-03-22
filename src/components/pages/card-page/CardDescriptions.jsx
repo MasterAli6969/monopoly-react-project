@@ -5,6 +5,8 @@ import {
   setDenomination,
   setCountIncrem,
   setCountDicrem,
+  setTotalIncrem,
+  setTotalDicrem,
 } from "../../../features/shoppinCartRenderReduser";
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
@@ -34,12 +36,14 @@ function CardDescriptions({ dataCard }) {
   //   }
   // }, [denominationSel]);
 
-  const handleDicrem = () => {
-    dispatch(setCountDicrem(denominationStateRedux));
+  const handleIncrem = () => {
+    dispatch(setCountIncrem());
+    dispatch(setTotalIncrem(denominationStateRedux));
   };
 
-  const handleIncrem = () => {
-    dispatch(setCountIncrem(denominationStateRedux));
+  const handleDicrem = () => {
+    dispatch(setCountDicrem(denominationStateRedux));
+    dispatch(setTotalDicrem(denominationStateRedux));
   };
 
   const handleDenomination = (event) => {
