@@ -7,6 +7,7 @@ import {
   setCountDicrem,
   setTotalIncrem,
   setTotalDicrem,
+  setCountToDefault,
 } from "../../../features/shoppinCartRenderReduser";
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
@@ -49,6 +50,7 @@ function CardDescriptions({ dataCard }) {
   const handleDenomination = (event) => {
     const value = parseInt(event.target.value, 10);
     dispatch(setDenomination(value));
+    dispatch(setCountToDefault());
   };
 
   return (
