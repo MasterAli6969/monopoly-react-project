@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Breadcrumbs from "./Breadcrumbs";
 import CardSlider from "./CardSlider";
 import CardDescriptions from "./CardDescriptions";
@@ -16,12 +17,11 @@ function CardPage() {
   useEffect(() => {
     if (cartDataRedus && cartDataRedus) {
       setCardData(cartDataRedus.data);
+      console.log(cardData);
     }
   }, [cartDataRedus]);
 
-  // const handleDataUpdate = (data) => {
-  //   console.log(data);
-  // };
+  const dispatch = useDispatch();
 
   return (
     <>

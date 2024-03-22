@@ -8,9 +8,8 @@ function CardDescriptions({ dataCard }) {
   const [total, setTotal] = useState();
   const [denominationSel, setDenominationSel] = useState();
   const [channgeDataCard, setChanngeDataCard] = useState({
-    name: "",
-    denomination: 0,
-    quantity: 0,
+    total: 0,
+    count: 1,
   });
   const dispatch = useDispatch();
   useEffect(() => {
@@ -29,12 +28,11 @@ function CardDescriptions({ dataCard }) {
   useEffect(() => {
     setChanngeDataCard((prevData) => ({
       ...prevData,
-      name: name,
-      denomination: total,
-      quantity: count,
+      total: total,
+      count: count,
     }));
     dispatch(setCartData(channgeDataCard));
-  }, [name, total, count]);
+  }, [total, count]);
 
   const handleDicrem = () => {
     if (count > 1) {
