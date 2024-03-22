@@ -19,7 +19,7 @@ function CardPage() {
       setCardData(cartDataRedus.data);
       console.log(cardData);
     }
-  }, [cartDataRedus]);
+  }, [cartDataRedus, cardData]);
 
   const dispatch = useDispatch();
 
