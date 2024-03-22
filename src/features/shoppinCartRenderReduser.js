@@ -33,6 +33,9 @@ const shoppinCartRenderReduser = createSlice({
     setDenomination(state, action) {
       state.denomination = action.payload;
     },
+    setTotal(state, action) {
+      state.total = action.payload;
+    },
 
     setCountIncrem(state) {
       state.count = state.count + 1;
@@ -54,10 +57,6 @@ const shoppinCartRenderReduser = createSlice({
 
     setCountToDefault(state) {
       state.count = 1;
-    },
-
-    setTotal(state, action) {
-      state.total = action.payload;
     },
 
     setCartData(state, action) {

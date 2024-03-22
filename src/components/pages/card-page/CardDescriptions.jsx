@@ -8,11 +8,10 @@ import {
   setTotalIncrem,
   setTotalDicrem,
   setCountToDefault,
+  setTotal,
 } from "../../../features/shoppinCartRenderReduser";
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
-  //const [total, setTotal] = useState();
-  //const [denominationSel, setDenominationSel] = useState();
   const countStateRedux = useSelector(
     (state) => state.shoppinCartRenderReduser.count
   );
@@ -28,14 +27,15 @@ function CardDescriptions({ dataCard }) {
     if (denomination) {
       const initialDenomination = parseInt(denomination.split("|")[0], 10);
       dispatch(setDenomination(initialDenomination));
+      dispatch(setTotal(initialDenomination));
     }
   }, [denomination, dispatch]);
 
   // useEffect(() => {
-  //   if (denominationSel !== undefined) {
+  //   if (denominationStateRedux !== undefined) {
   //     setTotal(denominationSel + denominationSel * 0.08);
   //   }
-  // }, [denominationSel]);
+  // }, [denominationStateRedux]);
 
   const handleIncrem = () => {
     dispatch(setCountIncrem());
