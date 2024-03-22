@@ -1,3 +1,4 @@
+//<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -5,11 +6,15 @@ import {
   setCountIncrem,
   setCountDicrem,
 } from "../../../features/shoppinCartRenderReduser";
-
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
+  //const [total, setTotal] = useState();
+  //const [denominationSel, setDenominationSel] = useState();
   const countStateRedux = useSelector(
     (state) => state.shoppinCartRenderReduser.count
+  );
+  const denominationStateRedux = useSelector(
+    (state) => state.shoppinCartRenderReduser.denomination
   );
   const totalStateRedux = useSelector(
     (state) => state.shoppinCartRenderReduser.total
@@ -23,12 +28,18 @@ function CardDescriptions({ dataCard }) {
     }
   }, [denomination, dispatch]);
 
+  // useEffect(() => {
+  //   if (denominationSel !== undefined) {
+  //     setTotal(denominationSel + denominationSel * 0.08);
+  //   }
+  // }, [denominationSel]);
+
   const handleDicrem = () => {
-    dispatch(setCountDicrem());
+    dispatch(setCountDicrem(denominationStateRedux));
   };
 
   const handleIncrem = () => {
-    dispatch(setCountIncrem());
+    dispatch(setCountIncrem(denominationStateRedux));
   };
 
   const handleDenomination = (event) => {
@@ -48,12 +59,12 @@ function CardDescriptions({ dataCard }) {
                 className="form-select mb-3"
                 id="floatingSelect"
                 aria-label="Floating label select example"
-                value={denomination}
+                value={denominationStateRedux}
                 onChange={handleDenomination}
               >
                 {denomination &&
                   denomination.split("|").map((item, index) => (
-                    <option value={item} key={index}>
+                    <option defaultValue={index[0]} key={index}>
                       {item}
                     </option>
                   ))}
@@ -98,5 +109,4 @@ function CardDescriptions({ dataCard }) {
     </>
   );
 }
-
 export default CardDescriptions;
