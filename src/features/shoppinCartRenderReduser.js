@@ -59,7 +59,8 @@ export const {
   setRecipient,
   setRecipientEmail,
   setDenomination,
-  setCount,
+  setCountIncrem,
+  setCountDicrem,
   setTotal,
   setCartData,
 } = shoppinCartRenderReduser.actions;
