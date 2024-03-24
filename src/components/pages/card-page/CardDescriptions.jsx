@@ -21,7 +21,7 @@ function CardDescriptions({ dataCard }) {
     (state) => state.shoppinCartRenderReduser.total
   );
   const finalStateObject = useSelector(
-    (state) => state.shoppinCartRenderReduser.setCartData
+    (state) => state.shoppinCartRenderReduser
   );
   const dispatch = useDispatch();
 
