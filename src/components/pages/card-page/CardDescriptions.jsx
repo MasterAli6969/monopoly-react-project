@@ -1,5 +1,5 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
-import { useEffect } from "react";
+//import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setDenomination,
@@ -23,12 +23,12 @@ function CardDescriptions({ dataCard }) {
   );
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (denomination) {
-      const initialDenomination = parseInt(denomination.split("|")[0], 10);
-      dispatch(setDenomination(initialDenomination));
-    }
-  }, [denomination, dispatch]);
+  // useEffect(() => {
+  //   if (denomination) {
+  //     const initialDenomination = parseInt(denomination.split("|")[0], 10);
+  //     dispatch(setDenomination(initialDenomination));
+  //   }
+  // }, [denomination, dispatch]);
 
   const handleIncrem = () => {
     dispatch(setCountIncrem());
