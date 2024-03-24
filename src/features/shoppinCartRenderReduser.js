@@ -77,8 +77,8 @@ export const {
   setCountDicrem,
   setTotalDicrem,
   setTotal,
-  setCartData,
   setCountToDefault,
+  setCartData,
 } = shoppinCartRenderReduser.actions;
 
 export default shoppinCartRenderReduser.reducer;

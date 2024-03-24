@@ -1,5 +1,4 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
-//import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setDenomination,
@@ -21,18 +20,15 @@ function CardDescriptions({ dataCard }) {
   const totalStateRedux = useSelector(
     (state) => state.shoppinCartRenderReduser.total
   );
+  const finalStateObject = useSelector(
+    (state) => state.shoppinCartRenderReduser.setCartData
+  );
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   if (denomination) {
-  //     const initialDenomination = parseInt(denomination.split("|")[0], 10);
-  //     dispatch(setDenomination(initialDenomination));
-  //   }
-  // }, [denomination, dispatch]);
 
   const handleIncrem = () => {
     dispatch(setCountIncrem());
     dispatch(setTotalIncrem(denominationStateRedux));
+    console.log(finalStateObject);
   };
 
   const handleDicrem = () => {
