@@ -20,15 +20,12 @@ function CardDescriptions({ dataCard }) {
   const totalStateRedux = useSelector(
     (state) => state.shoppinCartRenderReduser.total
   );
-  const finalStateObject = useSelector(
-    (state) => state.shoppinCartRenderReduser
-  );
+
   const dispatch = useDispatch();
 
   const handleIncrem = () => {
     dispatch(setCountIncrem());
     dispatch(setTotalIncrem(denominationStateRedux));
-    console.log(finalStateObject);
   };
 
   const handleDicrem = () => {

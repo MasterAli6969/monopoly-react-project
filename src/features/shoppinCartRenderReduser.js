@@ -59,10 +59,6 @@ const shoppinCartRenderReduser = createSlice({
     setCountToDefault(state) {
       state.count = 1;
     },
-
-    setCartData(state, action) {
-      return { ...state, ...action.payload };
-    },
   },
 });
 

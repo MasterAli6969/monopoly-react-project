@@ -1,21 +1,7 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
 import TooltipInitializer from "../../../assets/js/script";
 import { shoppingCartData } from "./data";
 
 function ShoppingCart() {
-  const [total, setTotal] = useState(0);
-  const shoppinCartReduser = useSelector(
-    (state) => state.shoppinCartRenderReduser
-  );
-  const handleDeduction = (howMuch) => {
-    setTotal(total - howMuch);
-  };
-
-  const handleAddition = (howMuch) => {
-    setTotal(total + howMuch);
-    console.log(shoppinCartReduser);
-  };
   return (
     <div className="container-fluid p-0">
       <TooltipInitializer />
@@ -92,7 +78,6 @@ function ShoppingCart() {
                     <div style={{ maxWidth: "130px" }}>
                       <div className="d-flex align-items-center">
                         <button
-                          onClick={() => handleDeduction(item.nominal.howMuch)}
                           type="button"
                           className="btn btn-outline-secondary _removeDuplicateProducts"
                         >
@@ -100,7 +85,6 @@ function ShoppingCart() {
                         </button>
                         <p className="mx-3 mb-0 _quantityProducts">1</p>
                         <button
-                          onClick={() => handleAddition(item.nominal.howMuch)}
                           type="button"
                           className="btn btn-outline-secondary _addDuplicateProducts"
                         >
@@ -112,9 +96,7 @@ function ShoppingCart() {
                   <td>
                     <div className="d-flex justify-content-between">
                       <p>
-                        <span className="_totalPrice">
-                          {total === 0 ? item.nominal.howMuch : total}
-                        </span>
+                        <span className="_totalPrice">1</span>
                         Р.
                       </p>
                     </div>
