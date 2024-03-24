@@ -29,7 +29,9 @@ function WhoDataForm() {
     dispatch(incrementCartValue());
     dispatch(setRecipient(name));
     dispatch(setRecipientEmail(mail));
-    console.log(finalStateObject);
+    dispatch(() => {
+      console.log(finalStateObject);
+    });
   };
   return (
     <>
