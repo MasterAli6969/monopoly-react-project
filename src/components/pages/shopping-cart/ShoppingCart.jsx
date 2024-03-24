@@ -1,18 +1,26 @@
 import TooltipInitializer from "../../../assets/js/script";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { shoppingCartData } from "./data";
 
 function ShoppingCart() {
+  const [shoopingDataArray, setShoopingDataArray] = useState([]);
   const finalStateObject = useSelector(
     (state) => state.shoppinCartRenderReduser
   );
+
+  useEffect(() => {
+    if (Object.keys(finalStateObject).length !== 0) {
+      setShoopingDataArray((prevArray) => [...prevArray, finalStateObject]);
+    }
+  }, [finalStateObject]);
+
   const handleClick = () => {
     console.log(finalStateObject);
   };
   return (
     <div className="container-fluid p-0">
       <TooltipInitializer />
-      {shoppingCartData.length === 0 ? (
+      {shoopingDataArray.length === 0 ? (
         <div className="container rounded-2 p-0 mb-5 bg-accent-colors">
           <div className="d-flex justify-content-center align-items-center rounded-top py-3 accent-colors">
             <h5 className="text-accent-colors">Корзина пуста</h5>
@@ -56,14 +64,14 @@ function ShoppingCart() {
               </tr>
             </thead>
             <tbody>
-              {shoppingCartData.map((item, index) => (
-                <tr key={index} className="_productsCouter _productsDelete">
+              {shoopingDataArray.map((item) => (
+                <tr key={item.id} className="_productsCouter _productsDelete">
                   <th scope="row">
                     <h6>{item.id}</h6>
                   </th>
                   <td>
                     <img
-                      src={item.certificateImg}
+                      src={item.сertificate}
                       className="img-fluid"
                       style={{ width: "200px", height: "100px" }}
                       alt=""
@@ -71,15 +79,12 @@ function ShoppingCart() {
                   </td>
                   <td>
                     <div>
-                      <p>{item.recipient.name}</p>
-                      <p>{item.recipient.mail}</p>
+                      <p>{item.recipient}</p>
+                      <p>{item.recipientEmail}</p>
                     </div>
                   </td>
                   <td>
-                    <span className="_denomination">
-                      {item.nominal.howMuch}
-                    </span>{" "}
-                    {item.nominal.currency}.
+                    <span className="_denomination">{item.denomination}</span>{" "}
                   </td>
                   <td>
                     <div style={{ maxWidth: "130px" }}>
@@ -90,7 +95,7 @@ function ShoppingCart() {
                         >
                           <i className="bi bi-dash-circle"></i>
                         </button>
-                        <p className="mx-3 mb-0 _quantityProducts">1</p>
+                        <p className="mx-3 mb-0 _quantityProducts"></p>
                         <button
                           type="button"
                           className="btn btn-outline-secondary _addDuplicateProducts"
@@ -103,7 +108,7 @@ function ShoppingCart() {
                   <td>
                     <div className="d-flex justify-content-between">
                       <p>
-                        <span className="_totalPrice">1</span>
+                        <span className="_totalPrice">{item.total}</span>
                         Р.
                       </p>
                     </div>
