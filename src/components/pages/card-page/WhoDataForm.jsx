@@ -1,6 +1,6 @@
 //<!--------------------- ФОРМА ДЛЯ ОФОРМЛЕНИЯ КАРТЫ ------------------->
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   setRecipient,
   setRecipientEmail,
@@ -10,10 +10,6 @@ import { Link } from "react-router-dom";
 function WhoDataForm() {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
-
-  const finalStateObject = useSelector(
-    (state) => state.shoppinCartRenderReduser
-  );
 
   const dispatch = useDispatch();
 
@@ -29,9 +25,6 @@ function WhoDataForm() {
     dispatch(incrementCartValue());
     dispatch(setRecipient(name));
     dispatch(setRecipientEmail(mail));
-    dispatch(() => {
-      console.log(finalStateObject);
-    });
   };
   return (
     <>

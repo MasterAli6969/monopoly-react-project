@@ -1,7 +1,14 @@
 import TooltipInitializer from "../../../assets/js/script";
+import { useSelector } from "react-redux";
 import { shoppingCartData } from "./data";
 
 function ShoppingCart() {
+  const finalStateObject = useSelector(
+    (state) => state.shoppinCartRenderReduser
+  );
+  const handleClick = () => {
+    console.log(finalStateObject);
+  };
   return (
     <div className="container-fluid p-0">
       <TooltipInitializer />
@@ -104,6 +111,7 @@ function ShoppingCart() {
                   <td>
                     <div>
                       <button
+                        onClick={handleClick}
                         type="button"
                         className="btn btn-light btn-sm rounded-5"
                         data-bs-toggle="tooltip"
