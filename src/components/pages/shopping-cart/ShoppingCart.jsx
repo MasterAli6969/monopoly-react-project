@@ -10,9 +10,20 @@ function ShoppingCart() {
 
   useEffect(() => {
     if (Object.keys(finalStateObject).length !== 0) {
+      // Проверяем, есть ли объект с таким же id уже в массиве
+      const existingItemIndex = shoopingDataArray.findIndex(
+        (item) => item.id === finalStateObject.id
+      );
+
+      // Если объект с таким id уже существует в массиве, не добавляем его заново
+      if (existingItemIndex !== -1) {
+        return;
+      }
+
+      // Если объект с таким id не существует, добавляем его в массив
       setShoopingDataArray((prevArray) => [...prevArray, finalStateObject]);
     }
-  }, [finalStateObject]);
+  }, [finalStateObject, shoopingDataArray]);
 
   const handleClick = () => {
     console.log(finalStateObject);
