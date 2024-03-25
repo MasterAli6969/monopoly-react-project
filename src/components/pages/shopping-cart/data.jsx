@@ -26,5 +26,3 @@ export const shoppingCartData = [
     },
   },
 ];
-
-//export const shoppingCartData = []
