@@ -105,12 +105,14 @@ function WhoDataForm() {
                   <div className="modal-body">
                     <div className="d-flex flex-column justify-content-center align-items-center">
                       <h5>Перейти в карзину?</h5>
-                      <Link
-                        className="w-75 btn btn-light btn-lg rounded-5 p-2 m-3 over-accent-color text-accent-colors"
-                        to="/shopping-cart"
-                      >
-                        Да
-                      </Link>
+                      <button data-bs-dismiss="modal" aria-label="Close">
+                        <Link
+                          className="w-75 btn btn-light btn-lg rounded-5 p-2 m-3 over-accent-color text-accent-colors"
+                          to="/shopping-cart"
+                        >
+                          Да
+                        </Link>
+                      </button>
 
                       <button
                         type="button"

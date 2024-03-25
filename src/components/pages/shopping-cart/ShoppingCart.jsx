@@ -23,7 +23,7 @@ function ShoppingCart() {
       // Если объект с таким id не существует, добавляем его в массив
       setShoopingDataArray((prevArray) => [...prevArray, finalStateObject]);
     }
-  }, [finalStateObject, shoopingDataArray]);
+  }, []);
 
   const handleClick = () => {
     console.log(finalStateObject);
