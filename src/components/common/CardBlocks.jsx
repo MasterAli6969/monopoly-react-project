@@ -65,13 +65,13 @@ function CardBlocks() {
                         type="button"
                         className="btn btn-light accent-colors text-accent-colors w-100"
                         data-bs-toggle="modal"
-                        data-bs-target={`#${item.id}`}
+                        data-bs-target={`#exampleModal${item.id}`}
                       >
                         Купить
                       </button>
                       <div
                         className="modal fade"
-                        id={item.id}
+                        id={`exampleModal${item.id}`}
                         tabIndex="-1"
                         aria-labelledby="exampleModalLabel"
                         aria-hidden="true"
