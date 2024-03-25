@@ -9,25 +9,9 @@ function ShoppingCart() {
   );
 
   useEffect(() => {
-    if (Object.keys(finalStateObject).length !== 0) {
-      // Проверяем, есть ли объект с таким же id уже в массиве
-      const existingItemIndex = shoopingDataArray.findIndex(
-        (item) => item.id === finalStateObject.id
-      );
+    setShoopingDataArray((prevArray) => [...prevArray, finalStateObject]);
+  }, [finalStateObject]);
 
-      // Если объект с таким id уже существует в массиве, не добавляем его заново
-      if (existingItemIndex !== -1) {
-        return;
-      }
-
-      // Если объект с таким id не существует, добавляем его в массив
-      setShoopingDataArray((prevArray) => [...prevArray, finalStateObject]);
-    }
-  }, []);
-
-  const handleClick = () => {
-    console.log(finalStateObject);
-  };
   return (
     <div className="container-fluid p-0">
       <TooltipInitializer />
@@ -127,7 +111,6 @@ function ShoppingCart() {
                   <td>
                     <div>
                       <button
-                        onClick={handleClick}
                         type="button"
                         className="btn btn-light btn-sm rounded-5"
                         data-bs-toggle="tooltip"

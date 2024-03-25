@@ -59,6 +59,9 @@ const shoppinCartRenderReduser = createSlice({
     setCountToDefault(state) {
       state.count = 1;
     },
+    setInitialState(state, action) {
+      return action.payload;
+    },
   },
 });
 
@@ -74,7 +77,7 @@ export const {
   setTotalDicrem,
   setTotal,
   setCountToDefault,
-  setCartData,
+  setInitialState,
 } = shoppinCartRenderReduser.actions;
 
 export default shoppinCartRenderReduser.reducer;
