@@ -1,24 +1,45 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { setDenomination } from "../../../features/shoppin-cart-render-redusers/setDenominationReduser";
+import {
+  setDenomination,
+  setCountIncrem,
+  setCountDicrem,
+  setTotalIncrem,
+  setTotalDicrem,
+  setCountToDefault,
+  setTotal,
+} from "../../../features/shoppinCartRenderReduser";
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
-  const denominationStateRedux = useSelector(
-    (state) => state.setDenominationReduser
+  const countStateRedux = useSelector(
+    (state) => state.shoppinCartRenderReduser.count
   );
-  useEffect(() => {
-    console.log(denominationStateRedux);
-  }, [denominationStateRedux]);
+  const denominationStateRedux = useSelector(
+    (state) => state.shoppinCartRenderReduser.denomination
+  );
+  const totalStateRedux = useSelector(
+    (state) => state.shoppinCartRenderReduser.total
+  );
+
   const dispatch = useDispatch();
 
-  const handleIncrem = () => {};
+  const handleIncrem = () => {
+    dispatch(setCountIncrem());
+    dispatch(setTotalIncrem(denominationStateRedux));
+  };
 
-  const handleDicrem = () => {};
+  const handleDicrem = () => {
+    if (countStateRedux > 1) {
+      dispatch(setCountDicrem(denominationStateRedux));
+      dispatch(setTotalDicrem(denominationStateRedux));
+    }
+  };
 
   const handleDenomination = (event) => {
     const value = parseInt(event.target.value, 10);
     dispatch(setDenomination(value));
+    dispatch(setTotal(value));
+    dispatch(setCountToDefault());
   };
 
   return (
@@ -43,7 +64,7 @@ function CardDescriptions({ dataCard }) {
                   ))}
               </select>
               <p>
-                К оплате — {denominationStateRedux}
+                К оплате — {totalStateRedux}
                 <i
                   className="bi bi-exclamation-circle"
                   data-bs-toggle="tooltip"
@@ -61,7 +82,7 @@ function CardDescriptions({ dataCard }) {
                 >
                   <i className="bi bi-dash-circle"></i>
                 </button>
-                <p className="mx-3 mb-0 _quantityProducts">1</p>
+                <p className="mx-3 mb-0 _quantityProducts">{countStateRedux}</p>
                 <button
                   type="button"
                   className="btn btn-outline-secondary _addDuplicateProducts"

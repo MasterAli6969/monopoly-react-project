@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartValueReducer from "./cartValueReducer";
 import cardRenderDataReduce from "./cardRenderDataReduce";
+import shoppinCartRenderReduser from "./shoppinCartRenderReduser";
 // import setCardIdReduser from "./shoppin-cart-render-redusers/setCardIdReduser";
 // import setCertificateReduser from "./shoppin-cart-render-redusers/setCertificateReduser";
 // import setCountDicremReduser from "./shoppin-cart-render-redusers/setCountDicremReduser";
@@ -34,6 +35,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   cartValueReducer: cartValueReducer,
   cardRenderDataReduce: cardRenderDataReduce,
+  shoppinCartRenderReduser: shoppinCartRenderReduser,
   // setCardIdReduser: setCardIdReduser,
   // setCertificateReduser: setCertificateReduser,
   // setCountDicremReduser: setCountDicremReduser,
