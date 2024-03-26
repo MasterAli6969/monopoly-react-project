@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = 65156160;
+const initialState = {
+  value: 65156160,
+};
 
 const setDenominationReduser = createSlice({
   name: "setDenominationReduser",
   initialState,
   reducers: {
     setDenomination(state, action) {
-      state = action.payload;
+      state.value = action.payload;
     },
   },
 });
