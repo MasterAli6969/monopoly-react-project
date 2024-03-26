@@ -4,7 +4,7 @@ import { setDenomination } from "../../../features/shoppin-cart-render-redusers/
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
   const denominationStateRedux = useSelector(
-    (state) => state.setDenominationReduser.denomination
+    (state) => state.setDenominationReduser
   );
 
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ function CardDescriptions({ dataCard }) {
   const handleDenomination = (event) => {
     const value = parseInt(event.target.value, 10);
     dispatch(setDenomination(value));
-    console.log(denominationStateRedux);
+    console.log(value);
   };
 
   return (
