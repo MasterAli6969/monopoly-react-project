@@ -4,7 +4,7 @@ import { setDenomination } from "../../../features/shoppin-cart-render-redusers/
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
   const denominationStateRedux = useSelector(
-    (state) => state.setDenominationReduser.denomination
+    (state) => state.setDenominationReduser
   );
 
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ function CardDescriptions({ dataCard }) {
                 className="form-select mb-3"
                 id="floatingSelect"
                 aria-label="Floating label select example"
-                value={denominationStateRedux}
+                value={denomination}
                 onChange={handleDenomination}
               >
                 {denomination &&
