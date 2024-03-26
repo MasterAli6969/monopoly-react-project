@@ -1,17 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartValueReducer from "./cartValueReducer";
 import cardRenderDataReduce from "./cardRenderDataReduce";
-import setCardIdReduser from "./shoppin-cart-render-redusers/setCardIdReduser";
-import setCertificateReduser from "./shoppin-cart-render-redusers/setCertificateReduser";
-import setCountDicremReduser from "./shoppin-cart-render-redusers/setCountDicremReduser";
-import setCountIncremReduser from "./shoppin-cart-render-redusers/setCountIncremReduser";
-import setCountToDefaultReduser from "./shoppin-cart-render-redusers/setCountToDefaultReduser";
-import setDenominationReduser from "./shoppin-cart-render-redusers/setDenominationReduser";
-import setRecipientEmailReduser from "./shoppin-cart-render-redusers/setRecipientEmailReduser";
-import setRecipientReduser from "./shoppin-cart-render-redusers/setRecipientReduser";
-import setTotalDicremReduser from "./shoppin-cart-render-redusers/setTotalDicremReduser";
-import setTotalIncremReduser from "./shoppin-cart-render-redusers/setTotalIncremReduser";
-import setTotalReduser from "./shoppin-cart-render-redusers/setTotalReduser";
+// import setCardIdReduser from "./shoppin-cart-render-redusers/setCardIdReduser";
+// import setCertificateReduser from "./shoppin-cart-render-redusers/setCertificateReduser";
+// import setCountDicremReduser from "./shoppin-cart-render-redusers/setCountDicremReduser";
+// import setCountIncremReduser from "./shoppin-cart-render-redusers/setCountIncremReduser";
+// import setCountToDefaultReduser from "./shoppin-cart-render-redusers/setCountToDefaultReduser";
+// import setDenominationReduser from "./shoppin-cart-render-redusers/setDenominationReduser";
+// import setRecipientEmailReduser from "./shoppin-cart-render-redusers/setRecipientEmailReduser";
+// import setRecipientReduser from "./shoppin-cart-render-redusers/setRecipientReduser";
+// import setTotalDicremReduser from "./shoppin-cart-render-redusers/setTotalDicremReduser";
+// import setTotalIncremReduser from "./shoppin-cart-render-redusers/setTotalIncremReduser";
+// import setTotalReduser from "./shoppin-cart-render-redusers/setTotalReduser";
 
 import storage from "redux-persist/lib/storage";
 import {
@@ -34,17 +34,17 @@ const persistConfig = {
 const rootReducer = combineReducers({
   cartValueReducer: cartValueReducer,
   cardRenderDataReduce: cardRenderDataReduce,
-  setCardIdReduser: setCardIdReduser,
-  setCertificateReduser: setCertificateReduser,
-  setCountDicremReduser: setCountDicremReduser,
-  setCountIncremReduser: setCountIncremReduser,
-  setCountToDefaultReduser: setCountToDefaultReduser,
-  setDenominationReduser: setDenominationReduser,
-  setRecipientEmailReduser: setRecipientEmailReduser,
-  setRecipientReduser: setRecipientReduser,
-  setTotalDicremReduser: setTotalDicremReduser,
-  setTotalIncremReduser: setTotalIncremReduser,
-  setTotalReduser: setTotalReduser,
+  // setCardIdReduser: setCardIdReduser,
+  // setCertificateReduser: setCertificateReduser,
+  // setCountDicremReduser: setCountDicremReduser,
+  // setCountIncremReduser: setCountIncremReduser,
+  // setCountToDefaultReduser: setCountToDefaultReduser,
+  // setDenominationReduser: setDenominationReduser,
+  // setRecipientEmailReduser: setRecipientEmailReduser,
+  // setRecipientReduser: setRecipientReduser,
+  // setTotalDicremReduser: setTotalDicremReduser,
+  // setTotalIncremReduser: setTotalIncremReduser,
+  // setTotalReduser: setTotalReduser,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
