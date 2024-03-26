@@ -5,7 +5,7 @@ import { setDenomination } from "../../../features/shoppin-cart-render-redusers/
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
   const denominationStateRedux = useSelector(
-    (state) => state.setDenominationReduser
+    (state) => state.setDenominationReduser.value
   );
   useEffect(() => {
     console.log(denominationStateRedux);
