@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = 0;
+const initialState = 65156160;
 
 const setDenominationReduser = createSlice({
   name: "setDenominationReduser",
