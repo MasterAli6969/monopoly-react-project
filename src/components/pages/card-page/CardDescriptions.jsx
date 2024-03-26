@@ -10,7 +10,7 @@ function CardDescriptions({ dataCard }) {
     (state) => state.shoppinCartRenderReduser.count
   );
   // const denominationStateRedux = useSelector(
-  //   (state) => state.shoppinCartRenderReduser.denomination
+  //   //(state) => state.shoppinCartRenderReduser.denomination
   // );
   const totalStateRedux = useSelector(
     (state) => state.shoppinCartRenderReduser.total
