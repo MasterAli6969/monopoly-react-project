@@ -65,6 +65,19 @@ const shoppinCartRenderReduser = createSlice({
   },
 });
 
-export const { setDenomination, setTotal } = shoppinCartRenderReduser.actions;
+export const {
+  setCardId,
+  setCertificate,
+  setRecipient,
+  setRecipientEmail,
+  setDenomination,
+  setTotal,
+  setCountIncrem,
+  setTotalIncrem,
+  setCountDicrem,
+  setTotalDicrem,
+  setCountToDefault,
+  setInitialState,
+} = shoppinCartRenderReduser.actions;
 
 export default shoppinCartRenderReduser.reducer;
