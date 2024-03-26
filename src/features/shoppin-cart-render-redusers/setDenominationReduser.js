@@ -7,7 +7,7 @@ const setDenominationReduser = createSlice({
   initialState,
   reducers: {
     setDenomination(state, action) {
-      return (state = action.payload);
+      return action.payload;
     },
   },
 });
