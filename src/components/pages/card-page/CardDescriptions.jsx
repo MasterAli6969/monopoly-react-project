@@ -1,13 +1,10 @@
 //<!--------------------- НЕПОСРЕДСТВЕННО КАРТОЧКА ------------------->
-import { useDispatch, useSelector } from "react-redux";
-import { setDenomination } from "../../../features/shoppin-cart-render-redusers/setDenominationReduser";
+import { useSelector } from "react-redux";
 function CardDescriptions({ dataCard }) {
   const { name, description, denomination } = dataCard;
   const denominationStateRedux = useSelector(
     (state) => state.setDenominationReduser
   );
-
-  const dispatch = useDispatch();
 
   const handleIncrem = () => {};
 
@@ -15,7 +12,6 @@ function CardDescriptions({ dataCard }) {
 
   const handleDenomination = (event) => {
     const value = parseInt(event.target.value, 10);
-    dispatch(setDenomination(value));
     console.log(value);
   };
 
