@@ -73,7 +73,7 @@ function CardDescriptions({ dataCard }) {
               </p>
             </div>
             <div style={{ maxWidth: "130px" }}>
-              <p>Количество</p>
+              <p>Количество:</p>
               <div className="d-flex align-items-center">
                 <button
                   type="button"
