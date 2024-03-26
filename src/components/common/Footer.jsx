@@ -1,7 +1,6 @@
 import { footerLinks, footerContacts } from "./data";
 import logo from "../../assets/img/logoMono.png";
 import { Link } from "react-router-dom";
-
 function Footer() {
   return (
     <>
