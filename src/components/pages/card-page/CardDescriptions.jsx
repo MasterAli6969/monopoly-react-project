@@ -2,11 +2,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   setDenomination,
-  setCountIncrem,
-  setCountDicrem,
-  setTotalIncrem,
-  setTotalDicrem,
-  setCountToDefault,
   setTotal,
 } from "../../../features/shoppinCartRenderReduser";
 function CardDescriptions({ dataCard }) {
@@ -14,9 +9,9 @@ function CardDescriptions({ dataCard }) {
   const countStateRedux = useSelector(
     (state) => state.shoppinCartRenderReduser.count
   );
-  const denominationStateRedux = useSelector(
-    (state) => state.shoppinCartRenderReduser.denomination
-  );
+  // const denominationStateRedux = useSelector(
+  //   (state) => state.shoppinCartRenderReduser.denomination
+  // );
   const totalStateRedux = useSelector(
     (state) => state.shoppinCartRenderReduser.total
   );
@@ -24,14 +19,14 @@ function CardDescriptions({ dataCard }) {
   const dispatch = useDispatch();
 
   const handleIncrem = () => {
-    dispatch(setCountIncrem());
-    dispatch(setTotalIncrem(denominationStateRedux));
+    //dispatch(setCountIncrem());
+    //dispatch(setTotalIncrem(denominationStateRedux));
   };
 
   const handleDicrem = () => {
     if (countStateRedux > 1) {
-      dispatch(setCountDicrem(denominationStateRedux));
-      dispatch(setTotalDicrem(denominationStateRedux));
+      //dispatch(setCountDicrem(denominationStateRedux));
+      //dispatch(setTotalDicrem(denominationStateRedux));
     }
   };
 
@@ -39,7 +34,7 @@ function CardDescriptions({ dataCard }) {
     const value = parseInt(event.target.value, 10);
     dispatch(setDenomination(value));
     dispatch(setTotal(value));
-    dispatch(setCountToDefault());
+    //dispatch(setCountToDefault());
   };
 
   return (
