@@ -25,6 +25,7 @@ function Home() {
         <CardFeatures />
         <OurClients />
         <FeedbackSlider />
+        <Test />
       </div>
     </div>
   );
