@@ -10,10 +10,6 @@ import RepliesAccordion from "./RepliesAccordion";
 import RecomendCard from "./RecomendCard";
 import OtherDescriptions from "./OtherDescriptions";
 import TooltipInitializer from "../../../assets/js/script";
-import {
-  setCardId,
-  setCertificate,
-} from "../../../features/shoppinCartRenderReduser";
 
 function CardPage() {
   const [cardData, setCardData] = useState({});
@@ -23,9 +19,9 @@ function CardPage() {
   useEffect(() => {
     if (cartDataRedus && cartDataRedus) {
       setCardData(cartDataRedus.data);
-      console.log(cardData);
-      dispatch(setCardId(cardData.id));
-      dispatch(setCertificate(cardData.image_url));
+      // console.log(cardData);
+      // dispatch(setCardId(cardData.id));
+      // dispatch(setCertificate(cardData.image_url));
     }
   }, [cartDataRedus, cardData, dispatch]);
 
