@@ -16,6 +16,7 @@ function CardDescriptions({ dataCard }) {
   const handleDenomination = (event) => {
     const value = parseInt(event.target.value, 10);
     dispatch(setDenomination(value));
+    console.log(denominationStateRedux);
   };
 
   return (
