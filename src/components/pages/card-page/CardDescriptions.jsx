@@ -41,7 +41,7 @@ function CardDescriptions({ dataCard }) {
                   ))}
               </select>
               <p>
-                К оплате — {}
+                К оплате — {denominationStateRedux}
                 <i
                   className="bi bi-exclamation-circle"
                   data-bs-toggle="tooltip"
